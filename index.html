@@ -1,8 +1,17 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
   <meta charset="utf-8">
-  <title>Bundled Page</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Om Jay Mishra | Data Engineer</title>
+  <meta name="description" content="Portfolio of Om Jay Mishra, a Data Engineer specialising in Azure, Databricks, PySpark, Delta Lake and data-platform modernisation.">
+  <link rel="canonical" href="https://omjay.github.io/Omjay-Portfolio/">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="Om Jay Mishra">
+  <meta property="og:title" content="Om Jay Mishra | Data Engineer">
+  <meta property="og:description" content="Azure, Databricks, PySpark and Lakehouse engineering portfolio.">
+  <meta property="og:url" content="https://omjay.github.io/Omjay-Portfolio/">
+  <meta name="twitter:card" content="summary">
   <style>
     * { margin: 0; padding: 0; box-sizing: border-box; }
     body { background: #faf9f5; display: flex; align-items: center; justify-content: center; min-height: 100vh; font-family: -apple-system, BlinkMacSystemFont, sans-serif; }
@@ -302,6 +311,44 @@ document.addEventListener('DOMContentLoaded', async function() {
       const i = headOpen.index + headOpen[0].length;
       template = template.slice(0, i) + resourceScript + template.slice(i);
     }
+
+    // The rendered page replaces this document's root element, so persistent
+    // metadata and the mobile layout fix must be added to the rendered template.
+    const portfolioHead = `
+      <title>Om Jay Mishra | Data Engineer</title>
+      <meta name="description" content="Portfolio of Om Jay Mishra, a Data Engineer specialising in Azure, Databricks, PySpark, Delta Lake and data-platform modernisation.">
+      <link rel="canonical" href="https://omjay.github.io/Omjay-Portfolio/">
+      <meta property="og:type" content="website">
+      <meta property="og:site_name" content="Om Jay Mishra">
+      <meta property="og:title" content="Om Jay Mishra | Data Engineer">
+      <meta property="og:description" content="Azure, Databricks, PySpark and Lakehouse engineering portfolio.">
+      <meta property="og:url" content="https://omjay.github.io/Omjay-Portfolio/">
+      <meta name="twitter:card" content="summary">
+      <style id="portfolio-responsive-fixes">
+        @media (max-width: 640px) {
+          /* Selected-work rows: keep the visual flow and CTAs inside the viewport. */
+          main > section:nth-of-type(5) > div:not(:first-child) {
+            align-items: stretch !important;
+            flex-direction: column !important;
+            gap: 16px !important;
+          }
+
+          main > section:nth-of-type(5) > div:not(:first-child) > div:last-child {
+            align-items: flex-start !important;
+            width: 100%;
+          }
+
+          main > section:nth-of-type(5) > div:not(:first-child) > div:last-child > button {
+            align-self: stretch;
+            min-height: 44px;
+            width: 100%;
+          }
+        }
+      </style>`;
+    template = template.replace(/<html\b([^>]*)>/i, (match, attributes) =>
+      /\blang\s*=/i.test(attributes) ? match : `<html${attributes} lang="en">`
+    );
+    template = template.replace(/<\/head>/i, portfolioHead + '</head>');
 
     // Parse the template and swap the root element. Scripts inserted via
     // DOMParser/replaceWith are inert per spec — re-create each with
