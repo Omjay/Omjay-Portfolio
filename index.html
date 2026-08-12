@@ -14,9 +14,9 @@
   <meta name="twitter:card" content="summary">
   <style>
     * { margin: 0; padding: 0; box-sizing: border-box; }
-    body { background: #faf9f5; display: flex; align-items: center; justify-content: center; min-height: 100vh; font-family: -apple-system, BlinkMacSystemFont, sans-serif; }
+    body { background: #fff; display: flex; align-items: center; justify-content: center; min-height: 100vh; font-family: -apple-system, BlinkMacSystemFont, sans-serif; }
     #__bundler_loading { position: fixed; bottom: 20px; right: 20px; font: 13px/1.4 -apple-system, BlinkMacSystemFont, sans-serif; color: #666; background: #fff; padding: 8px 14px; border-radius: 8px; box-shadow: 0 1px 4px rgba(0,0,0,0.12); z-index: 10000; }
-    #__bundler_thumbnail { position: fixed; inset: 0; width: 100%; height: 100%; display: flex; align-items: center; justify-content: center; background: #faf9f5; z-index: 9999; }
+    #__bundler_thumbnail { position: fixed; inset: 0; width: 100%; height: 100%; display: flex; align-items: center; justify-content: center; background: #fff; z-index: 9999; }
     #__bundler_thumbnail svg { width: 100%; height: 100%; object-fit: contain; }
     #__bundler_placeholder { color: #999; font-size: 14px; }
   </style>
@@ -325,29 +325,520 @@ document.addEventListener('DOMContentLoaded', async function() {
       <meta property="og:url" content="https://omjay.github.io/Omjay-Portfolio/">
       <meta name="twitter:card" content="summary">
       <style id="portfolio-responsive-fixes">
+        .portfolio-section-heading {
+          font-size: 12px;
+          font-weight: 400;
+          line-height: 1.5;
+          margin: 0;
+        }
+
+        .portfolio-header-resume {
+          align-items: center;
+          border-radius: 8px;
+          color: oklch(0.45 0.09 240);
+          display: inline-flex;
+          font-family: 'JetBrains Mono', monospace;
+          font-size: 12px;
+          letter-spacing: 0.06em;
+          min-height: 44px;
+          padding: 0 12px;
+          text-decoration: none;
+        }
+
+        .portfolio-header-resume:hover,
+        .portfolio-header-resume:focus-visible {
+          background: #fff;
+          color: #1c1e21;
+          outline: 1px solid oklch(0.45 0.09 240);
+          text-decoration: none;
+        }
+
+        .portfolio-control-button {
+          appearance: none;
+          background: transparent;
+          border: 0;
+          color: inherit;
+          cursor: pointer;
+          font: inherit;
+          margin: 0;
+        }
+
+        .portfolio-control-button:focus-visible {
+          outline: 1px solid oklch(0.45 0.09 240);
+          outline-offset: 3px;
+        }
+
+        .portfolio-header-contact {
+          min-height: 44px;
+        }
+
+        .portfolio-brand-control,
+        .portfolio-back-control {
+          min-height: 44px;
+        }
+
+        nav[role="menu"] [role="menuitem"] {
+          align-items: center;
+          box-sizing: border-box;
+          display: flex;
+          min-height: 44px;
+        }
+
+        .portfolio-project-nav {
+          align-items: center;
+          border-top: 1px solid #e6e6e2;
+          display: flex;
+          gap: 12px;
+          justify-content: space-between;
+          margin-top: 32px;
+          padding-top: 32px;
+        }
+
+        .portfolio-project-nav button {
+          background: #fff;
+          border: 1px solid #d8d8d3;
+          border-radius: 6px;
+          color: #45484d;
+          cursor: pointer;
+          font-family: 'JetBrains Mono', monospace;
+          font-size: 11px;
+          letter-spacing: 0.08em;
+          min-height: 44px;
+          padding: 10px 14px;
+        }
+
+        .portfolio-project-nav button:hover,
+        .portfolio-project-nav button:focus-visible {
+          border-color: oklch(0.45 0.09 240);
+          color: #1c1e21;
+          outline: none;
+        }
+
+        html,
+        body,
+        #page-wrap {
+          background: #fff !important;
+        }
+
+        .portfolio-site-header {
+          background: rgba(255, 255, 255, 0.94) !important;
+        }
+
+        .portfolio-selected-work button {
+          min-height: 44px;
+        }
+
+        .portfolio-selected-work-row {
+          min-width: 0;
+        }
+
+        .portfolio-selected-work-copy {
+          min-width: 0;
+        }
+
+        .portfolio-selected-work-actions {
+          flex: 0 0 224px;
+          width: 224px;
+        }
+
+        .portfolio-selected-work-icons {
+          gap: 0 !important;
+          justify-content: space-between;
+          width: 224px;
+        }
+
+        .portfolio-selected-work-icon {
+          box-sizing: border-box !important;
+          height: 44px !important;
+          width: 44px !important;
+        }
+
+        .portfolio-selected-work-button {
+          align-items: center;
+          box-sizing: border-box;
+          display: flex;
+          font-size: 10.5px !important;
+          justify-content: center;
+          height: 44px;
+          min-height: 44px !important;
+          padding: 0 10px !important;
+          text-align: center;
+          width: 100%;
+        }
+
+        .portfolio-work-company {
+          color: #747981;
+          font-family: 'JetBrains Mono', monospace;
+          font-size: 10px;
+          letter-spacing: 0.12em;
+          margin-top: 9px;
+          text-transform: uppercase;
+        }
+
+        .portfolio-role-card {
+          box-sizing: border-box;
+          cursor: pointer;
+          min-height: 226px;
+        }
+
+        .portfolio-role-card:hover {
+          box-shadow: 0 8px 28px rgba(28, 30, 33, 0.12) !important;
+          transform: translateY(-1px);
+        }
+
+        .portfolio-role-card:focus-visible {
+          box-shadow: 0 0 0 3px rgba(31, 103, 145, 0.18) !important;
+          outline: 2px solid oklch(0.45 0.09 240);
+          outline-offset: 3px;
+        }
+
+        .portfolio-role-card a {
+          position: relative;
+          z-index: 2;
+        }
+
+        .portfolio-role-card--exaqube {
+          background: linear-gradient(135deg, #edf7ff 0%, #e4f2fd 52%, #d6eafa 100%) !important;
+          border-color: #8db9d9 !important;
+          box-shadow: inset 0 0 72px rgba(71, 145, 198, 0.08);
+        }
+
+        .portfolio-role-card--azimuth {
+          background: linear-gradient(135deg, #fffefa 0%, #f8fbfa 52%, #eef5f3 100%) !important;
+          border-color: #d7e4df !important;
+          box-shadow: inset 0 0 72px rgba(41, 137, 94, 0.035);
+        }
+
+        .portfolio-role-card--azimuth .cardviz > div {
+          background: transparent !important;
+          border-color: transparent !important;
+        }
+
+        .portfolio-role-card--azimuth .cardviz {
+          height: 168px !important;
+          right: 18px !important;
+          width: 320px !important;
+        }
+
+        .portfolio-azimuth-window {
+          -webkit-mask-image: linear-gradient(to bottom, transparent 0%, #000 12%, #000 88%, transparent 100%);
+          mask-image: linear-gradient(to bottom, transparent 0%, #000 12%, #000 88%, transparent 100%);
+        }
+
+        .portfolio-azimuth-ticker {
+          font-size: 10.25px !important;
+          line-height: 17px !important;
+        }
+
+        .portfolio-role-card--planetspark {
+          background: linear-gradient(135deg, #111722 0%, #0d121b 56%, #090c12 100%) !important;
+          border-color: #2b3545 !important;
+          box-shadow: inset 0 0 90px rgba(48, 103, 156, 0.07);
+        }
+
+        .portfolio-role-card--planetspark .cardviz > div {
+          background: transparent !important;
+          border-color: transparent !important;
+        }
+
+        .portfolio-role-card--planetspark .cardviz {
+          height: 188px !important;
+          right: 18px !important;
+          width: 300px !important;
+        }
+
+        #shipviz.portfolio-exaqube-water {
+          bottom: 8px !important;
+          overflow: hidden;
+          right: 18px !important;
+          width: 320px !important;
+        }
+
+        #shipviz.portfolio-exaqube-water > svg {
+          overflow: hidden !important;
+        }
+
+        .portfolio-ship {
+          animation: portfolioShipSail 14s linear infinite !important;
+          transform-box: view-box;
+          transform-origin: center;
+        }
+
+        .portfolio-water-line {
+          opacity: 0.48 !important;
+          stroke-width: 2px !important;
+        }
+
+        @keyframes portfolioShipSail {
+          0% {
+            opacity: 0;
+            transform: translate(180px, 1px);
+          }
+          7% {
+            opacity: 1;
+            transform: translate(150px, -1px);
+          }
+          48% {
+            opacity: 1;
+            transform: translate(0, 1px);
+          }
+          88% {
+            opacity: 1;
+            transform: translate(-150px, -1px);
+          }
+          96%,
+          100% {
+            opacity: 0;
+            transform: translate(-185px, 1px);
+          }
+        }
+
+        @media (prefers-reduced-motion: reduce) {
+          .portfolio-ship {
+            animation: none !important;
+            opacity: 1 !important;
+            transform: none !important;
+          }
+        }
+
+        .portfolio-role-card--planetspark .portfolio-role-period {
+          color: #a9b7c9 !important;
+        }
+
+        .portfolio-role-tenure {
+          font-weight: 600;
+        }
+
+        .portfolio-role-card--planetspark .portfolio-role-company {
+          color: #f7f9fc !important;
+        }
+
+        .portfolio-role-card--planetspark .portfolio-role-position,
+        .portfolio-role-card--planetspark .portfolio-role-description {
+          color: #c6cfdb !important;
+        }
+
+        .portfolio-role-card--planetspark .portfolio-role-tech {
+          background: rgba(255, 255, 255, 0.035);
+          border-color: #374456 !important;
+          color: #cfd7e2 !important;
+        }
+
         @media (max-width: 640px) {
+          .portfolio-header-inner {
+            flex-wrap: nowrap !important;
+            gap: 8px !important;
+            padding-left: 20px !important;
+            padding-right: 20px !important;
+          }
+
+          .portfolio-hero {
+            padding-top: 64px !important;
+          }
+
+          .portfolio-hero-kicker {
+            font-size: 10px !important;
+            letter-spacing: 0.1em !important;
+            line-height: 1.55 !important;
+          }
+
+          .portfolio-hero-title {
+            font-size: clamp(36px, 10.75vw, 42px) !important;
+            letter-spacing: -0.015em !important;
+            line-height: 1.11 !important;
+            margin-top: 16px !important;
+            max-width: none !important;
+          }
+
+          .portfolio-hero-intro {
+            font-size: 16px !important;
+            margin-top: 18px !important;
+          }
+
+          .portfolio-header-resume {
+            display: none;
+          }
+
           /* Selected-work rows: keep the visual flow and CTAs inside the viewport. */
-          main > section:nth-of-type(5) > div:not(:first-child) {
+          main > section.portfolio-selected-work > div:not(:first-child) {
             align-items: stretch !important;
             flex-direction: column !important;
             gap: 16px !important;
           }
 
-          main > section:nth-of-type(5) > div:not(:first-child) > div:last-child {
+          main > section.portfolio-selected-work > div:not(:first-child) > div:last-child {
             align-items: flex-start !important;
+            flex-basis: 224px !important;
+            max-width: 100%;
+            width: 224px !important;
+          }
+
+          main > section.portfolio-selected-work > div:not(:first-child) > div:last-child > button {
+            align-self: stretch;
+            height: 44px;
+            min-height: 44px !important;
             width: 100%;
           }
 
-          main > section:nth-of-type(5) > div:not(:first-child) > div:last-child > button {
-            align-self: stretch;
-            min-height: 44px;
+          .portfolio-role-card {
+            min-height: 0;
+            padding-left: 20px !important;
+            padding-right: 20px !important;
+          }
+
+          .portfolio-role-content {
+            align-items: flex-start !important;
+            flex-direction: column !important;
+            gap: 14px !important;
+          }
+
+          .portfolio-role-content > div {
+            box-sizing: border-box;
+            max-width: 100% !important;
+            min-width: 0 !important;
+            width: 100% !important;
+          }
+
+          .portfolio-role-period,
+          .portfolio-role-context {
+            box-sizing: border-box;
+            line-height: 1.45 !important;
+            max-width: 100%;
+            overflow-wrap: anywhere;
+            white-space: normal !important;
+          }
+
+          .portfolio-role-context {
+            display: block !important;
+            width: 100% !important;
+          }
+
+          .portfolio-project-nav {
+            align-items: stretch;
+            flex-direction: column;
+          }
+
+          .portfolio-project-nav button {
             width: 100%;
+          }
+
+          .portfolio-before-after {
+            grid-template-columns: 1fr !important;
+          }
+
+          main[data-screen-label="Company page"] [style*="grid-template-columns:1fr 1fr"] {
+            grid-template-columns: 1fr !important;
+          }
+        }
+
+        @media (max-width: 420px) {
+          .portfolio-race-row {
+            align-items: stretch !important;
+            flex-direction: column !important;
+            gap: 7px !important;
+          }
+
+          .portfolio-race-row > span {
+            width: auto !important;
+          }
+
+          main[data-screen-label="Company page"] [style*="display:flex"][style*="gap:14px"] {
+            align-items: stretch !important;
+            flex-direction: column !important;
+            gap: 7px !important;
+          }
+
+          main[data-screen-label="Company page"] [style*="display:flex"][style*="gap:14px"] > span[style*="width:130px"] {
+            width: auto !important;
           }
         }
       </style>`;
     template = template.replace(/<html\b([^>]*)>/i, (match, attributes) =>
       /\blang\s*=/i.test(attributes) ? match : `<html${attributes} lang="en">`
     );
+
+    const replaceTemplateOnce = (from, to, label) => {
+      const occurrences = template.split(from).length - 1;
+      if (occurrences !== 1) throw new Error(`Portfolio patch ${label} matched ${occurrences} times`);
+      template = template.replace(from, to);
+    };
+
+    replaceTemplateOnce(
+      'Om Jay Mishra - Data Engineer across Databricks, PySpark, Delta Lake and Azure Data Factory: analytics automation at PlanetSpark, Lakehouse migration at Azimuth GRC, platform modernization at ExaQube.',
+      'Data Engineer working across Databricks, PySpark, Delta Lake and Azure Data Factory, with experience in analytics automation, Lakehouse migration and platform modernization.',
+      'hero introduction'
+    );
+
+    replaceTemplateOnce(
+      'if ((this.props.enableScrollAdvance ?? true) === false) return;',
+      'return;',
+      'scroll advance removal'
+    );
+
+    replaceTemplateOnce(
+      "  go(v) {\n    clearTimeout(this.choiceT); clearTimeout(this.idleT);",
+      "  setPortfolioUrl(v, mode = 'push') {\n    const hashes = { exa: '#exaqube', azi: '#azimuth-grc', ps: '#planetspark' };\n    const nextHash = hashes[v] || '';\n    if (window.location.hash === nextHash) return;\n    const nextUrl = window.location.pathname + window.location.search + nextHash;\n    if (mode === 'replace') window.history.replaceState({ portfolioView: v }, '', nextUrl);\n    else if (mode === 'push') window.history.pushState({ portfolioView: v }, '', nextUrl);\n  }\n\n  go(v, historyMode = 'push') {\n    clearTimeout(this.choiceT); clearTimeout(this.idleT);",
+      'URL-aware navigation method'
+    );
+
+    replaceTemplateOnce(
+      "    this.doneWait = false;\n    this.setState({ view: v, advance: false, back: false, choice: false, overlay: false });",
+      "    this.doneWait = false;\n    this.setPortfolioUrl(v, historyMode);\n    this.setState({ view: v, advance: false, back: false, choice: false, overlay: false });",
+      'URL update in navigation'
+    );
+
+    replaceTemplateOnce(
+      "  componentDidMount() {\n    this.reduced = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;",
+      "  componentDidMount() {\n    this.reduced = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;\n    const hashViews = { '#exaqube': 'exa', '#azimuth-grc': 'azi', '#planetspark': 'ps' };\n    const initialView = hashViews[window.location.hash];\n    this.onPopState = () => this.go(hashViews[window.location.hash] || 'home', 'none');\n    window.addEventListener('popstate', this.onPopState);\n    if (initialView) setTimeout(() => this.go(initialView, 'replace'), 0);",
+      'deep-link initialization'
+    );
+
+    replaceTemplateOnce(
+      "  componentWillUnmount() {\n    window.removeEventListener('wheel', this.onWheel);",
+      "  componentWillUnmount() {\n    window.removeEventListener('popstate', this.onPopState);\n    window.removeEventListener('wheel', this.onWheel);",
+      'deep-link cleanup'
+    );
+
+    replaceTemplateOnce(
+      "  scrollNav(id) {\n    const jump = () => {",
+      "  scrollNav(id) {\n    this.setPortfolioUrl('home', 'push');\n    const jump = () => {",
+      'section navigation URL reset'
+    );
+
+    replaceTemplateOnce(
+      "  menuKey(e, id) { if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); this.menuNav(id); } }",
+      "  menuKey(e, id) { if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); this.menuNav(id); } }\n  homeKey(e) { if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); this.go('home'); } }\n  viewKey(e, v) { if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); this.go(v); } }\n  cardNav(e, v) {\n    if (e && e.target && e.target.closest && e.target.closest('a, button')) return;\n    this.go(v);\n  }\n  cardKey(e, v) {\n    if (e.target !== e.currentTarget) return;\n    if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); this.go(v); }\n  }\n  toggleMenuFromKey(e) { if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); this.setState(s => ({ menuOpen: !s.menuOpen })); } }",
+      'keyboard navigation helpers'
+    );
+
+    replaceTemplateOnce(
+      "      goExa: () => this.go('exa'),\n      goAzi: () => this.go('azi'),\n      goPs: () => this.go('ps'),",
+      "      goExa: () => this.go('exa'),\n      goAzi: () => this.go('azi'),\n      goPs: () => this.go('ps'),\n      cardExa: (e) => this.cardNav(e, 'exa'),\n      cardAzi: (e) => this.cardNav(e, 'azi'),\n      cardPs: (e) => this.cardNav(e, 'ps'),\n      cardExaKey: (e) => this.cardKey(e, 'exa'),\n      cardAziKey: (e) => this.cardKey(e, 'azi'),\n      cardPsKey: (e) => this.cardKey(e, 'ps'),",
+      'career card navigation values'
+    );
+
+    replaceTemplateOnce(
+      "      toggleMenu: () => this.setState(s => ({ menuOpen: !s.menuOpen })),\n      closeMenu:",
+      "      toggleMenu: () => this.setState(s => ({ menuOpen: !s.menuOpen })),\n      toggleMenuKey: (e) => this.toggleMenuFromKey(e),\n      closeMenu:",
+      'menu keyboard navigation value'
+    );
+
+    replaceTemplateOnce(
+      "      chooseHome: () => this.go('home'),\n\n      nextLabel:",
+      "      chooseHome: () => this.go('home'),\n      goHomeKey: (e) => this.homeKey(e),\n      prevButtonLabel: this.labels[this.prev[v] || 'home'],\n      nextButtonLabel: this.labels[this.next[v] || 'home'],\n      goPrev: () => this.go(this.prev[v] || 'home'),\n      goNext: () => this.go(this.next[v] || 'home'),\n      goPrevKey: (e) => this.viewKey(e, this.prev[v] || 'home'),\n      goNextKey: (e) => this.viewKey(e, this.next[v] || 'home'),\n\n      nextLabel:",
+      'explicit project navigation values'
+    );
+
+    const oldProjectHint = /  <div style="font-family:'JetBrains Mono',monospace;font-size:11px;color:#8a8d92;text-align:center;padding:56px 0 8px 0;">KEEP SCROLLING PAST THE END[^<]*<\/div>\n<\/main>/;
+    const projectHintMatches = template.match(oldProjectHint);
+    if (!projectHintMatches) throw new Error('Portfolio patch explicit project navigation matched 0 times');
+    template = template.replace(oldProjectHint, `  <nav class="portfolio-project-nav" aria-label="Project navigation">
+    <button sc-camel-on-click="{{ goPrev }}" sc-camel-on-key-down="{{ goPrevKey }}" type="button">← {{ prevButtonLabel }}</button>
+    <button sc-camel-on-click="{{ goHome }}" sc-camel-on-key-down="{{ goHomeKey }}" type="button">ALL EXPERIENCE</button>
+    <button sc-camel-on-click="{{ goNext }}" sc-camel-on-key-down="{{ goNextKey }}" type="button">{{ nextButtonLabel }} →</button>
+  </nav>
+</main>`);
+
     template = template.replace(/<\/head>/i, portfolioHead + '</head>');
 
     // Parse the template and swap the root element. Scripts inserted via
@@ -355,6 +846,247 @@ document.addEventListener('DOMContentLoaded', async function() {
     // createElement so they execute, awaiting onload for src scripts to
     // preserve ordering (React before ReactDOM before Babel before text/babel).
     const doc = new DOMParser().parseFromString(template, 'text/html');
+
+    // Preserve the established visual system while improving hierarchy and scan order.
+    const homeMain = Array.from(doc.querySelectorAll('main')).find((main) =>
+      main.textContent.includes('CAREER TIMELINE') && main.textContent.includes('SELECTED WORK')
+    );
+    if (!homeMain) throw new Error('Portfolio home template was not found');
+
+    const pageWrap = doc.getElementById('page-wrap');
+    const siteHeader = pageWrap?.querySelector(':scope > div[style*="position:sticky"]');
+    if (siteHeader) siteHeader.classList.add('portfolio-site-header');
+
+    const sections = Array.from(homeMain.querySelectorAll(':scope > section'));
+    const findSection = (label) => sections.find((section) => section.textContent.includes(label));
+    const careerSection = findSection('CAREER TIMELINE');
+    const selectedSection = findSection('SELECTED WORK');
+    const skillsSection = findSection('SKILLS');
+    const architectureSection = findSection('ARCHITECTURE PATTERNS');
+    if (!careerSection || !selectedSection || !skillsSection || !architectureSection) {
+      throw new Error('One or more portfolio sections were not found');
+    }
+
+    selectedSection.classList.add('portfolio-selected-work');
+    selectedSection.id = 'selected-work';
+    careerSection.after(selectedSection);
+
+    const promoteHeading = (section, prefix, id) => {
+      const label = Array.from(section.querySelectorAll('div, span')).find((element) =>
+        element.children.length === 0 && element.textContent.trim().startsWith(prefix)
+      );
+      if (!label) throw new Error(`Portfolio heading ${prefix} was not found`);
+      const heading = doc.createElement('h2');
+      for (const attribute of Array.from(label.attributes)) heading.setAttribute(attribute.name, attribute.value);
+      heading.id = id;
+      heading.classList.add('portfolio-section-heading');
+      heading.innerHTML = label.innerHTML;
+      label.replaceWith(heading);
+      section.setAttribute('aria-labelledby', id);
+    };
+
+    promoteHeading(careerSection, 'CAREER TIMELINE', 'career-heading');
+    promoteHeading(selectedSection, 'SELECTED WORK', 'selected-work-heading');
+    promoteHeading(skillsSection, 'SKILLS', 'skills-heading');
+    promoteHeading(architectureSection, 'ARCHITECTURE PATTERNS', 'architecture-heading');
+
+    const heroSection = sections[0];
+    const heroTitle = heroSection.querySelector('h1');
+    const heroIntro = heroSection.querySelector('p');
+    const heroKicker = heroSection.querySelector('div');
+    heroSection.classList.add('portfolio-hero');
+    heroTitle.classList.add('portfolio-hero-title');
+    heroIntro.classList.add('portfolio-hero-intro');
+    heroKicker.classList.add('portfolio-hero-kicker');
+
+    Array.from(doc.querySelectorAll('[style*="grid-template-columns:1fr 1fr"]'))
+      .forEach((grid) => grid.classList.add('portfolio-before-after'));
+
+    const raceLabel = Array.from(doc.querySelectorAll('div')).find((element) =>
+      element.children.length === 0 && element.textContent.trim().startsWith('RUNTIME RACE')
+    );
+    if (raceLabel) {
+      Array.from(raceLabel.parentElement.children)
+        .filter((element) => (element.getAttribute('style') || '').includes('display:flex'))
+        .forEach((row) => row.classList.add('portfolio-race-row'));
+    }
+
+    const selectedButtons = Array.from(selectedSection.querySelectorAll('button'));
+    ['VIEW EXAQUBE PROJECTS →', 'VIEW AZIMUTH GRC PROJECTS →', 'VIEW PLANETSPARK PROJECTS →']
+      .forEach((label, index) => { if (selectedButtons[index]) selectedButtons[index].textContent = label; });
+
+    const selectedWorkMeta = [
+      { company: 'ExaQube Technologies', period: 'JUN 2026 - NOW', title: 'Platform Modernization' },
+      { company: 'Azimuth GRC', period: 'MAY 2023 - MAY 2026', title: 'Lakehouse Migration' },
+      { company: 'PlanetSpark', period: 'NOV 2022 - MAY 2023', title: 'Analytics Automation' }
+    ];
+    Array.from(selectedSection.children).slice(1).forEach((row, index) => {
+      const meta = selectedWorkMeta[index];
+      if (!meta) return;
+      row.classList.add('portfolio-selected-work-row');
+      const copy = row.children[0];
+      const actions = row.children[1];
+      if (!copy || !actions) return;
+      copy.classList.add('portfolio-selected-work-copy');
+      actions.classList.add('portfolio-selected-work-actions');
+      const iconStrip = actions.children[0];
+      if (iconStrip) {
+        iconStrip.classList.add('portfolio-selected-work-icons');
+        Array.from(iconStrip.children).filter((element) =>
+          /width:\s*40px/.test(element.getAttribute('style') || '')
+        ).forEach((element) => element.classList.add('portfolio-selected-work-icon'));
+      }
+      const period = Array.from(copy.querySelectorAll('div')).find((element) =>
+        element.children.length === 0 && /^(JUN 2026|2023|2022)/.test(element.textContent.trim())
+      );
+      if (period) period.textContent = meta.period;
+      const title = Array.from(copy.querySelectorAll('div')).find((element) =>
+        element.children.length === 0 && element.textContent.trim() === meta.title
+      );
+      if (title) {
+        const company = doc.createElement('div');
+        company.className = 'portfolio-work-company';
+        company.textContent = meta.company;
+        copy.insertBefore(company, title);
+      }
+      const button = actions.querySelector('button');
+      if (button) button.classList.add('portfolio-selected-work-button');
+    });
+
+    const careerCardsWrapper = careerSection.children[1];
+    const careerCards = careerCardsWrapper ? [
+      careerCardsWrapper.children[0],
+      ...Array.from(careerCardsWrapper.children[1]?.children || [])
+    ].filter(Boolean) : [];
+    const careerCardMeta = [
+      { company: 'ExaQube Technologies', slug: 'exaqube', period: 'JUN 2026 - NOW', click: '{{ cardExa }}', key: '{{ cardExaKey }}' },
+      { company: 'Azimuth GRC', slug: 'azimuth', period: 'MAY 2023 - MAY 2026 · 3 YEARS', click: '{{ cardAzi }}', key: '{{ cardAziKey }}' },
+      { company: 'PlanetSpark', slug: 'planetspark', period: 'NOV 2022 - MAY 2023 · 6 MONTHS', click: '{{ cardPs }}', key: '{{ cardPsKey }}' }
+    ];
+    careerCardMeta.forEach((meta) => {
+      const card = careerCards.find((element) => element.textContent.includes(meta.company));
+      if (!card) throw new Error(`Portfolio role card ${meta.company} was not found`);
+      card.classList.add('portfolio-role-card', `portfolio-role-card--${meta.slug}`);
+      card.setAttribute('role', 'link');
+      card.setAttribute('tabindex', '0');
+      card.setAttribute('aria-label', `View ${meta.company} projects`);
+      card.setAttribute('sc-camel-on-click', meta.click);
+      card.setAttribute('sc-camel-on-key-down', meta.key);
+      const content = Array.from(card.children).find((element) => element.textContent.includes(meta.company));
+      if (!content) throw new Error(`Portfolio role content ${meta.company} was not found`);
+      content.classList.add('portfolio-role-content');
+      const leaves = Array.from(content.querySelectorAll('*')).filter((element) =>
+        element.children.length === 0 && element.textContent.trim()
+      );
+      const period = leaves.find((element) => /^(JUN 2026|MAY 2023|NOV 2022)/.test(element.textContent.trim()));
+      if (period) {
+        period.textContent = meta.period;
+        period.classList.add('portfolio-role-period');
+        if (meta.slug === 'azimuth') {
+          period.textContent = 'MAY 2023 - MAY 2026 · ';
+          const tenure = doc.createElement('span');
+          tenure.className = 'portfolio-role-tenure';
+          tenure.textContent = '3 YEARS';
+          period.appendChild(tenure);
+        }
+      }
+      const company = leaves.find((element) => element.textContent.trim() === meta.company);
+      if (company) company.classList.add('portfolio-role-company');
+      const context = leaves.find((element) => element.textContent.includes(' / '));
+      if (context) context.classList.add('portfolio-role-context');
+      const position = leaves.find((element) => element.textContent.includes('·'));
+      if (position) position.classList.add('portfolio-role-position');
+      const description = leaves.find((element) => element.tagName === 'P');
+      if (description) description.classList.add('portfolio-role-description');
+      leaves.filter((element) => element.tagName === 'SPAN' &&
+        /font-size:\s*10px/.test(element.getAttribute('style') || '')
+      ).forEach((element) => element.classList.add('portfolio-role-tech'));
+
+      if (meta.slug === 'azimuth' || meta.slug === 'planetspark') {
+        const reservedWidth = meta.slug === 'azimuth' ? 'calc(100% - 340px)' : 'calc(100% - 320px)';
+        const body = content.children[1];
+        if (body) {
+          body.style.setProperty('flex', `0 1 ${reservedWidth}`);
+          body.style.setProperty('max-width', reservedWidth);
+          body.style.setProperty('min-width', '0');
+        }
+      }
+
+      if (meta.slug === 'exaqube') {
+        const water = card.querySelector('#shipviz');
+        if (!water) throw new Error('Portfolio ExaQube water animation was not found');
+        water.classList.add('portfolio-exaqube-water');
+        const ship = water.querySelector('svg > g');
+        if (ship) ship.classList.add('portfolio-ship');
+        Array.from(water.querySelectorAll('svg > path'))
+          .forEach((element) => element.classList.add('portfolio-water-line'));
+      }
+
+      if (meta.slug === 'azimuth') {
+        const visual = card.querySelector('.cardviz');
+        const windowElement = visual?.firstElementChild;
+        const ticker = windowElement?.firstElementChild;
+        if (!windowElement || !ticker) throw new Error('Portfolio Azimuth animation was not found');
+        windowElement.classList.add('portfolio-azimuth-window');
+        ticker.classList.add('portfolio-azimuth-ticker');
+        const scanLine = Array.from(windowElement.children).find((element) =>
+          /height:\s*1\.5px/.test(element.getAttribute('style') || '')
+        );
+        if (scanLine) scanLine.remove();
+      }
+    });
+
+    const tourHint = Array.from(homeMain.querySelectorAll('div')).find((element) =>
+      element.children.length === 0 && element.textContent.trim().startsWith('KEEP SCROLLING PAST THE END TO TOUR THE WORK')
+    );
+    if (tourHint) tourHint.textContent = 'SELECT A ROLE ABOVE TO EXPLORE THE WORK.';
+
+    const contactLink = Array.from(doc.querySelectorAll('[role="link"]')).find((element) =>
+      element.textContent.trim() === 'CONTACT'
+    );
+    if (!contactLink) throw new Error('Portfolio contact navigation was not found');
+    const resumeLink = doc.createElement('a');
+    resumeLink.className = 'portfolio-header-resume';
+    resumeLink.href = 'Om%27s%20Resume.pdf';
+    resumeLink.target = '_blank';
+    resumeLink.rel = 'noopener';
+    resumeLink.textContent = 'RESUME ↗';
+    contactLink.parentElement.insertBefore(resumeLink, contactLink);
+
+    const promoteControl = (element, className) => {
+      const button = doc.createElement('button');
+      for (const attribute of Array.from(element.attributes)) button.setAttribute(attribute.name, attribute.value);
+      button.removeAttribute('role');
+      button.removeAttribute('tabindex');
+      button.type = 'button';
+      button.classList.add('portfolio-control-button', className);
+      button.innerHTML = element.innerHTML;
+      element.replaceWith(button);
+      return button;
+    };
+
+    const brandControl = Array.from(doc.querySelectorAll('span')).find((element) =>
+      element.textContent.trim() === 'Om Jay Mishra' && element.hasAttribute('sc-camel-on-click')
+    );
+    if (brandControl) {
+      brandControl.parentElement.classList.add('portfolio-header-inner');
+      const brandButton = promoteControl(brandControl, 'portfolio-brand-control');
+      brandButton.setAttribute('sc-camel-on-key-down', '{{ goHomeKey }}');
+    }
+    const contactButton = promoteControl(contactLink, 'portfolio-header-contact');
+    contactButton.setAttribute('sc-camel-on-key-down', '{{ menuContactKey }}');
+
+    const menuButton = doc.querySelector('button[aria-label="Menu"]');
+    if (menuButton) menuButton.setAttribute('sc-camel-on-key-down', '{{ toggleMenuKey }}');
+
+    const backControl = Array.from(doc.querySelectorAll('span')).find((element) =>
+      element.textContent.includes('BACK TO HOME') && element.hasAttribute('sc-camel-on-click')
+    );
+    if (backControl) {
+      const backButton = promoteControl(backControl, 'portfolio-back-control');
+      backButton.setAttribute('sc-camel-on-key-down', '{{ goHomeKey }}');
+    }
+
     document.documentElement.replaceWith(doc.documentElement);
 
     // Resolve page-frame markers: mint this document's own blob for each
