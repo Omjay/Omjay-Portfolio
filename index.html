@@ -1047,11 +1047,17 @@ document.addEventListener('DOMContentLoaded', async function() {
     if (!contactLink) throw new Error('Portfolio contact navigation was not found');
     const resumeLink = doc.createElement('a');
     resumeLink.className = 'portfolio-header-resume';
-    resumeLink.href = 'Om%27s%20Resume.pdf';
+    resumeLink.href = 'resume.html';
     resumeLink.target = '_blank';
     resumeLink.rel = 'noopener';
     resumeLink.textContent = 'RESUME ↗';
     contactLink.parentElement.insertBefore(resumeLink, contactLink);
+
+    const mobileResumeLink = Array.from(doc.querySelectorAll('a[role="menuitem"]')).find((element) =>
+      element.textContent.trim() === 'RESUME ↗'
+    );
+    if (!mobileResumeLink) throw new Error('Portfolio mobile resume navigation was not found');
+    mobileResumeLink.href = 'resume.html';
 
     const promoteControl = (element, className) => {
       const button = doc.createElement('button');

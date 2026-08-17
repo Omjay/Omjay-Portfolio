@@ -1,0 +1,449 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Resume of Om Jay Mishra, Data Engineer and Azure Databricks specialist.">
+  <title>Om Jay Mishra | Resume</title>
+  <style>
+    :root {
+      color-scheme: light;
+      font-family: Arial, Helvetica, sans-serif;
+      background: #eef0f2;
+      color: #1c1e21;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      min-width: 320px;
+    }
+
+    a {
+      color: #175f89;
+      text-decoration: none;
+    }
+
+    a:hover,
+    a:focus-visible {
+      text-decoration: underline;
+    }
+
+    .resume-toolbar {
+      position: sticky;
+      top: 0;
+      z-index: 10;
+      background: rgba(255, 255, 255, 0.97);
+      border-bottom: 1px solid #dfe2e5;
+      backdrop-filter: blur(12px);
+    }
+
+    .resume-toolbar-inner {
+      width: min(100% - 32px, 980px);
+      min-height: 64px;
+      margin: 0 auto;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 16px;
+    }
+
+    .resume-back,
+    .resume-download {
+      min-height: 44px;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: 8px;
+      font-size: 12px;
+      font-weight: 700;
+      letter-spacing: 0.08em;
+      text-decoration: none;
+      text-transform: uppercase;
+    }
+
+    .resume-back {
+      color: #315f7d;
+      padding: 0 4px;
+    }
+
+    .resume-download {
+      color: #fff;
+      background: #315f7d;
+      gap: 8px;
+      padding: 0 16px;
+    }
+
+    .resume-download svg {
+      width: 18px;
+      height: 18px;
+      flex: 0 0 auto;
+      fill: none;
+      stroke: currentColor;
+      stroke-linecap: round;
+      stroke-linejoin: round;
+      stroke-width: 1.8;
+    }
+
+    .resume-download:hover,
+    .resume-download:focus-visible {
+      background: #244b65;
+      text-decoration: none;
+    }
+
+    .resume-back:focus-visible,
+    .resume-download:focus-visible {
+      outline: 2px solid #315f7d;
+      outline-offset: 3px;
+    }
+
+    .resume-title {
+      font-family: Georgia, 'Times New Roman', serif;
+      font-size: 17px;
+      font-weight: 700;
+      text-align: center;
+    }
+
+    .resume-stage {
+      padding: 24px 16px 40px;
+    }
+
+    .resume-sheet {
+      width: min(100%, 8.5in);
+      min-height: 11in;
+      margin: 0 auto;
+      padding: 0.5in;
+      background: #fff;
+      box-shadow: 0 16px 48px rgba(24, 38, 52, 0.18);
+      font-size: 13px;
+      line-height: 1.4;
+    }
+
+    .document-header {
+      display: flex;
+      align-items: flex-end;
+      justify-content: space-between;
+      gap: 24px;
+      padding-bottom: 8px;
+      border-bottom: 2px solid #1c1e21;
+    }
+
+    .document-name {
+      margin: 0;
+      font-family: Georgia, 'Times New Roman', serif;
+      font-size: 30px;
+      line-height: 1.05;
+      letter-spacing: 0.5px;
+      white-space: nowrap;
+    }
+
+    .document-role {
+      margin-top: 3px;
+      color: #175f89;
+      font-size: 13.5px;
+      font-weight: 700;
+      white-space: nowrap;
+    }
+
+    .document-contact {
+      flex: 0 0 auto;
+      color: #45484d;
+      font-size: 11.5px;
+      line-height: 1.55;
+      text-align: right;
+    }
+
+    .document-contact div {
+      white-space: nowrap;
+    }
+
+    .resume-section {
+      margin-top: 10px;
+    }
+
+    .section-title {
+      margin: 0 0 6px;
+      color: #175f89;
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 1.6px;
+      text-transform: uppercase;
+    }
+
+    .summary {
+      margin: 0;
+    }
+
+    .skills-grid {
+      display: grid;
+      grid-template-columns: 170px 1fr;
+      row-gap: 3px;
+      column-gap: 12px;
+      font-size: 12.5px;
+    }
+
+    .skill-label {
+      font-weight: 700;
+    }
+
+    .experience + .experience {
+      margin-top: 10px;
+    }
+
+    .experience-heading {
+      display: flex;
+      align-items: baseline;
+      justify-content: space-between;
+      gap: 12px;
+    }
+
+    .experience-role {
+      font-size: 13.5px;
+    }
+
+    .experience-role strong {
+      font-weight: 700;
+    }
+
+    .experience-date {
+      flex: 0 0 auto;
+      color: #45484d;
+      font-size: 11.5px;
+      font-weight: 700;
+      white-space: nowrap;
+    }
+
+    .experience ul,
+    .certifications ul {
+      margin: 4px 0 0;
+      padding-left: 18px;
+    }
+
+    .experience li,
+    .certifications li {
+      margin-bottom: 2px;
+    }
+
+    .bottom-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 20px;
+      margin-top: 10px;
+    }
+
+    .education-degree {
+      font-weight: 700;
+    }
+
+    .education-detail {
+      color: #45484d;
+      font-size: 12.5px;
+    }
+
+    .languages {
+      margin-top: 4px;
+      font-size: 12.5px;
+    }
+
+    @media (max-width: 700px) {
+      .resume-toolbar-inner {
+        width: min(100% - 24px, 980px);
+      }
+
+      .resume-title {
+        position: absolute;
+        width: 1px;
+        height: 1px;
+        overflow: hidden;
+        clip: rect(0 0 0 0);
+        clip-path: inset(50%);
+        white-space: nowrap;
+      }
+
+      .resume-stage {
+        padding: 12px 0 24px;
+      }
+
+      .resume-sheet {
+        min-height: 0;
+        padding: 24px 20px 32px;
+        box-shadow: none;
+      }
+
+      .document-header,
+      .experience-heading {
+        align-items: flex-start;
+        flex-direction: column;
+        gap: 6px;
+      }
+
+      .document-name,
+      .document-role,
+      .document-contact div {
+        white-space: normal;
+      }
+
+      .document-name {
+        font-size: clamp(27px, 9vw, 30px);
+      }
+
+      .document-contact {
+        text-align: left;
+      }
+
+      .skills-grid,
+      .bottom-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .skills-grid {
+        row-gap: 1px;
+      }
+
+      .skill-label:not(:first-child) {
+        margin-top: 5px;
+      }
+
+      .experience-date {
+        white-space: normal;
+      }
+    }
+
+    @media print {
+      @page {
+        size: letter;
+        margin: 0;
+      }
+
+      :root,
+      body {
+        background: #fff;
+      }
+
+      .resume-toolbar {
+        display: none;
+      }
+
+      .resume-stage {
+        padding: 0;
+      }
+
+      .resume-sheet {
+        width: 8.5in;
+        min-height: 11in;
+        margin: 0;
+        padding: 0.5in;
+        box-shadow: none;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header class="resume-toolbar">
+    <div class="resume-toolbar-inner">
+      <a class="resume-back" href="index.html">&larr; Portfolio</a>
+      <span class="resume-title">Om Jay Mishra &middot; Resume</span>
+      <a class="resume-download" href="Om%27s%20Resume.pdf" download="Om Jay Mishra - Resume.pdf" aria-label="Download resume PDF">
+        <span>PDF</span>
+        <svg viewBox="0 0 24 24" aria-hidden="true">
+          <path d="M12 3v12m0 0 4-4m-4 4-4-4"></path>
+          <path d="M3 15v3a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-3"></path>
+        </svg>
+      </a>
+    </div>
+  </header>
+
+  <main class="resume-stage">
+    <article class="resume-sheet" aria-label="Resume of Om Jay Mishra">
+      <header class="document-header">
+        <div>
+          <h1 class="document-name">OM JAY MISHRA</h1>
+          <div class="document-role">Data Engineer &middot; Azure Databricks Specialist</div>
+        </div>
+        <div class="document-contact">
+          <div><a href="tel:+919711107198">+91-9711107198</a> &middot; <a href="mailto:mishra.omjay@gmail.com">mishra.omjay@gmail.com</a></div>
+          <div><a href="https://www.linkedin.com/in/omjay-mishra/" target="_blank" rel="noopener">linkedin.com/in/omjay-mishra</a> &middot; Delhi NCR, India</div>
+        </div>
+      </header>
+
+      <section class="resume-section">
+        <h2 class="section-title">Summary</h2>
+        <p class="summary">Data Engineer with 3+ years building scalable Lakehouse architectures on Azure Databricks. Reduced pipeline runtime from 6 hours to 30 minutes on 500M+ record datasets using Liquid Clustering, improved query performance 65% across 50M+ records, and cut Databricks DBU costs 25% through cluster optimization. Databricks Certified Data Engineer Associate.</p>
+      </section>
+
+      <section class="resume-section">
+        <h2 class="section-title">Technical Skills</h2>
+        <div class="skills-grid">
+          <div class="skill-label">Databricks &amp; Lakehouse</div><div>Azure Databricks, Delta Lake, Unity Catalog, Liquid Clustering, DBU &amp; Cluster Optimization, Photon Engine, Medallion Architecture, PySpark</div>
+          <div class="skill-label">Azure Data Engineering</div><div>Azure Data Factory (ADF), ADLS Gen2, Azure DevOps, CI/CD Pipelines, Docker &amp; Azure Containers</div>
+          <div class="skill-label">Programming &amp; Querying</div><div>Python (PySpark, Pandas), SQL, Hive, REST APIs</div>
+          <div class="skill-label">Modeling &amp; Governance</div><div>Star Schema Modeling, Data Governance, Data Quality Assurance, Metadata Management, Workflow Automation</div>
+          <div class="skill-label">BI &amp; Visualization</div><div>Power BI, Tableau, Looker Studio</div>
+        </div>
+      </section>
+
+      <section class="resume-section">
+        <h2 class="section-title">Work Experience</h2>
+
+        <div class="experience">
+          <div class="experience-heading">
+            <div class="experience-role"><strong>Data Engineer</strong> &middot; ExaQube Technologies, Chennai</div>
+            <div class="experience-date">Jun 2026 - Present</div>
+          </div>
+          <ul>
+            <li>Migrated 40+ production scripts from a legacy Ubuntu server to Databricks notebooks and Workflows, decommissioning the legacy environment</li>
+            <li>Reduced a thrice-daily pipeline's runtime from ~1 hr 50 min to ~30 min per run by resolving data skew and migrating to job compute clusters, cutting daily compute hours by ~70% and lowering DBU costs</li>
+            <li>Containerized a VPN-dependent pipeline using Docker on Azure containers; accelerated delivery through AI-assisted development (Claude + VS Code + Databricks)</li>
+          </ul>
+        </div>
+
+        <div class="experience">
+          <div class="experience-heading">
+            <div class="experience-role"><strong>Data Engineer</strong> &middot; Azimuth GRC, Gurgaon</div>
+            <div class="experience-date">May 2023 - May 2026</div>
+          </div>
+          <ul>
+            <li>Led end-to-end migration from legacy databases to Databricks Lakehouse, transforming SQL-based workflows into scalable PySpark and Delta Lake architectures</li>
+            <li>Resolved partition skew on 500M+ record pipelines using Liquid Clustering, reducing runtime from 6 hours to 30 minutes</li>
+            <li>Developed a Gold-layer Star Schema in Databricks, improving query performance by 65% across 50M+ records</li>
+            <li>Reduced Databricks DBU consumption by 25% through cluster optimization, autoscaling, and Photon Engine utilization</li>
+            <li>Orchestrated Azure Data Factory and Databricks pipelines with custom Python automation, eliminating 270+ hours of manual effort</li>
+          </ul>
+        </div>
+
+        <div class="experience">
+          <div class="experience-heading">
+            <div class="experience-role"><strong>Data Analytics Engineer</strong> &middot; PlanetSpark, Gurgaon</div>
+            <div class="experience-date">Nov 2022 - May 2023</div>
+          </div>
+          <ul>
+            <li>Automated data transformation workflows for 10K+ student records using Google Apps Script, improving data preparation efficiency</li>
+            <li>Consolidated multi-source data into a centralized Power BI reporting layer, enabling stakeholders to track engagement and enrolment metrics</li>
+          </ul>
+        </div>
+      </section>
+
+      <div class="bottom-grid">
+        <section class="certifications">
+          <h2 class="section-title">Certifications</h2>
+          <ul>
+            <li><a href="https://credentials.databricks.com/36ca569a-fb10-4292-ad57-adb1495cd5b6" target="_blank" rel="noopener">Databricks Certified Data Engineer Associate</a></li>
+            <li><a href="https://learn.microsoft.com/api/credentials/share/en-us/OmJayMishra-2843/981616DDC1843CF?sharingId=A07CFCCD572798E5" target="_blank" rel="noopener">Microsoft Azure Data Fundamentals (DP-900)</a></li>
+            <li><a href="https://www.coursera.org/account/accomplishments/specialization/JBEX2YW7NO97" target="_blank" rel="noopener">Google AI Professional Certificate - Coursera</a></li>
+          </ul>
+        </section>
+
+        <section>
+          <h2 class="section-title">Education</h2>
+          <div class="education-degree">B.Tech, Mechanical &amp; Automation Engineering</div>
+          <div class="education-detail">Maharaja Agrasen Institute of Technology, Delhi &middot; 2019-2023</div>
+          <div class="languages"><strong>Languages:</strong> English, Hindi</div>
+        </section>
+      </div>
+    </article>
+  </main>
+</body>
+</html>
