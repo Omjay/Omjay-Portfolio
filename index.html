@@ -624,6 +624,24 @@ document.addEventListener('DOMContentLoaded', async function() {
           color: #cfd7e2 !important;
         }
 
+        .portfolio-credential-badge {
+          align-items: center;
+          box-sizing: border-box;
+          display: inline-flex;
+          min-height: 44px;
+          text-decoration: none;
+        }
+
+        .portfolio-credential-badge--linked:hover,
+        .portfolio-credential-badge--linked:focus-visible {
+          background: #e4f2fd !important;
+          border-color: #1f6791 !important;
+          color: #164b6a !important;
+          outline: 2px solid rgba(31, 103, 145, 0.22);
+          outline-offset: 2px;
+          text-decoration: none;
+        }
+
         @media (max-width: 640px) {
           .portfolio-header-inner {
             flex-wrap: nowrap !important;
@@ -653,6 +671,11 @@ document.addEventListener('DOMContentLoaded', async function() {
           .portfolio-hero-intro {
             font-size: 16px !important;
             margin-top: 18px !important;
+          }
+
+          .portfolio-credential-badge {
+            max-width: 100%;
+            white-space: normal;
           }
 
           .portfolio-header-resume {
@@ -898,6 +921,56 @@ document.addEventListener('DOMContentLoaded', async function() {
     heroTitle.classList.add('portfolio-hero-title');
     heroIntro.classList.add('portfolio-hero-intro');
     heroKicker.classList.add('portfolio-hero-kicker');
+
+    const associateCredential = Array.from(heroSection.querySelectorAll('span')).find((element) =>
+      element.textContent.trim() === 'DATABRICKS DATA ENGINEER ASSOCIATE'
+    );
+    if (!associateCredential) throw new Error('Portfolio credential row was not found');
+    const credentialRow = associateCredential.parentElement;
+    Array.from(credentialRow.children).forEach((element) =>
+      element.classList.add('portfolio-credential-badge')
+    );
+    const professionalCredential = doc.createElement('a');
+    professionalCredential.className = 'portfolio-credential-badge portfolio-credential-badge--linked';
+    professionalCredential.href = 'https://credentials.databricks.com/93549f7e-1f10-4663-9ef6-1a3768475059#acc.l6QhUMzB';
+    professionalCredential.target = '_blank';
+    professionalCredential.rel = 'noopener';
+    professionalCredential.setAttribute(
+      'aria-label',
+      'View Databricks Certified Data Engineer Professional credential, achieved August 2026 (opens in a new tab)'
+    );
+    professionalCredential.setAttribute('style', associateCredential.getAttribute('style') || '');
+    professionalCredential.textContent = 'DATABRICKS DATA ENGINEER PROFESSIONAL · AUG 2026 ↗';
+    credentialRow.insertBefore(professionalCredential, associateCredential);
+
+    const linkCredentialBadge = (sourceLabel, linkedLabel, href, accessibleLabel) => {
+      const source = Array.from(credentialRow.children).find((element) =>
+        element.textContent.trim() === sourceLabel
+      );
+      if (!source) throw new Error(`Portfolio credential ${sourceLabel} was not found`);
+      const link = doc.createElement('a');
+      link.className = 'portfolio-credential-badge portfolio-credential-badge--linked';
+      link.href = href;
+      link.target = '_blank';
+      link.rel = 'noopener';
+      link.setAttribute('aria-label', `${accessibleLabel} (opens in a new tab)`);
+      link.setAttribute('style', source.getAttribute('style') || '');
+      link.textContent = linkedLabel;
+      source.replaceWith(link);
+    };
+
+    linkCredentialBadge(
+      'AZURE DP-900',
+      'AZURE DP-900 · SEP 2024 ↗',
+      'https://learn.microsoft.com/api/credentials/share/en-us/OmJayMishra-2843/981616DDC1843CF?sharingId=A07CFCCD572798E5',
+      'View Microsoft Certified Azure Data Fundamentals credential, achieved September 2024'
+    );
+    linkCredentialBadge(
+      'GOOGLE AI PROFESSIONAL',
+      'GOOGLE AI PROFESSIONAL · MAY 2026 ↗',
+      'https://www.coursera.org/account/accomplishments/specialization/JBEX2YW7NO97',
+      'View Google AI Professional Certificate, achieved May 2026'
+    );
 
     Array.from(doc.querySelectorAll('[style*="grid-template-columns:1fr 1fr"]'))
       .forEach((grid) => grid.classList.add('portfolio-before-after'));
