@@ -1,0 +1,887 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Professional certifications and applied learning completed by Om Jay Mishra, Data Engineer.">
+  <meta name="theme-color" content="#ffffff">
+  <link rel="canonical" href="https://omjay.github.io/Omjay-Portfolio/certifications.html">
+  <meta property="og:type" content="profile">
+  <meta property="og:title" content="Certifications | Om Jay Mishra">
+  <meta property="og:description" content="Exam-backed data engineering credentials and selected applied learning, arranged as a verified timeline.">
+  <meta property="og:url" content="https://omjay.github.io/Omjay-Portfolio/certifications.html">
+  <meta name="twitter:card" content="summary">
+  <title>Certifications | Om Jay Mishra</title>
+  <style>
+    :root {
+      color-scheme: light;
+      --paper: #ffffff;
+      --paper-soft: #f7f8f6;
+      --ink: #1c1e21;
+      --ink-soft: #545961;
+      --muted: #7b818a;
+      --line: #e2e4df;
+      --line-strong: #c9cec9;
+      --blue: #1f6791;
+      --blue-deep: #164b6a;
+      --blue-soft: #edf5fa;
+      --red: #d63c2e;
+      --red-soft: #fff3f0;
+      --yellow: #a16207;
+      --yellow-soft: #fff8e8;
+      --green: #2f6f53;
+      --green-soft: #eef7f2;
+      --serif: "Source Serif 4", Charter, "Iowan Old Style", Georgia, serif;
+      --sans: "Public Sans", Inter, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      --mono: "JetBrains Mono", "SFMono-Regular", Consolas, monospace;
+    }
+
+    * { box-sizing: border-box; }
+
+    html {
+      background: var(--paper);
+      scroll-behavior: smooth;
+      scroll-padding-top: 96px;
+    }
+
+    body {
+      margin: 0;
+      background: var(--paper);
+      color: var(--ink);
+      font-family: var(--sans);
+      -webkit-font-smoothing: antialiased;
+    }
+
+    a { color: inherit; }
+
+    a:focus-visible,
+    button:focus-visible {
+      outline: 2px solid var(--blue);
+      outline-offset: 3px;
+    }
+
+    .site-header {
+      position: sticky;
+      top: 0;
+      z-index: 20;
+      border-bottom: 1px solid rgba(226, 228, 223, 0.9);
+      background: rgba(255, 255, 255, 0.94);
+      backdrop-filter: blur(12px);
+    }
+
+    .header-inner {
+      width: min(1120px, calc(100% - 48px));
+      min-height: 68px;
+      margin: 0 auto;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 24px;
+    }
+
+    .brand {
+      font-family: var(--serif);
+      font-size: 20px;
+      font-weight: 650;
+      text-decoration: none;
+      white-space: nowrap;
+    }
+
+    .header-nav {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+
+    .header-nav a {
+      min-height: 44px;
+      padding: 0 12px;
+      border-radius: 7px;
+      display: inline-flex;
+      align-items: center;
+      color: var(--ink-soft);
+      font-family: var(--mono);
+      font-size: 11px;
+      letter-spacing: 0.07em;
+      text-decoration: none;
+    }
+
+    .header-nav a:hover {
+      background: var(--paper-soft);
+      color: var(--ink);
+    }
+
+    .header-nav .current {
+      color: var(--blue-deep);
+    }
+
+    main {
+      width: min(1120px, calc(100% - 48px));
+      margin: 0 auto;
+    }
+
+    .hero {
+      padding: 96px 0 72px;
+      border-bottom: 1px solid var(--line);
+    }
+
+    .eyebrow,
+    .section-kicker,
+    .status,
+    .timeline-date,
+    .issuer,
+    .course-date,
+    .summary-label {
+      font-family: var(--mono);
+      letter-spacing: 0.11em;
+      text-transform: uppercase;
+    }
+
+    .eyebrow {
+      margin: 0;
+      color: var(--blue);
+      font-size: 11px;
+    }
+
+    h1 {
+      max-width: 850px;
+      margin: 18px 0 0;
+      font-family: var(--serif);
+      font-size: clamp(44px, 7vw, 76px);
+      font-weight: 560;
+      letter-spacing: -0.035em;
+      line-height: 0.98;
+    }
+
+    .hero-copy {
+      max-width: 730px;
+      margin: 28px 0 0;
+      color: var(--ink-soft);
+      font-family: var(--serif);
+      font-size: clamp(19px, 2vw, 23px);
+      line-height: 1.5;
+    }
+
+    .hero-copy strong {
+      color: var(--ink);
+      font-weight: 600;
+    }
+
+    .summary-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      margin-top: 52px;
+      border-top: 1px solid var(--line);
+      border-bottom: 1px solid var(--line);
+    }
+
+    .summary-item {
+      min-height: 100px;
+      padding: 22px 24px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      gap: 16px;
+    }
+
+    .summary-item + .summary-item { border-left: 1px solid var(--line); }
+
+    .summary-label {
+      color: var(--muted);
+      font-size: 9px;
+    }
+
+    .summary-value {
+      font-family: var(--serif);
+      font-size: 22px;
+      font-weight: 600;
+    }
+
+    .section-heading {
+      display: grid;
+      grid-template-columns: 160px minmax(0, 1fr);
+      gap: 40px;
+      align-items: end;
+      padding: 80px 0 32px;
+    }
+
+    .section-kicker {
+      margin: 0;
+      color: var(--blue);
+      font-size: 10px;
+    }
+
+    .section-title {
+      margin: 0;
+      font-family: var(--serif);
+      font-size: clamp(32px, 4vw, 46px);
+      font-weight: 570;
+      letter-spacing: -0.02em;
+    }
+
+    .section-intro {
+      max-width: 650px;
+      margin: 14px 0 0;
+      color: var(--ink-soft);
+      font-size: 15px;
+      line-height: 1.7;
+    }
+
+    .timeline-shell {
+      display: grid;
+      grid-template-columns: 160px minmax(0, 1fr);
+      gap: 40px;
+      align-items: start;
+    }
+
+    .timeline-rail {
+      position: sticky;
+      top: 104px;
+      padding: 6px 0 24px;
+    }
+
+    .rail-label {
+      margin: 0 0 18px;
+      color: var(--muted);
+      font-family: var(--mono);
+      font-size: 9px;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+    }
+
+    .rail-track {
+      position: relative;
+      width: 1px;
+      height: 220px;
+      margin-left: 5px;
+      background: var(--line);
+    }
+
+    .rail-progress {
+      position: absolute;
+      inset: 0 0 auto;
+      height: var(--timeline-progress, 0%);
+      background: var(--blue);
+      transition: height 120ms linear;
+    }
+
+    .rail-years {
+      position: absolute;
+      inset: 0 auto 0 0;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      transform: translateX(18px);
+    }
+
+    .rail-year {
+      color: var(--muted);
+      font-family: var(--mono);
+      font-size: 10px;
+      letter-spacing: 0.08em;
+      text-decoration: none;
+      transition: color 160ms ease;
+    }
+
+    .rail-year.is-active { color: var(--blue-deep); }
+
+    .credential-list {
+      position: relative;
+      border-top: 1px solid var(--line);
+    }
+
+    .credential {
+      display: grid;
+      grid-template-columns: 150px minmax(0, 1fr) 160px;
+      gap: 30px;
+      padding: 38px 0 42px;
+      border-bottom: 1px solid var(--line);
+      scroll-margin-top: 96px;
+    }
+
+    .timeline-date {
+      color: var(--muted);
+      font-size: 10px;
+      line-height: 1.6;
+    }
+
+    .credential-level {
+      width: max-content;
+      margin-top: 14px;
+      padding: 5px 8px;
+      border: 1px solid var(--line-strong);
+      border-radius: 4px;
+      color: var(--ink-soft);
+      font-family: var(--mono);
+      font-size: 9px;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+    }
+
+    .issuer {
+      margin: 0;
+      font-size: 10px;
+    }
+
+    .issuer,
+    .course-provider {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .brand-icon {
+      width: 16px;
+      height: 16px;
+      display: block;
+      flex: 0 0 auto;
+      object-fit: contain;
+    }
+
+    .issuer .brand-icon {
+      width: 18px;
+      height: 18px;
+    }
+
+    .course-provider .brand-icon {
+      width: 15px;
+      height: 15px;
+    }
+
+    .issuer--databricks { color: var(--red); }
+    .issuer--microsoft { color: var(--blue); }
+
+    .credential h3 {
+      margin: 9px 0 0;
+      font-family: var(--serif);
+      font-size: clamp(25px, 3vw, 34px);
+      font-weight: 590;
+      letter-spacing: -0.02em;
+      line-height: 1.13;
+    }
+
+    .credential-description {
+      max-width: 590px;
+      margin: 18px 0 0;
+      color: var(--ink-soft);
+      font-size: 14px;
+      line-height: 1.7;
+    }
+
+    .represents {
+      margin-top: 24px;
+      padding: 17px 18px;
+      border-left: 2px solid var(--blue);
+      background: var(--blue-soft);
+    }
+
+    .represents-label {
+      display: block;
+      margin-bottom: 8px;
+      color: var(--blue-deep);
+      font-family: var(--mono);
+      font-size: 9px;
+      letter-spacing: 0.11em;
+      text-transform: uppercase;
+    }
+
+    .represents p {
+      margin: 0;
+      color: #294857;
+      font-family: var(--serif);
+      font-size: 16px;
+      line-height: 1.55;
+    }
+
+    .skill-list {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 7px;
+      margin: 22px 0 0;
+      padding: 0;
+      list-style: none;
+    }
+
+    .skill-list li {
+      padding: 5px 8px;
+      border: 1px solid var(--line);
+      border-radius: 4px;
+      color: var(--ink-soft);
+      font-family: var(--mono);
+      font-size: 9px;
+      letter-spacing: 0.05em;
+    }
+
+    .credential-evidence {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 13px;
+    }
+
+    .status {
+      display: inline-flex;
+      align-items: center;
+      gap: 7px;
+      color: var(--green);
+      font-size: 9px;
+    }
+
+    .status::before {
+      width: 7px;
+      height: 7px;
+      border-radius: 50%;
+      background: currentColor;
+      content: "";
+    }
+
+    .status--historical { color: var(--yellow); }
+
+    .credential-link,
+    .course-link {
+      min-height: 44px;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      border: 1px solid var(--line-strong);
+      border-radius: 6px;
+      color: var(--ink);
+      font-family: var(--mono);
+      font-size: 10px;
+      letter-spacing: 0.07em;
+      text-decoration: none;
+      transition: border-color 160ms ease, background 160ms ease, color 160ms ease;
+    }
+
+    .credential-link { width: 100%; padding: 0 12px; }
+
+    .credential-link:hover,
+    .course-link:hover {
+      border-color: var(--blue);
+      background: var(--blue-soft);
+      color: var(--blue-deep);
+    }
+
+    .credential-note {
+      margin: 0;
+      color: var(--muted);
+      font-size: 11px;
+      line-height: 1.55;
+    }
+
+    .learning-section {
+      margin-top: 88px;
+      padding: 0 0 88px;
+      border-top: 1px solid var(--line);
+    }
+
+    .learning-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      border-top: 1px solid var(--line);
+      border-left: 1px solid var(--line);
+    }
+
+    .course {
+      min-height: 232px;
+      padding: 28px;
+      display: flex;
+      flex-direction: column;
+      border-right: 1px solid var(--line);
+      border-bottom: 1px solid var(--line);
+      background: var(--paper);
+    }
+
+    .course-topline {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 16px;
+    }
+
+    .course-date {
+      color: var(--muted);
+      font-size: 9px;
+    }
+
+    .course-provider {
+      color: var(--blue);
+      font-family: var(--mono);
+      font-size: 9px;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+    }
+
+    .course h3 {
+      margin: 28px 0 0;
+      font-family: var(--serif);
+      font-size: 23px;
+      font-weight: 580;
+      line-height: 1.22;
+    }
+
+    .course p {
+      margin: 12px 0 22px;
+      color: var(--ink-soft);
+      font-size: 13px;
+      line-height: 1.65;
+    }
+
+    .course-link {
+      width: max-content;
+      margin-top: auto;
+      padding: 0 12px;
+    }
+
+    .learning-note {
+      max-width: 760px;
+      margin: 28px 0 0 200px;
+      padding: 20px 22px;
+      border: 1px solid var(--line);
+      background: var(--paper-soft);
+      color: var(--ink-soft);
+      font-size: 13px;
+      line-height: 1.7;
+    }
+
+    .learning-note strong { color: var(--ink); }
+
+    footer {
+      border-top: 1px solid var(--line);
+      padding: 32px 0 48px;
+    }
+
+    .footer-inner {
+      width: min(1120px, calc(100% - 48px));
+      margin: 0 auto;
+      display: flex;
+      justify-content: space-between;
+      gap: 20px;
+      color: var(--muted);
+      font-family: var(--mono);
+      font-size: 9px;
+      letter-spacing: 0.08em;
+      line-height: 1.6;
+      text-transform: uppercase;
+    }
+
+    @media (max-width: 860px) {
+      .section-heading,
+      .timeline-shell {
+        grid-template-columns: 110px minmax(0, 1fr);
+        gap: 24px;
+      }
+
+      .credential {
+        grid-template-columns: 112px minmax(0, 1fr);
+        gap: 22px;
+      }
+
+      .credential-evidence {
+        grid-column: 2;
+        display: grid;
+        grid-template-columns: minmax(150px, 220px) minmax(0, 1fr);
+        align-items: center;
+      }
+
+      .learning-note { margin-left: 134px; }
+    }
+
+    @media (max-width: 640px) {
+      .header-inner,
+      main,
+      .footer-inner {
+        width: min(100% - 40px, 1120px);
+      }
+
+      .header-nav a:not(.current) { display: none; }
+
+      .hero { padding: 64px 0 48px; }
+
+      .summary-grid { grid-template-columns: 1fr; }
+      .summary-item { min-height: 82px; padding: 18px 0; }
+      .summary-item + .summary-item { border-left: 0; border-top: 1px solid var(--line); }
+
+      .section-heading {
+        display: block;
+        padding: 60px 0 26px;
+      }
+
+      .section-title { margin-top: 10px; }
+
+      .timeline-shell {
+        grid-template-columns: 32px minmax(0, 1fr);
+        gap: 16px;
+      }
+
+      .timeline-rail { top: 88px; }
+      .rail-label { display: none; }
+      .rail-track { height: 180px; margin-left: 3px; }
+      .rail-years { transform: translateX(11px); }
+      .rail-year { writing-mode: vertical-rl; font-size: 8px; }
+
+      .credential {
+        display: block;
+        padding: 32px 0 38px;
+      }
+
+      .credential-level { margin-top: 9px; }
+      .credential h3 { margin-top: 12px; }
+
+      .credential-evidence {
+        display: flex;
+        margin-top: 24px;
+      }
+
+      .credential-link { width: auto; }
+
+      .learning-section { margin-top: 64px; }
+      .learning-grid { grid-template-columns: 1fr; }
+      .course { min-height: 0; padding: 24px; }
+      .learning-note { margin-left: 0; }
+
+      .footer-inner { flex-direction: column; }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      html { scroll-behavior: auto; }
+      .rail-progress { transition: none; }
+    }
+  </style>
+</head>
+<body>
+  <header class="site-header">
+    <div class="header-inner">
+      <a class="brand" href="index.html">Om Jay Mishra</a>
+      <nav class="header-nav" aria-label="Page navigation">
+        <a class="current" href="#credentials" aria-current="page">CERTIFICATIONS</a>
+        <a href="toolkit.html">MIND-MAP</a>
+        <a href="resume.html">RESUME</a>
+        <a href="index.html">PORTFOLIO ↗</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero" aria-labelledby="page-title">
+      <p class="eyebrow">Credential ledger · 2022—2026</p>
+      <h1 id="page-title">Proof of depth.<br>Then breadth.</h1>
+      <p class="hero-copy">
+        <strong>Exam-backed credentials lead this page</strong> because they carry the clearest signal for data engineering roles. Course certificates follow as evidence of continuous learning, without pretending they are equivalent.
+      </p>
+      <div class="summary-grid" aria-label="Certification summary">
+        <div class="summary-item">
+          <span class="summary-label">Industry credentials</span>
+          <span class="summary-value">3 exam-backed</span>
+        </div>
+        <div class="summary-item">
+          <span class="summary-label">Current highest level</span>
+          <span class="summary-value">Professional</span>
+        </div>
+        <div class="summary-item">
+          <span class="summary-label">Applied learning</span>
+          <span class="summary-value">6 completions</span>
+        </div>
+      </div>
+    </section>
+
+    <section id="credentials" aria-labelledby="credentials-title">
+      <div class="section-heading">
+        <p class="section-kicker">01 · Core signal</p>
+        <div>
+          <h2 class="section-title" id="credentials-title">Industry certifications</h2>
+          <p class="section-intro">A progression from platform fundamentals to production-grade Lakehouse engineering. Scroll the timeline to follow the path.</p>
+        </div>
+      </div>
+
+      <div class="timeline-shell" id="timeline-shell">
+        <aside class="timeline-rail" aria-label="Credential timeline navigation">
+          <p class="rail-label">Timeline</p>
+          <div class="rail-track" aria-hidden="true">
+            <div class="rail-progress"></div>
+            <div class="rail-years">
+              <a class="rail-year is-active" href="#credential-2026">2026</a>
+              <a class="rail-year" href="#credential-2024">2024</a>
+            </div>
+          </div>
+        </aside>
+
+        <div class="credential-list">
+          <article class="credential" id="credential-2026" data-year="2026">
+            <div>
+              <div class="timeline-date">Aug 2026</div>
+              <div class="credential-level">Professional</div>
+            </div>
+            <div>
+              <p class="issuer issuer--databricks"><img class="brand-icon" src="https://api.iconify.design/simple-icons:databricks.svg?color=%23FF3621" alt="" aria-hidden="true">Databricks</p>
+              <h3>Certified Data Engineer Professional</h3>
+              <p class="credential-description">The strongest credential in this collection and the clearest match for senior Databricks-focused data engineering work.</p>
+              <div class="represents">
+                <span class="represents-label">What it represents</span>
+                <p>Advanced ability to build, optimise and maintain production-grade data pipelines, Lakehouse models, deployment workflows, monitoring, testing and security on Databricks.</p>
+              </div>
+              <ul class="skill-list" aria-label="Skills represented">
+                <li>Advanced ETL</li>
+                <li>Pipeline reliability</li>
+                <li>Data modelling</li>
+                <li>Performance</li>
+                <li>Governance</li>
+              </ul>
+            </div>
+            <div class="credential-evidence">
+              <span class="status">Current</span>
+              <a class="credential-link" href="https://credentials.databricks.com/93549f7e-1f10-4663-9ef6-1a3768475059#acc.l6QhUMzB" target="_blank" rel="noopener" aria-label="View Databricks Certified Data Engineer Professional credential in a new tab">VIEW CREDENTIAL ↗</a>
+              <p class="credential-note">Official Databricks credential record.</p>
+            </div>
+          </article>
+
+          <article class="credential" data-year="2024">
+            <div>
+              <div class="timeline-date">Sep 2024</div>
+              <div class="credential-level">Fundamentals</div>
+            </div>
+            <div>
+              <p class="issuer issuer--microsoft"><img class="brand-icon" src="https://api.iconify.design/logos:microsoft-icon.svg" alt="" aria-hidden="true">Microsoft</p>
+              <h3>Azure Data Fundamentals · DP-900</h3>
+              <p class="credential-description">Vendor certification covering the cloud-data concepts beneath Azure analytics and engineering services.</p>
+              <div class="represents">
+                <span class="represents-label">What it represents</span>
+                <p>Foundational knowledge of relational and non-relational data, transactional and analytical workloads, and the Azure services used to work with them.</p>
+              </div>
+              <ul class="skill-list" aria-label="Skills represented">
+                <li>Azure data services</li>
+                <li>Relational data</li>
+                <li>NoSQL</li>
+                <li>Analytics workloads</li>
+              </ul>
+            </div>
+            <div class="credential-evidence">
+              <span class="status">Earned</span>
+              <a class="credential-link" href="https://learn.microsoft.com/api/credentials/share/en-us/OmJayMishra-2843/981616DDC1843CF?sharingId=A07CFCCD572798E5" target="_blank" rel="noopener" aria-label="View Microsoft Certified Azure Data Fundamentals credential in a new tab">VIEW CREDENTIAL ↗</a>
+              <p class="credential-note">Microsoft Learn credential ID 981616DDC1843CF.</p>
+            </div>
+          </article>
+
+          <article class="credential" id="credential-2024" data-year="2024">
+            <div>
+              <div class="timeline-date">Aug 2024</div>
+              <div class="credential-level">Associate</div>
+            </div>
+            <div>
+              <p class="issuer issuer--databricks"><img class="brand-icon" src="https://api.iconify.design/simple-icons:databricks.svg?color=%23FF3621" alt="" aria-hidden="true">Databricks</p>
+              <h3>Certified Data Engineer Associate</h3>
+              <p class="credential-description">The platform credential that established the core Databricks data engineering foundation before the Professional progression.</p>
+              <div class="represents">
+                <span class="represents-label">What it represents</span>
+                <p>Ability to complete core data engineering tasks with the Databricks platform, including Spark SQL or PySpark ETL and deployment through Databricks Workflows.</p>
+              </div>
+              <ul class="skill-list" aria-label="Skills represented">
+                <li>PySpark</li>
+                <li>Spark SQL</li>
+                <li>Delta Lake</li>
+                <li>Workflows</li>
+              </ul>
+            </div>
+            <div class="credential-evidence">
+              <span class="status status--historical">Progressed</span>
+              <a class="credential-link" href="https://credentials.databricks.com/36ca569a-fb10-4292-ad57-adb1495cd5b6" target="_blank" rel="noopener" aria-label="View Databricks Certified Data Engineer Associate credential in a new tab">VIEW CREDENTIAL ↗</a>
+              <p class="credential-note">Earned Aug 2024. Two-year credential term ended Aug 2026; superseded by Professional.</p>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="learning-section" id="learning" aria-labelledby="learning-title">
+      <div class="section-heading">
+        <p class="section-kicker">02 · Breadth</p>
+        <div>
+          <h2 class="section-title" id="learning-title">Applied learning</h2>
+          <p class="section-intro">Selected course completions that explain supporting interests across AI, Snowflake, SQL and analytics foundations.</p>
+        </div>
+      </div>
+
+      <div class="learning-grid">
+        <article class="course">
+          <div class="course-topline"><span class="course-provider"><img class="brand-icon" src="https://api.iconify.design/vscode-icons:file-type-gemini.svg" alt="" aria-hidden="true" loading="lazy">Google · Coursera</span><span class="course-date">May 2026</span></div>
+          <h3>Google AI Professional Certificate</h3>
+          <p>Practical AI fluency across responsible use, research, data analysis, communication and lightweight app building.</p>
+          <a class="course-link" href="https://www.coursera.org/account/accomplishments/specialization/JBEX2YW7NO97" target="_blank" rel="noopener">VIEW RECORD ↗</a>
+        </article>
+
+        <article class="course">
+          <div class="course-topline"><span class="course-provider"><img class="brand-icon" src="https://api.iconify.design/simple-icons:snowflake.svg?color=%2329B5E8" alt="" aria-hidden="true" loading="lazy">Snowflake · Coursera</span><span class="course-date">May 2026</span></div>
+          <h3>Introduction to Modern Data Engineering with Snowflake</h3>
+          <p>Modern cloud data engineering concepts through Snowflake, kept as supporting platform breadth rather than a primary credential.</p>
+          <a class="course-link" href="https://www.coursera.org/account/accomplishments/verify/24UEFJIZ5MW1" target="_blank" rel="noopener">VIEW RECORD ↗</a>
+        </article>
+
+        <article class="course">
+          <div class="course-topline"><span class="course-provider"><img class="brand-icon" src="https://api.iconify.design/logos:coursera.svg" alt="" aria-hidden="true" loading="lazy">DeepLearning.AI · Coursera</span><span class="course-date">Apr 2026</span></div>
+          <h3>AI for Everyone</h3>
+          <p>A non-technical foundation for AI capabilities, project selection and responsible organisational adoption.</p>
+          <a class="course-link" href="https://www.coursera.org/account/accomplishments/verify/D6QAHQ36IOTT" target="_blank" rel="noopener">VIEW RECORD ↗</a>
+        </article>
+
+        <article class="course">
+          <div class="course-topline"><span class="course-provider"><img class="brand-icon" src="https://api.iconify.design/simple-icons:snowflake.svg?color=%2329B5E8" alt="" aria-hidden="true" loading="lazy">Snowflake · Coursera</span><span class="course-date">Feb 2026</span></div>
+          <h3>Intro to Snowflake for Devs, Data Scientists &amp; Data Engineers</h3>
+          <p>An introductory view of how engineering, development and data-science workloads are organised on Snowflake.</p>
+          <a class="course-link" href="https://www.coursera.org/account/accomplishments/verify/CEOMXRN74JES" target="_blank" rel="noopener">VIEW RECORD ↗</a>
+        </article>
+
+        <article class="course">
+          <div class="course-topline"><span class="course-provider"><img class="brand-icon" src="https://api.iconify.design/vscode-icons:file-type-sql.svg" alt="" aria-hidden="true" loading="lazy">Udemy</span><span class="course-date">Aug 2022</span></div>
+          <h3>Data Analytics: Intro to SQL using Healthcare Data</h3>
+          <p>An early SQL and domain-data foundation. Included as learning history, below the exam-backed credentials.</p>
+          <a class="course-link" href="https://www.udemy.com/certificate/UC-540a9dcf-e2b4-4ee2-9c28-f8612f320968/" target="_blank" rel="noopener">VIEW RECORD ↗</a>
+        </article>
+
+        <article class="course">
+          <div class="course-topline"><span class="course-provider"><img class="brand-icon" src="https://api.iconify.design/vscode-icons:file-type-excel.svg" alt="" aria-hidden="true" loading="lazy">Udemy</span><span class="course-date">Jul 2022</span></div>
+          <h3>Microsoft Excel: Advanced Formulas &amp; Functions</h3>
+          <p>A foundation in analytical formulas and spreadsheet problem-solving from the start of the data career path.</p>
+          <a class="course-link" href="https://www.udemy.com/certificate/UC-2836c22b-6722-4289-95a8-7c56843b3f51/" target="_blank" rel="noopener">VIEW RECORD ↗</a>
+        </article>
+      </div>
+
+      <p class="learning-note"><strong>Why Udemy is here:</strong> these completions show the start of the learning arc, but they sit in a deliberately quieter tier. For an experienced Data Engineer, the portfolio should lead with verified platform expertise and work outcomes, then use course certificates only as supporting context.</p>
+    </section>
+  </main>
+
+  <footer>
+    <div class="footer-inner">
+      <span>Om Jay Mishra · Data Engineer</span>
+      <span>Credentials are linked to their issuer records</span>
+    </div>
+  </footer>
+
+  <script>
+    (() => {
+      const shell = document.getElementById('timeline-shell');
+      const items = Array.from(document.querySelectorAll('[data-year]'));
+      const yearLinks = Array.from(document.querySelectorAll('.rail-year'));
+      if (!shell || !items.length) return;
+
+      const updateTimeline = () => {
+        const rect = shell.getBoundingClientRect();
+        const viewportAnchor = window.innerHeight * 0.38;
+        const travelled = viewportAnchor - rect.top;
+        const available = Math.max(1, rect.height - viewportAnchor);
+        const progress = Math.max(0, Math.min(1, travelled / available));
+        shell.style.setProperty('--timeline-progress', `${Math.round(progress * 100)}%`);
+
+        let active = items[0];
+        for (const item of items) {
+          if (item.getBoundingClientRect().top <= viewportAnchor) active = item;
+        }
+        yearLinks.forEach((link) => link.classList.toggle('is-active', link.textContent.trim() === active.dataset.year));
+      };
+
+      updateTimeline();
+      window.addEventListener('scroll', updateTimeline, { passive: true });
+      window.addEventListener('resize', updateTimeline, { passive: true });
+    })();
+  </script>
+</body>
+</html>

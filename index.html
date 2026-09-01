@@ -624,6 +624,27 @@ document.addEventListener('DOMContentLoaded', async function() {
           color: #cfd7e2 !important;
         }
 
+        .portfolio-header-certifications {
+          align-items: center;
+          border-radius: 8px;
+          color: #45484d;
+          display: inline-flex;
+          font-family: 'JetBrains Mono', monospace;
+          font-size: 12px;
+          letter-spacing: 0.06em;
+          min-height: 44px;
+          padding: 0 12px;
+          text-decoration: none;
+        }
+
+        .portfolio-header-certifications:hover,
+        .portfolio-header-certifications:focus-visible {
+          background: #fff;
+          color: #1c1e21;
+          outline: 1px solid #d8d8d3;
+          text-decoration: none;
+        }
+
         .portfolio-credential-badge {
           align-items: center;
           box-sizing: border-box;
@@ -679,6 +700,10 @@ document.addEventListener('DOMContentLoaded', async function() {
           }
 
           .portfolio-header-resume {
+            display: none;
+          }
+
+          .portfolio-header-certifications {
             display: none;
           }
 
@@ -1126,11 +1151,31 @@ document.addEventListener('DOMContentLoaded', async function() {
     resumeLink.textContent = 'RESUME ↗';
     contactLink.parentElement.insertBefore(resumeLink, contactLink);
 
+    const certificationsLink = doc.createElement('a');
+    certificationsLink.className = 'portfolio-header-certifications';
+    certificationsLink.href = 'certifications.html';
+    certificationsLink.textContent = 'CERTIFICATIONS';
+    contactLink.parentElement.insertBefore(certificationsLink, resumeLink);
+
     const mobileResumeLink = Array.from(doc.querySelectorAll('a[role="menuitem"]')).find((element) =>
       element.textContent.trim() === 'RESUME ↗'
     );
     if (!mobileResumeLink) throw new Error('Portfolio mobile resume navigation was not found');
     mobileResumeLink.href = 'resume.html';
+
+    const mobileCertificationsSoon = Array.from(doc.querySelectorAll('span[aria-disabled="true"]')).find((element) =>
+      element.textContent.trim().startsWith('CERTIFICATIONS & COURSES')
+    );
+    if (!mobileCertificationsSoon) throw new Error('Portfolio mobile certifications navigation was not found');
+    const mobileCertificationsLink = doc.createElement('a');
+    mobileCertificationsLink.setAttribute('role', 'menuitem');
+    mobileCertificationsLink.href = 'certifications.html';
+    mobileCertificationsLink.setAttribute('sc-camel-on-click', '{{ closeMenu }}');
+    mobileCertificationsLink.setAttribute('style', 'padding:11px 14px;border-radius:8px;color:#45484d;text-decoration:none;');
+    mobileCertificationsLink.setAttribute('style-hover', 'background:#f6f6f3;color:#1c1e21;text-decoration:none;');
+    mobileCertificationsLink.setAttribute('style-focus', 'background:#f6f6f3;outline:none;');
+    mobileCertificationsLink.textContent = 'CERTIFICATIONS';
+    mobileCertificationsSoon.replaceWith(mobileCertificationsLink);
 
     const promoteControl = (element, className) => {
       const button = doc.createElement('button');
