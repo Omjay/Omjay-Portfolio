@@ -337,6 +337,20 @@
         margin: 0;
         padding: 0.5in;
         box-shadow: none;
+        font-size: 12.5px;
+        line-height: 1.32;
+      }
+
+      .resume-section {
+        margin-top: 9px;
+      }
+
+      .experience + .experience {
+        margin-top: 8px;
+      }
+
+      .bottom-grid {
+        margin-top: 8px;
       }
     }
   </style>
@@ -366,21 +380,22 @@
         <div class="document-contact">
           <div><a href="tel:+919711107198">+91-9711107198</a> &middot; <a href="mailto:mishra.omjay@gmail.com">mishra.omjay@gmail.com</a></div>
           <div><a href="https://www.linkedin.com/in/omjay-mishra/" target="_blank" rel="noopener">linkedin.com/in/omjay-mishra</a> &middot; Delhi NCR, India</div>
+          <div>Portfolio: <a href="https://omjay.github.io/Omjay-Portfolio/" target="_blank" rel="noopener">omjay.github.io/Omjay-Portfolio</a></div>
         </div>
       </header>
 
       <section class="resume-section">
         <h2 class="section-title">Summary</h2>
-        <p class="summary">Data Engineer with 3+ years building scalable Lakehouse architectures on Azure Databricks. Reduced pipeline runtime from 6 hours to 30 minutes on 500M+ record datasets using Liquid Clustering, improved query performance 65% across 50M+ records, and cut Databricks DBU costs 25% through cluster optimization. Databricks Certified Data Engineer Associate.</p>
+        <p class="summary">Data Engineer with 3+ years designing and modernizing production Lakehouse platforms on Azure Databricks across ingestion, PySpark transformation, Delta Lake modeling, orchestration, data quality, governance, CI/CD, and cost-performance optimization. Reduced 500M+ record pipelines from 6 hours to 30 minutes, improved query performance 65%, and cut Databricks DBU consumption 25%.</p>
       </section>
 
       <section class="resume-section">
         <h2 class="section-title">Technical Skills</h2>
         <div class="skills-grid">
-          <div class="skill-label">Databricks &amp; Lakehouse</div><div>Azure Databricks, Delta Lake, Unity Catalog, Liquid Clustering, DBU &amp; Cluster Optimization, Photon Engine, Medallion Architecture, PySpark</div>
-          <div class="skill-label">Azure Data Engineering</div><div>Azure Data Factory (ADF), ADLS Gen2, Azure DevOps, CI/CD Pipelines, Docker &amp; Azure Containers</div>
-          <div class="skill-label">Programming &amp; Querying</div><div>Python (PySpark, Pandas), SQL, Hive, REST APIs</div>
-          <div class="skill-label">Modeling &amp; Governance</div><div>Star Schema Modeling, Data Governance, Data Quality Assurance, Metadata Management, Workflow Automation</div>
+          <div class="skill-label">Databricks &amp; Lakehouse</div><div>Azure Databricks, PySpark, Spark SQL, Delta Lake, Unity Catalog, Liquid Clustering, Photon, Medallion Architecture, Databricks Workflows</div>
+          <div class="skill-label">Azure Data Engineering</div><div>Azure Data Factory (ADF), ADLS Gen2, Azure DevOps, CI/CD, Docker, Azure Monitor, Job Clusters, Autoscaling</div>
+          <div class="skill-label">Programming &amp; Querying</div><div>Python, SQL, Pandas, Hive, REST APIs, ETL/ELT, Incremental Loading, Metadata-Driven Pipelines</div>
+          <div class="skill-label">Modeling &amp; Governance</div><div>Star Schema, Data Modeling, Data Quality, Data Governance, Audit Logging, Schema Evolution, Workflow Orchestration</div>
           <div class="skill-label">BI &amp; Visualization</div><div>Power BI, Tableau, Looker Studio</div>
         </div>
       </section>
@@ -394,9 +409,10 @@
             <div class="experience-date">Jun 2026 - Present</div>
           </div>
           <ul>
-            <li>Migrated 40+ production scripts from a legacy Ubuntu server to Databricks notebooks and Workflows, decommissioning the legacy environment</li>
+            <li>Migrated 40+ production Python scripts from a legacy Ubuntu server to Databricks Workflows, replacing cron execution with dependency-aware orchestration, retries, alerting, and job clusters</li>
             <li>Reduced a thrice-daily pipeline's runtime from ~1 hr 50 min to ~30 min per run by resolving data skew and migrating to job compute clusters, cutting daily compute hours by ~70% and lowering DBU costs</li>
-            <li>Containerized a VPN-dependent pipeline using Docker on Azure containers; accelerated delivery through AI-assisted development (Claude + VS Code + Databricks)</li>
+            <li>Built config-driven, Dockerized ingestion with idempotent checkpoints and schema evolution into Bronze Delta tables, allowing new sources to onboard without new pipeline code</li>
+            <li>Tuned shuffle partitions, broadcast joins, adaptive query execution, file compaction, and clustering to stabilize heavier Spark workloads as data volume grew</li>
           </ul>
         </div>
 
@@ -406,11 +422,11 @@
             <div class="experience-date">May 2023 - May 2026</div>
           </div>
           <ul>
-            <li>Led end-to-end migration from legacy databases to Databricks Lakehouse, transforming SQL-based workflows into scalable PySpark and Delta Lake architectures</li>
-            <li>Resolved partition skew on 500M+ record pipelines using Liquid Clustering, reducing runtime from 6 hours to 30 minutes</li>
-            <li>Developed a Gold-layer Star Schema in Databricks, improving query performance by 65% across 50M+ records</li>
-            <li>Reduced Databricks DBU consumption by 25% through cluster optimization, autoscaling, and Photon Engine utilization</li>
-            <li>Orchestrated Azure Data Factory and Databricks pipelines with custom Python automation, eliminating 270+ hours of manual effort</li>
+            <li>Led migration from legacy databases and SQL workflows to an Azure Databricks Lakehouse, redesigning production pipelines in PySpark and Delta Lake with incremental loading patterns</li>
+            <li>Reduced 500M+ record pipelines from 6 hours to 30 minutes using Liquid Clustering; improved Gold-layer query performance 65% across 50M+ records with a Star Schema</li>
+            <li>Cut Databricks DBU consumption 25% through job clusters, autoscaling, Photon, and workload tuning; file compaction and Delta vacuuming reduced storage footprint 30%</li>
+            <li>Automated ADF, Databricks, SQL, and Python workflows, eliminating 270+ hours of recurring manual work; metadata-driven ADF patterns reduced maintenance overhead 50%</li>
+            <li>Implemented Unity Catalog access controls and audit logs, a PySpark Expectations framework for Bronze-to-Silver quality checks, and multi-stage Azure DevOps CI/CD</li>
           </ul>
         </div>
 
@@ -420,8 +436,8 @@
             <div class="experience-date">Nov 2022 - May 2023</div>
           </div>
           <ul>
-            <li>Automated data transformation workflows for 10K+ student records using Google Apps Script, improving data preparation efficiency</li>
-            <li>Consolidated multi-source data into a centralized Power BI reporting layer, enabling stakeholders to track engagement and enrolment metrics</li>
+            <li>Automated transformation and validation for 10K+ student records using Google Apps Script and Excel, cutting manual reporting cycles 40%</li>
+            <li>Built 10+ engagement and retention dashboards; analysis informed product updates associated with 15% higher engagement and 20% better satisfaction metrics</li>
           </ul>
         </div>
       </section>
@@ -433,7 +449,7 @@
             <li><a href="https://credentials.databricks.com/93549f7e-1f10-4663-9ef6-1a3768475059#acc.l6QhUMzB" target="_blank" rel="noopener">Databricks Certified Data Engineer Professional</a></li>
             <li><a href="https://credentials.databricks.com/36ca569a-fb10-4292-ad57-adb1495cd5b6" target="_blank" rel="noopener">Databricks Certified Data Engineer Associate</a></li>
             <li><a href="https://learn.microsoft.com/api/credentials/share/en-us/OmJayMishra-2843/981616DDC1843CF?sharingId=A07CFCCD572798E5" target="_blank" rel="noopener">Microsoft Azure Data Fundamentals (DP-900)</a></li>
-            <li><a href="https://www.coursera.org/account/accomplishments/specialization/JBEX2YW7NO97" target="_blank" rel="noopener">Google AI Professional Certificate - Coursera</a></li>
+            <li><a href="https://www.coursera.org/account/accomplishments/specialization/JBEX2YW7NO97" target="_blank" rel="noopener">Google AI Professional Certificate</a></li>
           </ul>
         </section>
 
