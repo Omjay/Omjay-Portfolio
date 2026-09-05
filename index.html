@@ -6,6 +6,8 @@
   <title>Om Jay Mishra | Data Engineer</title>
   <meta name="description" content="Portfolio of Om Jay Mishra, a Data Engineer specialising in Azure, Databricks, PySpark, Delta Lake and data-platform modernisation.">
   <link rel="canonical" href="https://omjay.github.io/Omjay-Portfolio/">
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='12' fill='%231c1e21'/%3E%3Ctext x='32' y='41' text-anchor='middle' font-family='Arial' font-size='24' font-weight='700' fill='%23fbfbf9'%3EOM%3C/text%3E%3C/svg%3E">
+  <meta name="theme-color" content="#fbfbf9">
   <meta property="og:type" content="website">
   <meta property="og:site_name" content="Om Jay Mishra">
   <meta property="og:title" content="Om Jay Mishra | Data Engineer">
@@ -318,6 +320,8 @@ document.addEventListener('DOMContentLoaded', async function() {
       <title>Om Jay Mishra | Data Engineer</title>
       <meta name="description" content="Portfolio of Om Jay Mishra, a Data Engineer specialising in Azure, Databricks, PySpark, Delta Lake and data-platform modernisation.">
       <link rel="canonical" href="https://omjay.github.io/Omjay-Portfolio/">
+      <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='12' fill='%231c1e21'/%3E%3Ctext x='32' y='41' text-anchor='middle' font-family='Arial' font-size='24' font-weight='700' fill='%23fbfbf9'%3EOM%3C/text%3E%3C/svg%3E">
+      <meta name="theme-color" content="#fbfbf9">
       <meta property="og:type" content="website">
       <meta property="og:site_name" content="Om Jay Mishra">
       <meta property="og:title" content="Om Jay Mishra | Data Engineer">
@@ -325,11 +329,156 @@ document.addEventListener('DOMContentLoaded', async function() {
       <meta property="og:url" content="https://omjay.github.io/Omjay-Portfolio/">
       <meta name="twitter:card" content="summary">
       <style id="portfolio-responsive-fixes">
+        :root {
+          --portfolio-canvas: #fff;
+          --portfolio-surface: #fbfbf9;
+          --portfolio-surface-alt: #f5f7f8;
+          --portfolio-border: #e2e5e6;
+          --portfolio-border-strong: #c8cdd0;
+          --portfolio-ink: #1c1e21;
+          --portfolio-ink-secondary: #45484d;
+          --portfolio-ink-tertiary: #697078;
+          --portfolio-accent: #1f6791;
+          --portfolio-accent-hover: #164b6a;
+          --portfolio-accent-soft: #e8f2f8;
+          --portfolio-accent-rgb: 31, 103, 145;
+          --portfolio-azimuth: #087543;
+          --portfolio-planetspark: #9c3f12;
+        }
+
         .portfolio-section-heading {
-          font-size: 12px;
-          font-weight: 400;
-          line-height: 1.5;
+          border-bottom: 1px solid var(--portfolio-border);
+          color: var(--portfolio-ink);
+          font-family: 'Source Serif 4', serif !important;
+          font-size: clamp(28px, 4vw, 38px) !important;
+          font-weight: 600;
+          letter-spacing: -0.02em !important;
+          line-height: 1.12;
           margin: 0;
+          padding-bottom: 14px !important;
+          text-transform: none;
+        }
+
+        .portfolio-impact-grid {
+          grid-template-columns: minmax(0, 1.6fr) minmax(260px, 1fr) !important;
+          grid-template-rows: repeat(2, minmax(0, 1fr));
+        }
+
+        .portfolio-impact-card {
+          background: var(--portfolio-canvas) !important;
+          border-color: var(--portfolio-border) !important;
+          min-height: 138px;
+        }
+
+        .portfolio-impact-card--primary {
+          align-items: flex-start;
+          display: flex;
+          flex-direction: column;
+          grid-row: span 2;
+          justify-content: center;
+          min-height: 292px;
+          padding: 34px 38px !important;
+        }
+
+        .portfolio-impact-card--primary > div:first-child {
+          font-size: clamp(64px, 8vw, 92px) !important;
+          line-height: 0.95;
+        }
+
+        .portfolio-impact-card--primary > div:last-child {
+          font-size: 16px !important;
+          line-height: 1.6;
+          max-width: 36ch;
+        }
+
+        .portfolio-impact-card--secondary {
+          align-items: center;
+          display: grid;
+          gap: 20px;
+          grid-template-columns: auto minmax(0, 1fr);
+        }
+
+        .portfolio-impact-card--secondary > div:first-child {
+          font-size: clamp(38px, 5vw, 52px) !important;
+          line-height: 1;
+        }
+
+        .portfolio-impact-card--secondary > div:last-child {
+          line-height: 1.5;
+          margin-top: 0 !important;
+        }
+
+        .portfolio-toolkit-preview {
+          border-bottom: 1px solid var(--portfolio-border);
+          display: grid;
+          gap: 40px;
+          grid-template-columns: minmax(0, 0.9fr) minmax(360px, 1.1fr);
+          padding: 30px 0 72px;
+        }
+
+        .portfolio-toolkit-copy p {
+          color: var(--portfolio-ink-secondary);
+          font-size: 16px;
+          line-height: 1.65;
+          margin: 0;
+          max-width: 48ch;
+        }
+
+        .portfolio-toolkit-link {
+          align-items: center;
+          background: var(--portfolio-accent);
+          border: 1px solid var(--portfolio-accent);
+          border-radius: 6px;
+          color: var(--portfolio-canvas);
+          display: inline-flex;
+          font-family: 'Public Sans', sans-serif;
+          font-size: 13px;
+          font-weight: 600;
+          justify-content: center;
+          margin-top: 24px;
+          min-height: 44px;
+          padding: 10px 15px;
+          text-decoration: none;
+        }
+
+        .portfolio-toolkit-link:hover,
+        .portfolio-toolkit-link:focus-visible {
+          background: var(--portfolio-accent-hover);
+          border-color: var(--portfolio-accent-hover);
+          color: var(--portfolio-canvas);
+          outline: 2px solid rgba(var(--portfolio-accent-rgb), 0.22);
+          outline-offset: 3px;
+          text-decoration: none;
+        }
+
+        .portfolio-toolkit-focus {
+          border-top: 1px solid var(--portfolio-border);
+        }
+
+        .portfolio-toolkit-focus-row {
+          display: grid;
+          gap: 22px;
+          grid-template-columns: minmax(130px, 0.4fr) minmax(0, 1fr);
+          padding: 18px 0;
+        }
+
+        .portfolio-toolkit-focus-row + .portfolio-toolkit-focus-row {
+          border-top: 1px solid var(--portfolio-border);
+        }
+
+        .portfolio-toolkit-focus-row span {
+          color: var(--portfolio-ink-tertiary);
+          font-family: 'JetBrains Mono', monospace;
+          font-size: 10px;
+          letter-spacing: 0.05em;
+          line-height: 1.5;
+        }
+
+        .portfolio-toolkit-focus-row strong {
+          color: var(--portfolio-ink);
+          font-size: 14px;
+          font-weight: 500;
+          line-height: 1.55;
         }
 
         .portfolio-header-resume {
@@ -467,7 +616,7 @@ document.addEventListener('DOMContentLoaded', async function() {
         }
 
         .portfolio-work-company {
-          color: #747981;
+          color: var(--portfolio-ink-tertiary);
           font-family: 'JetBrains Mono', monospace;
           font-size: 10px;
           letter-spacing: 0.12em;
@@ -493,8 +642,30 @@ document.addEventListener('DOMContentLoaded', async function() {
         }
 
         .portfolio-role-card a {
+          align-items: center;
+          display: inline-flex;
+          min-height: 44px;
+          min-width: 44px;
           position: relative;
           z-index: 2;
+        }
+
+        #contact a {
+          align-items: center;
+          display: inline-flex;
+          min-height: 44px;
+        }
+
+        .portfolio-footer {
+          box-sizing: border-box;
+          margin: 0 auto;
+          max-width: 1080px;
+          padding-left: 32px !important;
+          padding-right: 32px !important;
+        }
+
+        .portfolio-footer > div:last-child {
+          color: var(--portfolio-ink-tertiary) !important;
         }
 
         .portfolio-role-card--exaqube {
@@ -507,6 +678,11 @@ document.addEventListener('DOMContentLoaded', async function() {
           background: linear-gradient(135deg, #fffefa 0%, #f8fbfa 52%, #eef5f3 100%) !important;
           border-color: #d7e4df !important;
           box-shadow: inset 0 0 72px rgba(41, 137, 94, 0.035);
+        }
+
+        .portfolio-role-card--azimuth .portfolio-role-context {
+          border-color: var(--portfolio-azimuth) !important;
+          color: var(--portfolio-azimuth) !important;
         }
 
         .portfolio-role-card--azimuth .cardviz > div {
@@ -624,6 +800,36 @@ document.addEventListener('DOMContentLoaded', async function() {
           color: #cfd7e2 !important;
         }
 
+        .portfolio-role-card--exaqube,
+        .portfolio-role-card--azimuth,
+        .portfolio-role-card--planetspark {
+          background: var(--portfolio-canvas) !important;
+          border-color: var(--portfolio-border) !important;
+          box-shadow: inset 3px 0 0 var(--portfolio-accent) !important;
+        }
+
+        .portfolio-role-card--planetspark .portfolio-role-period,
+        .portfolio-role-card--planetspark .portfolio-role-company,
+        .portfolio-role-card--planetspark .portfolio-role-position,
+        .portfolio-role-card--planetspark .portfolio-role-description {
+          color: var(--portfolio-ink-secondary) !important;
+        }
+
+        .portfolio-role-card--planetspark .portfolio-role-company {
+          color: var(--portfolio-ink) !important;
+        }
+
+        .portfolio-role-card--planetspark .portfolio-role-tech {
+          background: var(--portfolio-surface) !important;
+          border-color: var(--portfolio-border) !important;
+          color: var(--portfolio-ink-secondary) !important;
+        }
+
+        .portfolio-role-card--planetspark .portfolio-role-context {
+          border-color: var(--portfolio-planetspark) !important;
+          color: var(--portfolio-planetspark) !important;
+        }
+
         .portfolio-credential-badge {
           align-items: center;
           box-sizing: border-box;
@@ -643,6 +849,38 @@ document.addEventListener('DOMContentLoaded', async function() {
         }
 
         @media (max-width: 640px) {
+          .portfolio-footer {
+            padding-left: 20px !important;
+            padding-right: 20px !important;
+          }
+
+          .portfolio-impact-grid {
+            grid-template-columns: 1fr !important;
+            grid-template-rows: auto;
+          }
+
+          .portfolio-impact-card--primary {
+            grid-row: auto;
+            min-height: 220px;
+            padding: 28px 26px !important;
+          }
+
+          .portfolio-impact-card--secondary {
+            grid-template-columns: 92px minmax(0, 1fr);
+            min-height: 132px;
+          }
+
+          .portfolio-toolkit-preview {
+            gap: 30px;
+            grid-template-columns: 1fr;
+            padding-bottom: 56px;
+          }
+
+          .portfolio-toolkit-focus-row {
+            gap: 8px;
+            grid-template-columns: 1fr;
+          }
+
           .portfolio-header-inner {
             flex-wrap: nowrap !important;
             gap: 8px !important;
@@ -788,8 +1026,20 @@ document.addEventListener('DOMContentLoaded', async function() {
 
     replaceTemplateOnce(
       'Om Jay Mishra - Data Engineer across Databricks, PySpark, Delta Lake and Azure Data Factory: analytics automation at PlanetSpark, Lakehouse migration at Azimuth GRC, platform modernization at ExaQube.',
-      'Data Engineer working across Databricks, PySpark, Delta Lake and Azure Data Factory, with experience in analytics automation, Lakehouse migration and platform modernization.',
+      'Data Engineer building faster, governed Lakehouse platforms across Databricks, PySpark, Delta Lake and Azure Data Factory.',
       'hero introduction'
+    );
+
+    replaceTemplateOnce(
+      "const el = React.createElement('img', { src, alt: label, style: { width: 24, height: 24 } });",
+      "const el = React.createElement('img', { src, alt: label, onError: (event) => { event.currentTarget.hidden = true; }, style: { width: 24, height: 24 } });",
+      'remote icon fallback'
+    );
+
+    replaceTemplateOnce(
+      "company: 'PlanetSpark', period: 'NOV 2022 - MAY 2023 · GURGAON', role: 'Data Analyst',",
+      "company: 'PlanetSpark', period: 'NOV 2022 - MAY 2023 · GURGAON', role: 'Data Analytics Engineer',",
+      'PlanetSpark role consistency'
     );
 
     replaceTemplateOnce(
@@ -877,8 +1127,16 @@ document.addEventListener('DOMContentLoaded', async function() {
     if (!homeMain) throw new Error('Portfolio home template was not found');
 
     const pageWrap = doc.getElementById('page-wrap');
-    const siteHeader = pageWrap?.querySelector(':scope > div[style*="position:sticky"]');
-    if (siteHeader) siteHeader.classList.add('portfolio-site-header');
+    const sourceHeader = pageWrap?.querySelector(':scope > div[style*="position:sticky"]');
+    if (sourceHeader) {
+      const siteHeader = doc.createElement('header');
+      for (const attribute of Array.from(sourceHeader.attributes)) {
+        siteHeader.setAttribute(attribute.name, attribute.value);
+      }
+      siteHeader.classList.add('portfolio-site-header');
+      siteHeader.innerHTML = sourceHeader.innerHTML;
+      sourceHeader.replaceWith(siteHeader);
+    }
 
     const sections = Array.from(homeMain.querySelectorAll(':scope > section'));
     const findSection = (label) => sections.find((section) => section.textContent.includes(label));
@@ -913,6 +1171,54 @@ document.addEventListener('DOMContentLoaded', async function() {
     promoteHeading(skillsSection, 'SKILLS', 'skills-heading');
     promoteHeading(architectureSection, 'ARCHITECTURE PATTERNS', 'architecture-heading');
 
+    careerSection.querySelector('#career-heading').textContent = 'Career timeline';
+    selectedSection.querySelector('#selected-work-heading').textContent = 'Selected work';
+
+    const impactGrid = doc.getElementById('statgrid');
+    if (!impactGrid || impactGrid.children.length !== 3) {
+      throw new Error('Portfolio impact metrics were not found');
+    }
+    impactGrid.classList.add('portfolio-impact-grid');
+    const impactCopy = [
+      'runtime reduction on 500M+ records, from 6 hours to 30 minutes with Liquid Clustering',
+      'faster queries from a Gold-layer Star Schema across 50M+ records',
+      'Databricks DBU reduction through cluster optimization, autoscaling and Photon'
+    ];
+    Array.from(impactGrid.children).forEach((card, index) => {
+      card.classList.add(
+        'portfolio-impact-card',
+        index === 0 ? 'portfolio-impact-card--primary' : 'portfolio-impact-card--secondary'
+      );
+      const description = card.lastElementChild;
+      if (description) description.textContent = impactCopy[index];
+    });
+
+    skillsSection.classList.add('portfolio-toolkit-section');
+    skillsSection.innerHTML = `
+      <h2 id="skills-heading" class="portfolio-section-heading">Engineering toolkit</h2>
+      <div class="portfolio-toolkit-preview">
+        <div class="portfolio-toolkit-copy">
+          <p>See how Azure, Databricks, Delta Lake, PySpark, governance, DevOps, and analytics fit into one delivery system.</p>
+          <a class="portfolio-toolkit-link" href="toolkit.html?v=20260904-3">Explore the toolkit →</a>
+        </div>
+        <div class="portfolio-toolkit-focus" aria-label="Toolkit highlights">
+          <div class="portfolio-toolkit-focus-row">
+            <span>Platform core</span>
+            <strong>Databricks, Azure Data Factory, ADLS Gen2, Delta Lake</strong>
+          </div>
+          <div class="portfolio-toolkit-focus-row">
+            <span>Engineering</span>
+            <strong>PySpark, Python, SQL, Scala, performance tuning</strong>
+          </div>
+          <div class="portfolio-toolkit-focus-row">
+            <span>Delivery</span>
+            <strong>Unity Catalog, CI/CD, Docker, Power BI, Tableau</strong>
+          </div>
+        </div>
+      </div>`;
+    skillsSection.setAttribute('aria-labelledby', 'skills-heading');
+    if (architectureSection !== skillsSection) architectureSection.remove();
+
     const heroSection = sections[0];
     const heroTitle = heroSection.querySelector('h1');
     const heroIntro = heroSection.querySelector('p');
@@ -921,6 +1227,8 @@ document.addEventListener('DOMContentLoaded', async function() {
     heroTitle.classList.add('portfolio-hero-title');
     heroIntro.classList.add('portfolio-hero-intro');
     heroKicker.classList.add('portfolio-hero-kicker');
+    heroTitle.textContent = 'I build Lakehouse platforms that run in minutes, not hours.';
+    heroKicker.textContent = 'Data Engineer | Azure Databricks | India';
 
     const associateCredential = Array.from(heroSection.querySelectorAll('span')).find((element) =>
       element.textContent.trim() === 'DATABRICKS DATA ENGINEER ASSOCIATE'
@@ -985,7 +1293,7 @@ document.addEventListener('DOMContentLoaded', async function() {
     }
 
     const selectedButtons = Array.from(selectedSection.querySelectorAll('button'));
-    ['VIEW EXAQUBE PROJECTS →', 'VIEW AZIMUTH GRC PROJECTS →', 'VIEW PLANETSPARK PROJECTS →']
+    ['View ExaQube projects →', 'View Azimuth GRC projects →', 'View PlanetSpark projects →']
       .forEach((label, index) => { if (selectedButtons[index]) selectedButtons[index].textContent = label; });
 
     const selectedWorkMeta = [
@@ -1112,7 +1420,7 @@ document.addEventListener('DOMContentLoaded', async function() {
     const tourHint = Array.from(homeMain.querySelectorAll('div')).find((element) =>
       element.children.length === 0 && element.textContent.trim().startsWith('KEEP SCROLLING PAST THE END TO TOUR THE WORK')
     );
-    if (tourHint) tourHint.textContent = 'SELECT A ROLE ABOVE TO EXPLORE THE WORK.';
+    if (tourHint) tourHint.textContent = 'Select a role above to explore the work.';
 
     const contactLink = Array.from(doc.querySelectorAll('[role="link"]')).find((element) =>
       element.textContent.trim() === 'CONTACT'
@@ -1121,16 +1429,14 @@ document.addEventListener('DOMContentLoaded', async function() {
     const resumeLink = doc.createElement('a');
     resumeLink.className = 'portfolio-header-resume';
     resumeLink.href = 'resume.html';
-    resumeLink.target = '_blank';
-    resumeLink.rel = 'noopener';
-    resumeLink.textContent = 'RESUME ↗';
+    resumeLink.textContent = 'RESUME';
     contactLink.parentElement.insertBefore(resumeLink, contactLink);
 
     const mobileResumeLink = Array.from(doc.querySelectorAll('a[role="menuitem"]')).find((element) =>
       element.textContent.trim() === 'RESUME ↗'
     );
     if (!mobileResumeLink) throw new Error('Portfolio mobile resume navigation was not found');
-    mobileResumeLink.href = 'resume.html';
+    mobileResumeLink.remove();
 
     const mobileCertificationsSoon = Array.from(doc.querySelectorAll('span[aria-disabled="true"]')).find((element) =>
       element.textContent.trim().startsWith('CERTIFICATIONS & COURSES')
@@ -1138,13 +1444,26 @@ document.addEventListener('DOMContentLoaded', async function() {
     if (!mobileCertificationsSoon) throw new Error('Portfolio mobile certifications navigation was not found');
     const mobileCertificationsLink = doc.createElement('a');
     mobileCertificationsLink.setAttribute('role', 'menuitem');
-    mobileCertificationsLink.href = 'certifications.html';
+    mobileCertificationsLink.href = 'certifications.html?v=20260904-3';
     mobileCertificationsLink.setAttribute('sc-camel-on-click', '{{ closeMenu }}');
     mobileCertificationsLink.setAttribute('style', 'padding:11px 14px;border-radius:8px;color:#45484d;text-decoration:none;');
     mobileCertificationsLink.setAttribute('style-hover', 'background:#f6f6f3;color:#1c1e21;text-decoration:none;');
     mobileCertificationsLink.setAttribute('style-focus', 'background:#f6f6f3;outline:none;');
     mobileCertificationsLink.textContent = 'CERTIFICATIONS';
     mobileCertificationsSoon.replaceWith(mobileCertificationsLink);
+
+    Array.from(doc.querySelectorAll('span[aria-disabled="true"]')).forEach((element) => {
+      const label = element.textContent.trim();
+      if (label.startsWith('BLOGS') || label.startsWith('PERSONALITY')) {
+        element.setAttribute('role', 'menuitem');
+        element.setAttribute('tabindex', '-1');
+      }
+    });
+
+    Array.from(doc.querySelectorAll('a[href="toolkit.html"], a[href^="toolkit.html?"]')).forEach((link) => {
+      if (link.textContent.trim() === 'MIND-MAP') link.textContent = 'TOOLKIT';
+      link.setAttribute('href', 'toolkit.html?v=20260904-3');
+    });
 
     const promoteControl = (element, className) => {
       const button = doc.createElement('button');
@@ -1165,6 +1484,11 @@ document.addEventListener('DOMContentLoaded', async function() {
       brandControl.parentElement.classList.add('portfolio-header-inner');
       const brandButton = promoteControl(brandControl, 'portfolio-brand-control');
       brandButton.setAttribute('sc-camel-on-key-down', '{{ goHomeKey }}');
+      const headerNavigation = brandButton.parentElement.lastElementChild;
+      if (headerNavigation) {
+        headerNavigation.setAttribute('role', 'navigation');
+        headerNavigation.setAttribute('aria-label', 'Portfolio actions');
+      }
     }
     const contactButton = promoteControl(contactLink, 'portfolio-header-contact');
     contactButton.setAttribute('sc-camel-on-key-down', '{{ menuContactKey }}');
@@ -1179,6 +1503,24 @@ document.addEventListener('DOMContentLoaded', async function() {
       const backButton = promoteControl(backControl, 'portfolio-back-control');
       backButton.setAttribute('sc-camel-on-key-down', '{{ goHomeKey }}');
     }
+
+    const contactSection = doc.getElementById('contact');
+    if (contactSection) {
+      const siteFooter = doc.createElement('footer');
+      for (const attribute of Array.from(contactSection.attributes)) {
+        siteFooter.setAttribute(attribute.name, attribute.value);
+      }
+      siteFooter.classList.add('portfolio-footer');
+      siteFooter.innerHTML = contactSection.innerHTML;
+      homeMain.after(siteFooter);
+      contactSection.remove();
+    }
+
+    Array.from(doc.querySelectorAll('a[target="_blank"]')).forEach((link) => {
+      const rel = new Set((link.getAttribute('rel') || '').split(/\s+/).filter(Boolean));
+      rel.add('noopener');
+      link.setAttribute('rel', Array.from(rel).join(' '));
+    });
 
     document.documentElement.replaceWith(doc.documentElement);
 

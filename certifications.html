@@ -6,6 +6,7 @@
   <meta name="description" content="Professional certifications and applied learning completed by Om Jay Mishra, Data Engineer.">
   <meta name="theme-color" content="#ffffff">
   <link rel="canonical" href="https://omjay.github.io/Omjay-Portfolio/certifications.html">
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='12' fill='%231c1e21'/%3E%3Ctext x='32' y='41' text-anchor='middle' font-family='Arial' font-size='24' font-weight='700' fill='%23fbfbf9'%3EOM%3C/text%3E%3C/svg%3E">
   <meta property="og:type" content="profile">
   <meta property="og:title" content="Certifications | Om Jay Mishra">
   <meta property="og:description" content="Exam-backed data engineering credentials and selected applied learning, arranged as a verified timeline.">
@@ -19,7 +20,7 @@
       --paper-soft: #f7f8f6;
       --ink: #1c1e21;
       --ink-soft: #545961;
-      --muted: #7b818a;
+      --muted: #636b74;
       --line: #e2e4df;
       --line-strong: #c9cec9;
       --blue: #1f6791;
@@ -80,6 +81,9 @@
     }
 
     .brand {
+      min-height: 44px;
+      display: inline-flex;
+      align-items: center;
       font-family: var(--serif);
       font-size: 20px;
       font-weight: 650;
@@ -258,11 +262,7 @@
     }
 
     .rail-progress {
-      position: absolute;
-      inset: 0 0 auto;
-      height: var(--timeline-progress, 0%);
-      background: var(--blue);
-      transition: height 120ms linear;
+      display: none;
     }
 
     .rail-years {
@@ -275,6 +275,10 @@
     }
 
     .rail-year {
+      width: 44px;
+      min-height: 44px;
+      display: inline-flex;
+      align-items: center;
       color: var(--muted);
       font-family: var(--mono);
       font-size: 10px;
@@ -346,6 +350,19 @@
     .course-provider .brand-icon {
       width: 15px;
       height: 15px;
+    }
+
+    .course-topic-icon {
+      align-items: center;
+      border-left: 1px solid var(--line-strong);
+      display: inline-flex;
+      margin-left: 2px;
+      padding-left: 8px;
+    }
+
+    .course-topic-icon .brand-icon {
+      height: 17px;
+      width: 17px;
     }
 
     .issuer--databricks { color: var(--red); }
@@ -594,7 +611,9 @@
         width: min(100% - 40px, 1120px);
       }
 
-      .header-nav a:not(.current) { display: none; }
+      .header-inner { align-items: flex-start; flex-direction: column; gap: 0; padding-block: 10px; }
+      .header-nav { justify-content: space-between; width: 100%; }
+      .header-nav a { font-size: 10px; padding-inline: 8px; }
 
       .hero { padding: 64px 0 48px; }
 
@@ -618,7 +637,7 @@
       .rail-label { display: none; }
       .rail-track { height: 180px; margin-left: 3px; }
       .rail-years { transform: translateX(11px); }
-      .rail-year { writing-mode: vertical-rl; font-size: 8px; }
+      .rail-year { justify-content: center; writing-mode: vertical-rl; font-size: 8px; }
 
       .credential {
         display: block;
@@ -643,6 +662,11 @@
       .footer-inner { flex-direction: column; }
     }
 
+    @media (max-width: 360px) {
+      .header-nav { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); }
+      .header-nav a { justify-content: center; padding-inline: 4px; }
+    }
+
     @media (prefers-reduced-motion: reduce) {
       html { scroll-behavior: auto; }
       .rail-progress { transition: none; }
@@ -654,17 +678,17 @@
     <div class="header-inner">
       <a class="brand" href="index.html">Om Jay Mishra</a>
       <nav class="header-nav" aria-label="Page navigation">
+        <a href="index.html">PORTFOLIO</a>
+        <a href="toolkit.html?v=20260904-3">TOOLKIT</a>
         <a class="current" href="#credentials" aria-current="page">CERTIFICATIONS</a>
-        <a href="toolkit.html">MIND-MAP</a>
         <a href="resume.html">RESUME</a>
-        <a href="index.html">PORTFOLIO ↗</a>
       </nav>
     </div>
   </header>
 
   <main>
     <section class="hero" aria-labelledby="page-title">
-      <p class="eyebrow">Credential ledger · 2022—2026</p>
+      <p class="eyebrow">Credentials, 2022-2026</p>
       <h1 id="page-title">Proof of depth.<br>Then breadth.</h1>
       <p class="hero-copy">
         <strong>Exam-backed credentials lead this page</strong> because they carry the clearest signal for data engineering roles. Course certificates follow as evidence of continuous learning, without pretending they are equivalent.
@@ -687,10 +711,10 @@
 
     <section id="credentials" aria-labelledby="credentials-title">
       <div class="section-heading">
-        <p class="section-kicker">01 · Core signal</p>
+        <p class="section-kicker">Exam-backed credentials</p>
         <div>
           <h2 class="section-title" id="credentials-title">Industry certifications</h2>
-          <p class="section-intro">A progression from platform fundamentals to production-grade Lakehouse engineering. Scroll the timeline to follow the path.</p>
+          <p class="section-intro">A progression from platform fundamentals to production-grade Lakehouse engineering.</p>
         </div>
       </div>
 
@@ -794,7 +818,7 @@
 
     <section class="learning-section" id="learning" aria-labelledby="learning-title">
       <div class="section-heading">
-        <p class="section-kicker">02 · Breadth</p>
+        <p class="section-kicker">Supporting breadth</p>
         <div>
           <h2 class="section-title" id="learning-title">Applied learning</h2>
           <p class="section-intro">Selected course completions that explain supporting interests across AI, Snowflake, SQL and analytics foundations.</p>
@@ -830,15 +854,15 @@
           <a class="course-link" href="https://www.coursera.org/account/accomplishments/verify/CEOMXRN74JES" target="_blank" rel="noopener">VIEW RECORD ↗</a>
         </article>
 
-        <article class="course">
-          <div class="course-topline"><span class="course-provider"><img class="brand-icon" src="https://api.iconify.design/vscode-icons:file-type-sql.svg" alt="" aria-hidden="true" loading="lazy">Udemy</span><span class="course-date">Aug 2022</span></div>
+        <article class="course" data-course="udemy-sql">
+          <div class="course-topline"><span class="course-provider"><img class="brand-icon course-provider-logo" src="https://api.iconify.design/simple-icons:udemy.svg?color=%23A435F0" alt="" aria-hidden="true" loading="lazy">Udemy<span class="course-topic-icon" role="img" aria-label="SQL course"><img class="brand-icon" src="https://api.iconify.design/vscode-icons:file-type-sql.svg" alt="" aria-hidden="true" loading="lazy"></span></span><span class="course-date">Aug 2022</span></div>
           <h3>Data Analytics: Intro to SQL using Healthcare Data</h3>
           <p>An early SQL and domain-data foundation. Included as learning history, below the exam-backed credentials.</p>
           <a class="course-link" href="https://www.udemy.com/certificate/UC-540a9dcf-e2b4-4ee2-9c28-f8612f320968/" target="_blank" rel="noopener">VIEW RECORD ↗</a>
         </article>
 
-        <article class="course">
-          <div class="course-topline"><span class="course-provider"><img class="brand-icon" src="https://api.iconify.design/vscode-icons:file-type-excel.svg" alt="" aria-hidden="true" loading="lazy">Udemy</span><span class="course-date">Jul 2022</span></div>
+        <article class="course" data-course="udemy-excel">
+          <div class="course-topline"><span class="course-provider"><img class="brand-icon course-provider-logo" src="https://api.iconify.design/simple-icons:udemy.svg?color=%23A435F0" alt="" aria-hidden="true" loading="lazy">Udemy<span class="course-topic-icon" role="img" aria-label="Microsoft Excel course"><img class="brand-icon" src="https://api.iconify.design/vscode-icons:file-type-excel.svg" alt="" aria-hidden="true" loading="lazy"></span></span><span class="course-date">Jul 2022</span></div>
           <h3>Microsoft Excel: Advanced Formulas &amp; Functions</h3>
           <p>A foundation in analytical formulas and spreadsheet problem-solving from the start of the data career path.</p>
           <a class="course-link" href="https://www.udemy.com/certificate/UC-2836c22b-6722-4289-95a8-7c56843b3f51/" target="_blank" rel="noopener">VIEW RECORD ↗</a>
@@ -861,26 +885,25 @@
       const shell = document.getElementById('timeline-shell');
       const items = Array.from(document.querySelectorAll('[data-year]'));
       const yearLinks = Array.from(document.querySelectorAll('.rail-year'));
+      document.querySelectorAll('.brand-icon').forEach((icon) => {
+        const hideBrokenIcon = () => { icon.hidden = true; };
+        if (icon.complete && icon.naturalWidth === 0) hideBrokenIcon();
+        else icon.addEventListener('error', hideBrokenIcon, { once: true });
+      });
       if (!shell || !items.length) return;
 
-      const updateTimeline = () => {
-        const rect = shell.getBoundingClientRect();
-        const viewportAnchor = window.innerHeight * 0.38;
-        const travelled = viewportAnchor - rect.top;
-        const available = Math.max(1, rect.height - viewportAnchor);
-        const progress = Math.max(0, Math.min(1, travelled / available));
-        shell.style.setProperty('--timeline-progress', `${Math.round(progress * 100)}%`);
-
-        let active = items[0];
-        for (const item of items) {
-          if (item.getBoundingClientRect().top <= viewportAnchor) active = item;
-        }
-        yearLinks.forEach((link) => link.classList.toggle('is-active', link.textContent.trim() === active.dataset.year));
+      const activateYear = (year) => {
+        yearLinks.forEach((link) => link.classList.toggle('is-active', link.textContent.trim() === year));
       };
 
-      updateTimeline();
-      window.addEventListener('scroll', updateTimeline, { passive: true });
-      window.addEventListener('resize', updateTimeline, { passive: true });
+      const observer = new IntersectionObserver((entries) => {
+        const visibleItems = entries
+          .filter((entry) => entry.isIntersecting)
+          .sort((left, right) => right.intersectionRatio - left.intersectionRatio);
+        if (visibleItems[0]) activateYear(visibleItems[0].target.dataset.year);
+      }, { rootMargin: '-28% 0px -50% 0px', threshold: [0, 0.25, 0.5, 0.75] });
+
+      items.forEach((item) => observer.observe(item));
     })();
   </script>
 </body>
