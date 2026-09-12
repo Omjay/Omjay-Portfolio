@@ -3,7 +3,7 @@ const fs = require('node:fs');
 const path = require('node:path');
 
 const root = path.resolve(__dirname, '..');
-const read = (name) => fs.readFileSync(path.join(root, name), 'utf8');
+const read = (name) => fs.readFileSync(path.join(root, name), 'utf8').replace(/\r\n/g, '\n');
 const strip = (html) => html
   .replace(/<script[\s\S]*?<\/script>/gi, ' ')
   .replace(/<style[\s\S]*?<\/style>/gi, ' ')
@@ -25,6 +25,9 @@ function testHomepage() {
   assert.ok(strip(fallback[1]).length >= 500, 'raw HTML fallback must contain at least 500 characters');
   assert.equal((fallback[1].match(/<h1\b/g) || []).length, 1, 'fallback must contain one H1');
   assert.ok(!/<h[3-6]\b/.test(fallback[1]), 'fallback headings must not skip levels');
+  assert.ok(!/\.js\s+#agent-fallback\s*\{\s*display:\s*none/.test(html), 'fallback must remain usable until the bundle renders');
+  assert.ok(!html.includes('This page requires JavaScript to display.'), 'no-JavaScript content must not be labelled unavailable');
+  assert.ok(fs.existsSync(path.join(root, '.nojekyll')), 'publish the Markdown resource without Jekyll processing');
 
   const jsonLdBlocks = [...html.matchAll(/<script type="application\/ld\+json">([\s\S]*?)<\/script>/g)];
   assert.ok(jsonLdBlocks.length >= 1, 'homepage JSON-LD is missing');
@@ -71,8 +74,11 @@ function testSitemapAndPages() {
 function testRecoveryAndImage() {
   const notFound = read('404.html');
   for (const target of ['sitemap.xml', 'llms.txt', 'index.md', 'developers/']) assert.ok(notFound.includes(target));
+  for (const target of ['sitemap.xml', 'llms.txt', 'index.md', 'developers/']) assert.ok(notFound.includes(`href="/Omjay-Portfolio/${target}"`), `404 recovery link must be clickable: ${target}`);
   const png = fs.readFileSync(path.join(root, 'og-image.png'));
   assert.equal(png.subarray(1, 4).toString(), 'PNG');
+  assert.equal(png.readUInt32BE(16), 1200);
+  assert.equal(png.readUInt32BE(20), 630);
 }
 
 testHomepage();

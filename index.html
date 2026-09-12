@@ -19,7 +19,7 @@
   <meta property="og:image:alt" content="Om Jay Mishra, Data Engineer - Azure Databricks, PySpark and Delta Lake">
   <meta name="twitter:card" content="summary_large_image">
   <link rel="alternate" type="text/markdown" href="https://omjay.github.io/Omjay-Portfolio/index.md" title="Om Jay Mishra portfolio in Markdown">
-  <script>document.documentElement.classList.add('js');</script>
+
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
@@ -84,18 +84,18 @@
     #__bundler_thumbnail { position: fixed; inset: 0; width: 100%; height: 100%; display: flex; align-items: center; justify-content: center; background: #fff; z-index: 9999; }
     #__bundler_thumbnail svg { width: 100%; height: 100%; object-fit: contain; }
     #__bundler_placeholder { color: #999; font-size: 14px; }
-    .js #agent-fallback { display: none; }
+    #__bundler_loading, #__bundler_thumbnail { display: none; }
+    body { display: block; }
     #agent-fallback { width: min(920px, calc(100% - 40px)); margin: 48px auto; color: #1c1e21; line-height: 1.65; }
     #agent-fallback h1, #agent-fallback h2 { font-family: Georgia, serif; line-height: 1.2; }
     #agent-fallback nav { display: flex; flex-wrap: wrap; gap: 16px; margin-bottom: 48px; }
     #agent-fallback a { color: #1f6791; }
+    #agent-fallback h2 { margin-top: 1.5em; }
+    #agent-fallback nav a { display: inline-flex; align-items: center; min-height: 44px; }
+    #agent-fallback footer { margin-top: 2em; }
+    #agent-fallback a:focus-visible { outline: 3px solid #1f6791; outline-offset: 3px; }
   </style>
-  <noscript>
-    <style>body { display: block; } #__bundler_loading, #__bundler_thumbnail { display: none; }</style>
-    <div style="position:fixed;bottom:12px;left:12px;font:13px/1.4 -apple-system,BlinkMacSystemFont,sans-serif;color:#999;background:rgba(255,255,255,0.9);padding:6px 12px;border-radius:6px;box-shadow:0 1px 4px rgba(0,0,0,0.08);z-index:10000;">
-      This page requires JavaScript to display.
-    </div>
-  </noscript>
+
 </head>
 <body>
   <div id="agent-fallback">
@@ -756,7 +756,7 @@ document.addEventListener('DOMContentLoaded', async function() {
           padding-right: 32px !important;
         }
 
-        .portfolio-footer > div:last-child {
+        .portfolio-footer > div:last-of-type {
           color: var(--portfolio-ink-tertiary) !important;
         }
 
@@ -1512,7 +1512,7 @@ document.addEventListener('DOMContentLoaded', async function() {
     const tourHint = Array.from(homeMain.querySelectorAll('div')).find((element) =>
       element.children.length === 0 && element.textContent.trim().startsWith('KEEP SCROLLING PAST THE END TO TOUR THE WORK')
     );
-    if (tourHint) tourHint.textContent = 'Select a role above to explore the work.';
+    if (tourHint) { tourHint.textContent = 'Select a role above to explore the work.'; tourHint.style.color = '#59636e'; }
 
     const contactLink = Array.from(doc.querySelectorAll('[role="link"]')).find((element) =>
       element.textContent.trim() === 'CONTACT'
@@ -1614,6 +1614,20 @@ document.addEventListener('DOMContentLoaded', async function() {
       link.setAttribute('rel', Array.from(rel).join(' '));
     });
 
+    const resourceFooter = doc.querySelector('footer');
+    if (resourceFooter) {
+      const resourceNav = doc.createElement('nav');
+      resourceNav.setAttribute('aria-label', 'Site information');
+      resourceNav.style.cssText = 'display:flex;flex-wrap:wrap;gap:8px 20px;padding:20px 0;';
+      for (const [label, href] of [['About', 'about/'], ['Contact details', 'contact/'], ['Privacy', 'privacy/'], ['Developer resources', 'developers/'], ['Markdown portfolio', 'index.md']]) {
+        const link = doc.createElement('a');
+        link.textContent = label;
+        link.href = href;
+        link.style.cssText = 'display:inline-flex;align-items:center;min-height:44px;min-width:44px;color:#1f6791;font-size:14px;';
+        resourceNav.appendChild(link);
+      }
+      resourceFooter.appendChild(resourceNav);
+    }
     document.documentElement.replaceWith(doc.documentElement);
 
     // Resolve page-frame markers: mint this document's own blob for each

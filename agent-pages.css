@@ -18,3 +18,7 @@ p,li{max-width:72ch;color:var(--muted)}
 .card{background:var(--surface);border:1px solid var(--border);border-radius:12px;padding:24px;margin:22px 0}
 footer{border-top:1px solid var(--border);padding:28px 0 48px;font-size:.9rem}
 @media(max-width:520px){.site-header nav{align-items:flex-start}.brand{width:100%}.page{padding-top:48px}}
+
+.site-header nav a,footer a{display:inline-flex;align-items:center;min-height:44px}
+.page{overflow-wrap:anywhere}
+pre{white-space:pre-wrap;overflow-wrap:anywhere}
