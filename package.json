@@ -1,0 +1,7 @@
+{
+  "name": "omjay-portfolio",
+  "private": true,
+  "scripts": {
+    "test": "node scripts/agent-readiness.test.cjs"
+  }
+}

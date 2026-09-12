@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630" role="img" aria-labelledby="title desc">
+  <title id="title">Om Jay Mishra - Data Engineer</title><desc id="desc">Azure Databricks, PySpark and Delta Lake portfolio</desc>
+  <rect width="1200" height="630" fill="#fbfbf9"/><rect x="60" y="60" width="1080" height="510" rx="28" fill="#fff" stroke="#e2e5e6" stroke-width="3"/>
+  <rect x="96" y="104" width="12" height="422" rx="6" fill="#1f6791"/>
+  <text x="150" y="212" fill="#1f6791" font-family="Arial, sans-serif" font-size="28" font-weight="700" letter-spacing="4">DATA ENGINEER</text>
+  <text x="150" y="325" fill="#1c1e21" font-family="Georgia, serif" font-size="78" font-weight="700">Om Jay Mishra</text>
+  <text x="150" y="404" fill="#4f565d" font-family="Arial, sans-serif" font-size="34">Azure Databricks · PySpark · Delta Lake</text>
+  <text x="150" y="480" fill="#4f565d" font-family="Arial, sans-serif" font-size="26">Governed Lakehouse platforms that run in minutes, not hours.</text>
+</svg>
