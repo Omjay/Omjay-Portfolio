@@ -18,7 +18,7 @@ Om Jay Mishra is an Azure-focused Data Engineer in Chennai, India. He builds gov
 
 ## Credentials
 
-Databricks Certified Data Engineer Professional, Databricks Certified Data Engineer Associate, Microsoft Certified Azure Data Fundamentals (DP-900), and Google AI Professional Certificate.
+Microsoft Fabric Data Engineer Associate (DP-700), Databricks Certified Data Engineer Professional, Databricks Certified Data Engineer Associate, Microsoft Certified Azure Data Fundamentals (DP-900), and Google AI Professional Certificate.
 
 ## Links
 
