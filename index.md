@@ -1,6 +1,6 @@
 # Om Jay Mishra - Data Engineer
 
-Om Jay Mishra is an Azure-focused Data Engineer in Chennai, India. He builds governed Lakehouse platforms with Azure Databricks, PySpark, Delta Lake, Azure Data Factory, SQL and Python.
+Om Jay Mishra is an Azure-focused Data Engineer in Chennai, India. He builds governed Lakehouse platforms with Azure Databricks, PySpark, Delta Lake, Azure Data Factory, SQL and Python. His toolkit also includes KQL for querying and dbt for data modeling.
 
 ## Selected impact
 
