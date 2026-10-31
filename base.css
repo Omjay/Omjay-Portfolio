@@ -1,0 +1,85 @@
+/* Hallmark · base · what the Floor already decided: overflow, focus, type defaults, reduced motion. */
+*, *::before, *::after { box-sizing: border-box; }
+
+html, body { overflow-x: clip; }
+html {
+  -webkit-text-size-adjust: 100%;
+  scroll-behavior: smooth;
+  scroll-padding-top: 88px;
+}
+
+body {
+  background: var(--color-paper);
+  color: var(--color-ink);
+  font: 400 var(--text-md) / 1.6 var(--font-body);
+  font-synthesis: none;
+  margin: 0;
+  text-rendering: optimizeLegibility;
+}
+
+h1, h2, h3 {
+  color: var(--color-ink);
+  font-family: var(--font-display);
+  font-weight: 600;
+  margin: 0;
+  min-width: 0;
+  overflow-wrap: break-word;
+  text-wrap: balance;
+}
+h1 { font-size: var(--text-display); letter-spacing: -0.03em; line-height: 1.02; max-width: 16ch; }
+h2 { font-size: var(--text-section); letter-spacing: -0.02em; line-height: 1.08; max-width: 24ch; }
+h3 { font-size: var(--text-title); letter-spacing: -0.01em; line-height: 1.2; max-width: 40ch; }
+
+p, ul, ol, dl, figure { margin: 0; }
+p, li, dd { text-wrap: pretty; }
+
+a { color: var(--color-accent); text-decoration-thickness: 1px; text-underline-offset: 0.2em; }
+a:hover { color: var(--color-accent-hover); }
+
+img, svg { display: block; max-width: 100%; }
+
+code, pre { font-family: var(--font-mono); }
+
+::selection { background: var(--color-accent-soft); color: var(--color-ink); }
+
+:focus-visible {
+  outline: 2px solid var(--color-focus);
+  outline-offset: 3px;
+}
+
+.container {
+  margin-inline: auto;
+  max-width: var(--container);
+  padding-inline: var(--gutter);
+}
+
+.visually-hidden {
+  clip: rect(0 0 0 0);
+  clip-path: inset(50%);
+  height: 1px;
+  overflow: hidden;
+  position: absolute;
+  white-space: nowrap;
+  width: 1px;
+}
+
+.skip-link {
+  background: var(--color-ink);
+  color: var(--color-paper);
+  left: var(--space-md);
+  padding: var(--space-xs) var(--space-md);
+  position: absolute;
+  top: var(--space-xs);
+  transform: translateY(-160%);
+  z-index: 400;
+}
+.skip-link:focus-visible { transform: none; }
+
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}

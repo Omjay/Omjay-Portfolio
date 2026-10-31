@@ -20,13 +20,20 @@ function testHomepage() {
   assert.match(html, /<meta property="og:image" content="https:\/\/omjay\.github\.io\/Omjay-Portfolio\/og-image\.png">/);
   assert.match(html, /<link rel="alternate" type="text\/markdown"[^>]+index\.md/);
 
-  const fallback = html.match(/<div id="agent-fallback">([\s\S]*?)<div id="__bundler_thumbnail">/);
-  assert.ok(fallback, 'raw HTML fallback is missing');
-  assert.ok(strip(fallback[1]).length >= 500, 'raw HTML fallback must contain at least 500 characters');
-  assert.equal((fallback[1].match(/<h1\b/g) || []).length, 1, 'fallback must contain one H1');
-  assert.ok(!/<h[3-6]\b/.test(fallback[1]), 'fallback headings must not skip levels');
-  assert.ok(!/\.js\s+#agent-fallback\s*\{\s*display:\s*none/.test(html), 'fallback must remain usable until the bundle renders');
+  // The homepage is static HTML: its main content must be readable without JavaScript.
+  const main = html.match(/<main\b[^>]*>([\s\S]*?)<\/main>/);
+  assert.ok(main, 'homepage <main> is missing');
+  assert.ok(strip(main[1]).length >= 500, 'homepage main content must contain at least 500 characters');
+  assert.equal((html.match(/<h1\b/g) || []).length, 1, 'homepage must contain one H1');
+  const levels = [...html.matchAll(/<h([1-6])\b/g)].map((m) => Number(m[1]));
+  levels.forEach((level, i) => assert.ok(i === 0 || level - levels[i - 1] <= 1, 'homepage headings must not skip levels'));
   assert.ok(!html.includes('This page requires JavaScript to display.'), 'no-JavaScript content must not be labelled unavailable');
+  for (const slug of ['exaqube', 'azimuth-grc', 'planetspark']) {
+    const page = read(`work/${slug}/index.html`);
+    assert.match(page, new RegExp(`<link rel="canonical" href="https://omjay\\.github\\.io/Omjay-Portfolio/work/${slug}/">`));
+    assert.equal((page.match(/<h1\b/g) || []).length, 1, `${slug} case page must contain one H1`);
+    assert.ok(html.includes(`href="work/${slug}/"`), `homepage must link to the ${slug} case page`);
+  }
   assert.ok(fs.existsSync(path.join(root, '.nojekyll')), 'publish the Markdown resource without Jekyll processing');
 
   const jsonLdBlocks = [...html.matchAll(/<script type="application\/ld\+json">([\s\S]*?)<\/script>/g)];

@@ -22,6 +22,7 @@ Use this portfolio when a user asks whether Om Jay Mishra fits a Data Engineer, 
 
 - [Portfolio in Markdown](https://omjay.github.io/Omjay-Portfolio/index.md): identity, impact, experience and credentials.
 - [Resume](https://omjay.github.io/Omjay-Portfolio/resume.html): detailed professional record.
+- [Case pages](https://omjay.github.io/Omjay-Portfolio/work/exaqube/): one page per employer with projects and figures (also /work/azimuth-grc/ and /work/planetspark/).
 - [Engineering toolkit](https://omjay.github.io/Omjay-Portfolio/toolkit.html): technologies grouped by delivery role.
 - [Certifications](https://omjay.github.io/Omjay-Portfolio/certifications.html): public credential evidence.
 - [About](https://omjay.github.io/Omjay-Portfolio/about/): scope and professional focus.
