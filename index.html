@@ -148,28 +148,50 @@
           </div>
           <ol class="run-rows">
             <li class="run-row" style="--share: 1" data-minutes="360">
-              <div class="run-row-label"><strong>Before: skewed full scans</strong><span class="clock" data-clock>6 h 00 m</span></div>
+              <div class="run-row-label"><strong>Before: a manual 6-hour process</strong><span class="clock" data-clock>6 h 00 m</span></div>
               <div class="run-track" aria-hidden="true"><div class="run-fill"></div></div>
             </li>
             <li class="run-row run-row--after" style="--share: 0.0833" data-minutes="30">
-              <div class="run-row-label"><strong>After: Liquid Clustering</strong><span class="clock" data-clock>30 m</span></div>
+              <div class="run-row-label"><strong>After: the pipeline I built</strong><span class="clock" data-clock>30 m</span></div>
               <div class="run-track" aria-hidden="true"><div class="run-fill"></div></div>
             </li>
           </ol>
-          <figcaption id="run-caption">One 500M+ record pipeline at Azimuth GRC, both runs drawn on the same time axis. Clustered Delta tables and incremental merges touch only the data that changed.</figcaption>
+          <figcaption id="run-caption">The same Azimuth GRC workload on one time axis: 20M+ records when I first automated it, 500M+ as it grew.</figcaption>
         </figure>
       </div>
     </section>
 
-    <section class="section--tight" aria-labelledby="figures-title">
+    <section class="section--tight" aria-labelledby="changes-title">
       <div class="container">
         <div class="section-head">
-          <h2 id="figures-title">What else got faster, or cheaper</h2>
+          <h2 id="changes-title">How six hours became thirty minutes</h2>
+          <p>Four changes I made at Azimuth GRC, in the order I made them, while the data grew from 20M+ to 500M+ records.</p>
+        </div>
+        <div class="changes" data-steps>
+          <ol>
+            <li><h3>Automated the whole run</h3><p>Replaced a manual 6-hour process with one Azure Data Factory and Databricks pipeline, from raw-data validation to the Tableau refresh.</p><small>Azure Data Factory, Databricks</small></li>
+            <li><h3>Loaded only what changed</h3><p>Incremental Delta Lake loads and merges, so each run skips the data it has already processed.</p><small>Delta Lake, PySpark</small></li>
+            <li><h3>Fixed the skew as data grew</h3><p>Past 500M+ records one oversized partition held up every run; Liquid Clustering and compaction spread the load evenly.</p><small>Liquid Clustering, Delta</small></li>
+            <li><h3>Remodeled and right-sized</h3><p>A Gold-layer star schema made queries 65% faster; job clusters, autoscaling and Photon cut DBU spend 25%.</p><small>Star schema, Photon</small></li>
+          </ol>
+          <div class="changes-foot">
+            <button class="text-button" type="button" data-steps-play hidden>Walk through it</button>
+            <a href="work/azimuth-grc/">See the Azimuth GRC case</a>
+          </div>
+          <p class="visually-hidden" aria-live="polite" data-steps-status></p>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" aria-labelledby="figures-title">
+      <div class="container">
+        <div class="section-head">
+          <h2 id="figures-title">What else I changed</h2>
         </div>
         <ul class="figures">
-          <li><b>65%</b><span>faster Gold-layer queries across 50M+ records, from a star schema</span><small>Azimuth GRC</small></li>
-          <li><b>25%</b><span>lower Databricks DBU spend through job clusters, autoscaling and Photon</span><small>Azimuth GRC</small></li>
-          <li><b>270+ h</b><span>of recurring manual work automated with ADF and Databricks</span><small>Azimuth GRC</small></li>
+          <li><b>270+ h</b><span>of recurring manual work replaced by ADF and Databricks pipelines</span><small>Azimuth GRC</small></li>
+          <li><b>50%</b><span>less pipeline maintenance from a metadata-driven ADF framework</span><small>Azimuth GRC</small></li>
+          <li><b>99.9%</b><span>data reliability on rate-limited APIs, with backoff and alerting</span><small>Azimuth GRC</small></li>
           <li><b>~70%</b><span>fewer daily compute hours on a thrice-daily pipeline</span><small>ExaQube Technologies</small></li>
         </ul>
       </div>
@@ -244,7 +266,7 @@
               </figure>
             </div>
             <div class="work-what">
-              <p>Led the move from legacy databases to an Azure Databricks Lakehouse: Liquid Clustering, a Gold-layer star schema, Unity Catalog governance and Azure DevOps CI/CD.</p>
+              <p>Built the automated ADF and Databricks pipeline behind the 6&nbsp;h to 30&nbsp;m result, led the move to a Lakehouse, and set up Unity Catalog governance and Azure DevOps CI/CD.</p>
               <p class="work-stack">Databricks, PySpark, Delta Lake, ADF</p>
               <a class="work-case" href="work/azimuth-grc/">Read the Azimuth GRC case</a>
             </div>
@@ -297,42 +319,6 @@
             </div>
           </li>
         </ol>
-      </div>
-    </section>
-
-    <section class="section" aria-labelledby="skew-title">
-      <div class="container explain">
-        <div class="explain-copy">
-          <h2 id="skew-title">Where the six hours went</h2>
-          <p>A Spark stage ends when its slowest task ends. One oversized partition kept the whole run waiting while every other task sat idle.</p>
-          <p>Liquid Clustering spread the data evenly and let each run skip files that had not changed.</p>
-          <pre class="code"><span class="k">ALTER TABLE</span> silver.compliance_records
-  <span class="k">CLUSTER BY</span> (entity_id, record_date);
-<span class="k">OPTIMIZE</span> silver.compliance_records;</pre>
-          <p class="code-note">Table and column names are simplified.</p>
-        </div>
-
-        <figure class="skew" data-switch data-state="before" aria-labelledby="skew-caption">
-          <div class="skew-head">
-            <div class="segmented" role="group" aria-label="Show the stage">
-              <button type="button" data-set="before" aria-pressed="true">Before</button>
-              <button type="button" data-set="after" aria-pressed="false">With Liquid Clustering</button>
-            </div>
-            <p class="skew-total" aria-live="polite"><span data-show="before">Stage runs 6 h 00 m</span><span data-show="after">Stage runs 30 m</span></p>
-          </div>
-          <ul class="skew-tasks" aria-hidden="true">
-            <li style="--before: 0.2; --after: 0.075"><i></i></li>
-            <li style="--before: 0.23; --after: 0.08"><i></i></li>
-            <li style="--before: 0.17; --after: 0.078"><i></i></li>
-            <li style="--before: 0.25; --after: 0.083"><i></i></li>
-            <li style="--before: 0.21; --after: 0.08"><i></i></li>
-            <li style="--before: 0.24; --after: 0.076"><i></i></li>
-            <li style="--before: 0.19; --after: 0.082"><i></i></li>
-            <li class="straggler" style="--before: 1; --after: 0.083"><i></i></li>
-          </ul>
-          <div class="skew-axis" aria-hidden="true"><span>0</span><span>6 h</span></div>
-          <figcaption id="skew-caption">Eight tasks in one stage on a six-hour axis. Task lengths are illustrative; the totals are real.</figcaption>
-        </figure>
       </div>
     </section>
 

@@ -573,3 +573,38 @@ a.cred:hover { border-color: var(--color-accent); color: var(--color-accent); }
   .v-ship { opacity: 1; transform: none; }
   .vignette-foot .text-button { display: none; }
 }
+
+/* The four changes behind 6 h to 30 m: a real ordered sequence, highlighted by the walk-through. */
+.changes ol {
+  counter-reset: change;
+  display: grid;
+  gap: var(--gap-columns);
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  list-style: none;
+  padding: 0;
+}
+.changes li {
+  border-top: 2px solid var(--color-rule);
+  counter-increment: change;
+  display: grid;
+  gap: var(--space-sm);
+  align-content: start;
+  padding-top: var(--space-lg);
+  transition: border-color var(--dur-short) var(--ease-out);
+}
+.changes li::before {
+  color: var(--color-muted);
+  content: counter(change);
+  font: 600 var(--text-display-s) / 1 var(--font-display);
+  font-variant-numeric: tabular-nums;
+  transition: color var(--dur-short) var(--ease-out);
+}
+.changes li h3 { font-size: var(--text-title); }
+.changes li p { color: var(--color-ink-2); }
+.changes li small { color: var(--color-muted); font-size: var(--text-sm); }
+.changes li.is-current { border-top-color: var(--color-accent); }
+.changes li.is-current::before { color: var(--color-accent); }
+.changes-foot { align-items: center; display: flex; flex-wrap: wrap; gap: var(--space-sm) var(--space-lg); margin-top: var(--space-xl); }
+.changes-foot a { align-items: center; display: inline-flex; font-weight: 600; min-height: 44px; }
+@media (max-width: 60rem) { .changes ol { grid-template-columns: repeat(2, minmax(0, 1fr)); row-gap: var(--space-xl); } }
+@media (max-width: 30rem) { .changes ol { grid-template-columns: minmax(0, 1fr); } }

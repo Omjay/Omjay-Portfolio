@@ -84,16 +84,34 @@
           <h2 id="lakehouse-migration-title">Architectural migration and Lakehouse transition</h2>
           <p class="project-stack">Azure, Databricks, Delta Lake</p>
           <ul class="points">
+              <li>Designed and built the pipeline that replaced a manual 6-hour process: one automated Azure Data Factory and Databricks run, from raw-data validation to the Tableau refresh, in 30 minutes for 20M+ records (12x faster).</li>
               <li>Spearheaded a full-scale migration from traditional databases to a Databricks Lakehouse, converting legacy SQL procedures into scalable PySpark logic.</li>
+              <li>Architected incremental loading patterns on Delta Lake, so each run touches only new and changed data.</li>
               <li>Designed a star schema in the Gold layer: join overhead down, query performance up 65% across 50M+ records.</li>
-              <li>Architected incremental loading patterns on Delta Lake, keeping data fresh while minimizing redundant compute.</li>
-              <li>Automated end-to-end pipelines from raw ingestion to Tableau dashboard refreshes; file compaction and Delta vacuuming cut the storage footprint 30%.</li>
+              <li>File compaction and Delta vacuuming cut the storage footprint 30%.</li>
           </ul>
         </div>
         <div class="project-figure">
+          <figure class="run" data-race aria-labelledby="run-azi">
+            <div class="run-head">
+              <p class="run-figure"><span class="from">6 h 00 m</span> to 30 m</p>
+              <button class="text-button" type="button" data-race-replay hidden>Run it again</button>
+            </div>
+            <ol class="run-rows">
+            <li class="run-row" style="--share: 1.0000" data-minutes="360">
+              <div class="run-row-label"><strong>Before: a manual 6-hour process</strong><span class="clock" data-clock>6 h 00 m</span></div>
+              <div class="run-track" aria-hidden="true"><div class="run-fill"></div></div>
+            </li>
+            <li class="run-row run-row--after" style="--share: 0.0833" data-minutes="30">
+              <div class="run-row-label"><strong>After: the pipeline I built</strong><span class="clock" data-clock>30 m</span></div>
+              <div class="run-track" aria-hidden="true"><div class="run-fill"></div></div>
+            </li>
+            </ol>
+            <figcaption id="run-azi">The same workload on one time axis: 20M+ records when I first automated it, 500M+ as it grew.</figcaption>
+          </figure>
           <figure class="flow" data-steps aria-labelledby="flow-medallion">
             <div class="flow-head">
-              <p id="flow-medallion">How the data moves after the migration.</p>
+              <p id="flow-medallion">How the data moves through the pipeline I built.</p>
               <button class="text-button" type="button" data-steps-play hidden>Walk through it</button>
             </div>
             <ol>
@@ -101,12 +119,12 @@
               <li><strong>Bronze</strong><span>Raw Delta tables, loaded incrementally.</span></li>
               <li><strong>Silver</strong><span>Validated by the PySpark “Expectations” checks.</span></li>
               <li><strong>Gold</strong><span>A star schema: queries 65% faster across 50M+ records.</span></li>
-              <li><strong>Tableau</strong><span>Dashboards refreshed at the end of the pipeline.</span></li>
+              <li><strong>Tableau</strong><span>Dashboards refreshed automatically at the end of the run.</span></li>
             </ol>
             <p class="visually-hidden" aria-live="polite" data-steps-status></p>
           </figure>
           <ul class="case-figures">
-            <li><b>65%</b><span>faster Gold-layer queries</span></li>
+            <li><b>12x</b><span>faster than the manual process</span></li>
             <li><b>30%</b><span>smaller storage footprint</span></li>
           </ul>
         </div>
@@ -123,6 +141,7 @@
               <li>Eliminated 270+ hours of manual effort by orchestrating fragmented workflows (manual script runs, SQL stored-procedure triggers) into ADF and Databricks pipelines.</li>
               <li>Engineered a metadata-driven pipeline architecture in ADF for dynamic source schemas: maintenance overhead down 50%.</li>
               <li>Integrated custom Python scrapers and validation logic into scalable Azure pipelines with concurrent execution for faster extraction.</li>
+              <li>Reworked the scrapers to remove redundant calls and reduce time complexity, saving about 5% in monthly costs.</li>
               <li>Built a real-time ingestion framework for rate-limited APIs with exponential backoff and Azure Monitor alerting: 99.9% data reliability.</li>
           </ul>
         </div>
@@ -143,7 +162,7 @@
           <h2 id="performance-governance-title">High-volume performance and governance</h2>
           <p class="project-stack">Databricks, Delta Lake, Spark</p>
           <ul class="points">
-              <li>Resolved partition skew on 500M+ record pipelines with Liquid Clustering: runtimes cut from 6 hours to 30 minutes.</li>
+              <li>As the data grew past 500M+ records, diagnosed the partition skew holding up runs and resolved it with Liquid Clustering and compaction: runtimes from 6 hours to 30 minutes.</li>
               <li>Implemented Unity Catalog for centralized governance: fine-grained access controls and automated audit logs.</li>
               <li>Optimized Databricks DBU consumption 25% through job clusters, autoscaling and Photon.</li>
               <li>Engineered a custom “Expectations” data-quality framework in PySpark validating schema and business logic at the Bronze to Silver layer.</li>
@@ -151,26 +170,30 @@
           </ul>
         </div>
         <div class="project-figure">
-          <figure class="run" data-race aria-labelledby="run-azi">
-            <div class="run-head">
-              <p class="run-figure"><span class="from">6 h 00 m</span> to 30 m</p>
-              <button class="text-button" type="button" data-race-replay hidden>Run it again</button>
+          <figure class="skew" data-switch data-state="before" aria-labelledby="skew-azi">
+            <div class="skew-head">
+              <div class="segmented" role="group" aria-label="Show the run">
+                <button type="button" data-set="before" aria-pressed="true">Before</button>
+                <button type="button" data-set="after" aria-pressed="false">With Liquid Clustering</button>
+              </div>
+              <p class="skew-total" aria-live="polite"><span data-show="before">Run takes 6 h 00 m</span><span data-show="after">Run takes 30 m</span></p>
             </div>
-            <ol class="run-rows">
-            <li class="run-row" style="--share: 1.0000" data-minutes="360">
-              <div class="run-row-label"><strong>Before: skewed full scans</strong><span class="clock" data-clock>6 h 00 m</span></div>
-              <div class="run-track" aria-hidden="true"><div class="run-fill"></div></div>
-            </li>
-            <li class="run-row run-row--after" style="--share: 0.0833" data-minutes="30">
-              <div class="run-row-label"><strong>After: Liquid Clustering</strong><span class="clock" data-clock>30 m</span></div>
-              <div class="run-track" aria-hidden="true"><div class="run-fill"></div></div>
-            </li>
-            </ol>
-            <figcaption id="run-azi">500M+ record pipelines, both runs on the same time axis.</figcaption>
+            <ul class="skew-tasks" aria-hidden="true">
+              <li style="--before: 0.2; --after: 0.077"><i></i></li>
+              <li style="--before: 0.23; --after: 0.083"><i></i></li>
+              <li style="--before: 0.17; --after: 0.080"><i></i></li>
+              <li style="--before: 0.25; --after: 0.083"><i></i></li>
+              <li style="--before: 0.21; --after: 0.080"><i></i></li>
+              <li style="--before: 0.24; --after: 0.077"><i></i></li>
+              <li style="--before: 0.19; --after: 0.083"><i></i></li>
+              <li class="straggler" style="--before: 1; --after: 0.083"><i></i></li>
+            </ul>
+            <div class="skew-axis" aria-hidden="true"><span>0</span><span>6 h 00 m</span></div>
+            <figcaption id="skew-azi">Eight tasks in one stage on a shared axis. Task lengths are illustrative; the totals are real.</figcaption>
           </figure>
           <dl class="ba">
-            <div><dt>Before</dt><dd><strong>Skewed full scans</strong><span>Partition skew forced 6-hour runs over 500M+ records, windows that slipped past SLA as data grew.</span></dd></div>
-            <div><dt>After</dt><dd><strong>Liquid Clustering and pruning</strong><span>Clustered Delta tables and incremental merges touch only the data that changed: 30-minute runs.</span></dd></div>
+            <div><dt>Before</dt><dd><strong>Skewed full scans</strong><span>Partition skew forced 6-hour runs over 500M+ records.</span></dd></div>
+            <div><dt>After</dt><dd><strong>Liquid Clustering and compaction</strong><span>Data spread evenly and incremental merges touch only what changed: 30-minute runs.</span></dd></div>
           </dl>
           <ul class="case-figures">
             <li><b>25%</b><span>lower DBU consumption</span></li>

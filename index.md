@@ -4,7 +4,7 @@ Om Jay Mishra is an Azure-focused Data Engineer in Chennai, India. He builds gov
 
 ## Selected impact
 
-- Reduced a 500M+ record pipeline from six hours to thirty minutes using Liquid Clustering and incremental processing.
+- Built the Azure Data Factory and Databricks pipeline that turned a manual six-hour process into a thirty-minute run (20M+ records), then scaled it past 500M+ records with incremental Delta loads, Liquid Clustering for partition skew, and job-cluster tuning.
 - Improved Gold-layer query performance by 65% across more than 50M records using a Star Schema.
 - Reduced Databricks DBU consumption by 25% using job clusters, autoscaling and Photon.
 - Eliminated more than 270 hours of manual work through ADF and Databricks automation.
