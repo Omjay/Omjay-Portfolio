@@ -1,6 +1,7 @@
 /* Hallmark · v2.0.0 · redesign: full · shape: stat-led · genre: editorial · brand: kept · posture: restrained · job: hire · hero: stage (the run drawn to scale) · nav: edge-aligned, wordmark and five links · footer: colophon · signature: the 500M+ record pipeline as two bars on one time axis, 6 h against 30 m */
 /* Hallmark · pre-emit critique: P4 H4 E4 S5 R5 V4 · weakest: P and E, the case pages still read as lists; each now leads with one figure drawn from its own numbers */
 /* Hallmark · waive 13 · the hero keeps a sixth block, the credential links, because the owner asked for them by name */
+/* Hallmark · waive 80 · the ship, check-line and orbit vignettes are the owner's own pieces, kept by request; each loop pauses on demand, off-screen and under reduced motion */
 
 /* ---------- Chrome ---------- */
 .site-nav {
@@ -453,3 +454,122 @@ a.cred:hover { border-color: var(--color-accent); color: var(--color-accent); }
 .pager .container { display: flex; flex-wrap: wrap; gap: var(--space-md); justify-content: space-between; }
 .pager a { align-items: center; display: inline-flex; min-height: 44px; font-weight: 600; }
 .pager small { color: var(--color-muted); display: block; font-size: var(--text-sm); font-weight: 400; }
+
+/* ---------- Company vignettes ----------
+   Ambient loops: each has a Pause control, stops off-screen (site.js) and holds a
+   readable still frame under reduced motion. */
+.vignette { display: grid; gap: var(--space-2xs); margin-top: var(--space-lg); min-width: 0; }
+.vignette-art { border-radius: var(--radius-card); overflow: hidden; position: relative; }
+.vignette-art svg { display: block; height: auto; width: 100%; }
+.vignette-foot { align-items: center; display: flex; gap: var(--space-sm); justify-content: space-between; }
+.vignette-foot figcaption { color: var(--color-muted); font-size: var(--text-sm); line-height: 1.4; }
+.vignette.is-paused * { animation-play-state: paused !important; }
+.case-head .vignette { margin-top: 0; margin-bottom: var(--space-lg); }
+
+/* ExaQube: a container ship sails under a day and night sky, pinging its position. */
+.v-sea { background: linear-gradient(to bottom, var(--color-paper-2), var(--color-paper)); }
+.v-sky { animation: v-sky-path 60s linear infinite; }
+.v-sun { animation: v-sun-fade 60s linear infinite; }
+.v-sun circle { fill: var(--color-sun); }
+.v-sun .ring { fill: none; stroke: var(--color-sun); stroke-width: 1; opacity: 0.35; }
+.v-moon { animation: v-moon-fade 60s linear infinite; opacity: 0; }
+.v-moon path, .v-moon circle { fill: var(--color-steel); }
+.v-ship { animation: v-ship-sail 16s linear infinite; transform-box: view-box; }
+.v-ship .hull { fill: var(--color-ink); }
+.v-ship .cabin, .v-ship .mast { fill: var(--color-steel); stroke: var(--color-steel); }
+.v-ship .window { fill: var(--color-paper); }
+.v-ship .box-a { fill: var(--color-sea); }
+.v-ship .box-b { fill: var(--color-mark); }
+.v-ship .box-c { fill: var(--color-steel); }
+.v-ping { fill: none; stroke: var(--color-sea); stroke-width: 1.2; transform-box: fill-box; transform-origin: center; animation: v-ping 3.2s var(--ease-out) infinite; opacity: 0; }
+.v-ping--late { animation-delay: 1.6s; }
+.v-wave { fill: none; stroke-linecap: round; }
+.v-wave--near { stroke: var(--color-sea); stroke-width: 1.6; stroke-dasharray: 6 6; opacity: 0.5; animation: v-wave 1.9s linear infinite; }
+.v-wave--far { stroke: var(--color-steel); stroke-width: 1.2; stroke-dasharray: 4 8; opacity: 0.3; animation: v-wave 2.8s linear infinite; }
+@keyframes v-sky-path { from { transform: translate(0, 0); } to { transform: translate(280px, -28px); } }
+@keyframes v-sun-fade { 0% { opacity: 0; } 6%, 70% { opacity: 0.9; } 80%, 100% { opacity: 0; } }
+@keyframes v-moon-fade { 0%, 70% { opacity: 0; } 80%, 94% { opacity: 0.9; } 100% { opacity: 0; } }
+@keyframes v-ship-sail {
+  0% { opacity: 0; transform: translate(190px, 1px); }
+  7% { opacity: 1; transform: translate(160px, -1px); }
+  50% { transform: translate(0, 1px); }
+  88% { opacity: 1; transform: translate(-150px, -1px); }
+  96%, 100% { opacity: 0; transform: translate(-190px, 1px); }
+}
+@keyframes v-ping { 0% { opacity: 0.7; transform: scale(0.3); } 100% { opacity: 0; transform: scale(2.6); } }
+@keyframes v-wave { to { stroke-dashoffset: -24; } }
+
+/* Azimuth GRC: records rise through a check line and get their verdict as they cross it. */
+.v-check {
+  background: var(--color-check-paper);
+  border: 1px solid var(--color-check-rule);
+  height: 176px;
+}
+.v-check-stream {
+  display: grid;
+  font: 500 0.8125rem / 1 var(--font-mono);
+  gap: 0;
+  list-style: none;
+  margin: 0;
+  padding: 0 var(--space-md);
+  will-change: transform;
+}
+.v-check-stream li {
+  align-items: center;
+  color: var(--color-ink-2);
+  display: flex;
+  gap: var(--space-xs);
+  height: 22px;
+  transition: color var(--dur-short) var(--ease-out), opacity var(--dur-long) var(--ease-out), transform var(--dur-long) var(--ease-out);
+  white-space: nowrap;
+}
+.v-check-stream li::before { color: var(--color-muted); content: '·'; display: inline-block; text-align: center; width: 1ch; }
+.v-check-stream li.is-pass { color: var(--color-pass); }
+.v-check-stream li.is-pass::before { color: var(--color-pass); content: '✓'; }
+.v-check-stream li.is-fail { color: var(--color-fail); opacity: 0.7; text-decoration: line-through; transform: translateX(var(--space-lg)); }
+.v-check-stream li.is-fail::before { color: var(--color-fail); content: '✕'; }
+.v-check-line { background: var(--color-scan); height: 2px; left: 0; position: absolute; right: 0; top: 50%; }
+.v-check-count {
+  background: var(--color-check-paper);
+  border-radius: var(--radius-control);
+  bottom: var(--space-xs);
+  color: var(--color-ink-2);
+  font-size: var(--text-sm);
+  font-variant-numeric: tabular-nums;
+  padding: var(--space-2xs) var(--space-xs);
+  position: absolute;
+  right: var(--space-xs);
+}
+.v-check-count[hidden] { display: none; }
+
+/* PlanetSpark: learners in orbit around a core that pulses as their data comes in. */
+.v-night { background: var(--color-night); border: 1px solid var(--color-night-rule); }
+.v-night .star-b { fill: var(--color-star-blue); }
+.v-night .star-g { fill: var(--color-star-gold); }
+.v-night .star-c { fill: var(--color-star-coral); }
+.v-night .link { stroke: var(--color-star-blue); stroke-width: 0.7; opacity: 0.25; }
+.v-night .orbit { fill: none; stroke-width: 1; }
+.v-night .orbit-a { stroke: var(--color-sea); opacity: 0.45; }
+.v-night .orbit-b { stroke: var(--color-orbit-coral); opacity: 0.4; }
+.v-night .orbit-c { stroke: var(--color-sun); opacity: 0.35; }
+.v-night .planet-a { fill: var(--color-core-glow); }
+.v-night .planet-b { fill: var(--color-star-coral); }
+.v-night .planet-c { fill: var(--color-star-gold); }
+.v-night .spin { transform-origin: 115px 75px; animation: v-orbit 9s linear infinite; }
+.v-night .spin-b { animation-duration: 7s; }
+.v-night .spin-c { animation-duration: 12s; }
+.v-night .core-halo { fill: var(--color-sea); opacity: 0.15; }
+.v-night .core-glow { fill: var(--color-core-glow); opacity: 0.3; }
+.v-night .core { fill: var(--color-core); }
+.v-night .pulse { fill: none; stroke: var(--color-core-glow); stroke-width: 1; opacity: 0; transform-origin: 115px 75px; animation: v-pulse 3.4s var(--ease-out) infinite; }
+@keyframes v-orbit { to { transform: rotate(360deg); } }
+@keyframes v-pulse { 0% { opacity: 0.55; transform: scale(0.5); } 100% { opacity: 0; transform: scale(2.1); } }
+
+@media (prefers-reduced-motion: reduce) {
+  .v-sky, .v-sun, .v-moon, .v-ship, .v-ping, .v-wave, .v-night .spin, .v-night .pulse { animation: none !important; }
+  .v-sky { transform: translate(36px, -12px); }
+  .v-sun { opacity: 0.9; }
+  .v-moon, .v-ping, .v-night .pulse { opacity: 0; }
+  .v-ship { opacity: 1; transform: none; }
+  .vignette-foot .text-button { display: none; }
+}

@@ -22,6 +22,25 @@
   --color-mark: oklch(66% 0.01 250);
   --color-warn: oklch(52% 0.11 75);
 
+  /* Company vignettes: the ExaQube sea, the Azimuth checks, the PlanetSpark orbits. */
+  --color-sea: oklch(55% 0.15 250);
+  --color-steel: oklch(45% 0.03 240);
+  --color-sun: oklch(74% 0.13 85);
+  --color-pass: oklch(47% 0.11 155);
+  --color-fail: oklch(47% 0.11 25);
+  --color-scan: oklch(78% 0.17 150);
+  --color-check-paper: oklch(98.6% 0.006 160);
+  --color-check-rule: oklch(90% 0.025 160);
+  --color-night: oklch(19% 0.02 255);
+  --color-night-rule: oklch(30% 0.03 255);
+  --color-star-blue: oklch(79% 0.09 255);
+  --color-star-gold: oklch(87% 0.12 85);
+  --color-star-coral: oklch(76% 0.13 45);
+  --color-orbit-coral: oklch(60% 0.18 45);
+  --color-core: oklch(90% 0.05 240);
+  --color-core-glow: oklch(73% 0.13 240);
+  --color-night-ink: oklch(90% 0.01 255);
+
   /* Code blocks. */
   --color-code-paper: oklch(23% 0.012 250);
   --color-code-ink: oklch(94% 0.005 250);

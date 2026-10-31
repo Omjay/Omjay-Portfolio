@@ -125,7 +125,7 @@ async function inspect(page, pageName, viewport) {
       : [];
 
     const text = document.body.innerText;
-    const unicodeDashes = (text.match(/[—–]/g) || []).length;
+    const unicodeDashes = (text.match(/[\u2014\u2013]/g) || []).length;
     const overflow = Math.max(document.documentElement.scrollWidth, document.body.scrollWidth) - innerWidth;
 
     const parseColor = (value) => {
