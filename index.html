@@ -6,7 +6,7 @@
   <title>Om Jay Mishra | Data Engineer</title>
   <meta name="description" content="Portfolio of Om Jay Mishra, a Data Engineer specialising in Azure, Databricks, Snowflake, PySpark and Delta Lake, with Microsoft Fabric certification.">
   <link rel="canonical" href="https://omjay.github.io/Omjay-Portfolio/">
-  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='12' fill='%231c1e21'/%3E%3Ctext x='32' y='41' text-anchor='middle' font-family='Arial' font-size='24' font-weight='700' fill='%23fbfbf9'%3EOM%3C/text%3E%3C/svg%3E">
+  <link rel="icon" href="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%2064%2064'%3E%3Crect%20width='64'%20height='64'%20rx='12'%20fill='%231c1e21'/%3E%3Ctext%20x='32'%20y='41'%20text-anchor='middle'%20font-family='Arial'%20font-size='24'%20font-weight='700'%20fill='%23fbfbf9'%3EOM%3C/text%3E%3C/svg%3E">
   <meta name="theme-color" content="#fbfbf9">
   <meta property="og:type" content="website">
   <meta property="og:site_name" content="Om Jay Mishra">
@@ -116,7 +116,7 @@
     </main>
     <footer><p>Professional enquiries: <a href="mailto:mishra.omjay@gmail.com">mishra.omjay@gmail.com</a>. See also <a href="privacy/">Privacy</a>.</p></footer>
   </div>
-  <div id="__bundler_thumbnail"><svg xmlns="http://www.w3.org/2000/svg" sc-camel-view-box="0 0 100 100"><rect width="100" height="100" fill="#1c1e21"></rect><text x="50" y="62" text-anchor="middle" font-family="Georgia,serif" font-size="34" fill="#fbfbf9">OM</text></svg></div>
+  <div id="__bundler_thumbnail"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><rect width="100" height="100" fill="#1c1e21"></rect><text x="50" y="62" text-anchor="middle" font-family="Georgia,serif" font-size="34" fill="#fbfbf9">OM</text></svg></div>
   <div id="__bundler_loading">Unpacking...</div>
 
   <script>
@@ -408,7 +408,7 @@ document.addEventListener('DOMContentLoaded', async function() {
       <title>Om Jay Mishra | Data Engineer</title>
       <meta name="description" content="Portfolio of Om Jay Mishra, a Data Engineer specialising in Azure, Databricks, Snowflake, PySpark and Delta Lake, with Microsoft Fabric certification.">
       <link rel="canonical" href="https://omjay.github.io/Omjay-Portfolio/">
-      <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='12' fill='%231c1e21'/%3E%3Ctext x='32' y='41' text-anchor='middle' font-family='Arial' font-size='24' font-weight='700' fill='%23fbfbf9'%3EOM%3C/text%3E%3C/svg%3E">
+      <link rel="icon" href="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%2064%2064'%3E%3Crect%20width='64'%20height='64'%20rx='12'%20fill='%231c1e21'/%3E%3Ctext%20x='32'%20y='41'%20text-anchor='middle'%20font-family='Arial'%20font-size='24'%20font-weight='700'%20fill='%23fbfbf9'%3EOM%3C/text%3E%3C/svg%3E">
       <meta name="theme-color" content="#fbfbf9">
       <meta property="og:type" content="website">
       <meta property="og:site_name" content="Om Jay Mishra">
@@ -1137,6 +1137,18 @@ document.addEventListener('DOMContentLoaded', async function() {
     );
 
     replaceTemplateOnce(
+      'https://www.linkedin.com/company/azimuthgrc',
+      'https://www.linkedin.com/company/azimuth-grc',
+      'Azimuth GRC LinkedIn page'
+    );
+
+    replaceTemplateOnce(
+      'https://www.linkedin.com/company/planetspark',
+      'https://www.linkedin.com/company/planet-spark',
+      'PlanetSpark LinkedIn page'
+    );
+
+    replaceTemplateOnce(
       "blurb: 'Modernizing a legacy data platform: production workloads moving off a self-managed Ubuntu server onto Databricks Workflows and Delta Lake.',",
       "blurb: 'Modernizing a legacy data platform: production workloads moving off a self-managed Ubuntu server onto Databricks Workflows and Delta Lake, plus branch-based Snowflake dev environments for a client.',",
       'ExaQube Snowflake summary'
@@ -1180,7 +1192,7 @@ document.addEventListener('DOMContentLoaded', async function() {
 
     replaceTemplateOnce(
       "  go(v) {\n    clearTimeout(this.choiceT); clearTimeout(this.idleT);",
-      "  setPortfolioUrl(v, mode = 'push') {\n    const hashes = { exa: '#exaqube', azi: '#azimuth-grc', ps: '#planetspark' };\n    const nextHash = hashes[v] || '';\n    if (window.location.hash === nextHash) return;\n    const nextUrl = window.location.pathname + window.location.search + nextHash;\n    if (mode === 'replace') window.history.replaceState({ portfolioView: v }, '', nextUrl);\n    else if (mode === 'push') window.history.pushState({ portfolioView: v }, '', nextUrl);\n  }\n\n  go(v, historyMode = 'push') {\n    clearTimeout(this.choiceT); clearTimeout(this.idleT);",
+      "  setPortfolioUrl(v, mode = 'push') {\n    const hashes = { exa: '#exaqube', azi: '#azimuth-grc', ps: '#planetspark' };\n    const nextHash = hashes[v] || '';\n    const titles = { exa: 'ExaQube Technologies', azi: 'Azimuth GRC', ps: 'PlanetSpark' };\n    document.title = titles[v] ? titles[v] + ' projects | Om Jay Mishra' : 'Om Jay Mishra | Data Engineer';\n    if (window.location.hash === nextHash) return;\n    const nextUrl = window.location.pathname + window.location.search + nextHash;\n    if (mode === 'replace') window.history.replaceState({ portfolioView: v }, '', nextUrl);\n    else if (mode === 'push') window.history.pushState({ portfolioView: v }, '', nextUrl);\n  }\n\n  go(v, historyMode = 'push') {\n    clearTimeout(this.choiceT); clearTimeout(this.idleT);",
       'URL-aware navigation method'
     );
 
@@ -1241,6 +1253,10 @@ document.addEventListener('DOMContentLoaded', async function() {
     <button sc-camel-on-click="{{ goNext }}" sc-camel-on-key-down="{{ goNextKey }}" type="button">{{ nextButtonLabel }} →</button>
   </nav>
 </main>`);
+
+    // Muted text: #8a8d92 is 3.3:1 on white; #6b6f76 meets WCAG AA. Runs last because
+    // earlier patches match template text that still contains the old colour.
+    template = template.split('color:#8a8d92').join('color:#6b6f76');
 
     template = template.replace(/<\/head>/i, portfolioHead + '</head>');
 
@@ -1331,7 +1347,7 @@ document.addEventListener('DOMContentLoaded', async function() {
           <p>See how Azure, Databricks, Snowflake, Delta Lake, PySpark, KQL, dbt, governance, DevOps, and analytics fit into one delivery system.</p>
           <a class="portfolio-toolkit-link" href="toolkit.html?v=20260904-3">Explore the toolkit →</a>
         </div>
-        <div class="portfolio-toolkit-focus" aria-label="Toolkit highlights">
+        <div class="portfolio-toolkit-focus" role="group" aria-label="Toolkit highlights">
           <div class="portfolio-toolkit-focus-row">
             <span>Platform core</span>
             <strong>Databricks, Snowflake, Azure Data Factory, ADLS Gen2, Delta Lake</strong>
@@ -1579,7 +1595,11 @@ document.addEventListener('DOMContentLoaded', async function() {
       element.textContent.trim() === 'RESUME ↗'
     );
     if (!mobileResumeLink) throw new Error('Portfolio mobile resume navigation was not found');
-    mobileResumeLink.remove();
+    // The header Resume link is hidden on small screens, so the menu keeps an in-site Resume item.
+    mobileResumeLink.href = 'resume.html';
+    mobileResumeLink.removeAttribute('target');
+    mobileResumeLink.removeAttribute('rel');
+    mobileResumeLink.textContent = 'RESUME';
 
     const mobileCertificationsSoon = Array.from(doc.querySelectorAll('span[aria-disabled="true"]')).find((element) =>
       element.textContent.trim().startsWith('CERTIFICATIONS & COURSES')

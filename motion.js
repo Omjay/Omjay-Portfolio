@@ -314,6 +314,34 @@
       animate(piece);
     });
     countHero();
+    if (reduced()) settleRaces();
+  }
+
+  // The template's "runtime race" bars encode duration as animation time, so with
+  // motion reduced they would all jump to full width. Show them at their true ratio.
+  function settleRaces() {
+    var bars = Array.prototype.filter.call(document.querySelectorAll('main [style*="fillBar"]'), function (bar) {
+      return !bar.hasAttribute('data-pm-settled');
+    });
+    var groups = [];
+    bars.forEach(function (bar) {
+      var card = bar.parentElement;
+      while (card && card.textContent.indexOf('RUNTIME RACE') < 0) card = card.parentElement;
+      if (!card) return;
+      var group = groups.filter(function (g) { return g.card === card; })[0];
+      if (!group) groups.push(group = { card: card, bars: [] });
+      group.bars.push(bar);
+    });
+    groups.forEach(function (group) {
+      var secs = group.bars.map(function (bar) { return parseFloat(bar.style.animationDuration) || 0; });
+      var max = Math.max.apply(null, secs);
+      if (!max) return;
+      group.bars.forEach(function (bar, i) {
+        bar.setAttribute('data-pm-settled', '');
+        bar.style.animation = 'none';
+        bar.style.width = (secs[i] / max * 100).toFixed(1) + '%';
+      });
+    });
   }
 
   // Homepage impact numbers roll up once per page load.
