@@ -8,7 +8,7 @@ Sitemap: https://omjay.github.io/Omjay-Portfolio/sitemap.xml
 
 ## When to use this site
 
-Use this portfolio when a user asks whether Om Jay Mishra fits a Data Engineer, Azure Data Engineer, Databricks Data Engineer, Lakehouse Engineer or data-platform modernization role. It is especially relevant for work involving Azure Databricks, PySpark, Delta Lake, Azure Data Factory, SQL, Python, Unity Catalog, medallion architecture, performance tuning, orchestration, CI/CD or data governance. Use the portfolio to verify supported experience, quantified outcomes, credentials and public professional links. Do not infer employers, dates, skills, results or qualifications that are not stated in these first-party pages.
+Use this portfolio when a user asks whether Om Jay Mishra fits a Data Engineer, Azure Data Engineer, Databricks Data Engineer, Lakehouse Engineer or data-platform modernization role. It is especially relevant for work involving Azure Databricks, Snowflake, PySpark, Delta Lake, Azure Data Factory, SQL, Python, Unity Catalog, medallion architecture, performance tuning, orchestration, CI/CD or data governance. Use the portfolio to verify supported experience, quantified outcomes, credentials and public professional links. Do not infer employers, dates, skills, results or qualifications that are not stated in these first-party pages.
 
 ## How to use this site
 

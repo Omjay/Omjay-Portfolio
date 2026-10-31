@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="Resume of Om Jay Mishra, Data Engineer and Azure Databricks specialist.">
+  <meta name="description" content="Resume of Om Jay Mishra, Data Engineer and Azure Databricks specialist with Snowflake experience.">
   <link rel="canonical" href="https://omjay.github.io/Omjay-Portfolio/resume.html">
   <link rel="icon" href="og-image.svg" type="image/svg+xml">
   <title>Om Jay Mishra | Resume</title>
@@ -337,7 +337,7 @@
         width: 8.5in;
         min-height: 11in;
         margin: 0;
-        padding: 0.5in;
+        padding: 0.4in 0.5in;
         box-shadow: none;
         font-size: 12.5px;
         line-height: 1.32;
@@ -394,7 +394,7 @@
       <section class="resume-section">
         <h2 class="section-title">Technical Skills</h2>
         <div class="skills-grid">
-          <div class="skill-label">Databricks &amp; Lakehouse</div><div>Azure Databricks, PySpark, Spark SQL, Delta Lake, Unity Catalog, Liquid Clustering, Photon, Medallion Architecture, Databricks Workflows</div>
+          <div class="skill-label">Databricks &amp; Lakehouse</div><div>Azure Databricks, PySpark, Spark SQL, Delta Lake, Unity Catalog, Liquid Clustering, Photon, Medallion Architecture, Databricks Workflows, Snowflake (Zero-Copy Cloning)</div>
           <div class="skill-label">Azure Data Engineering</div><div>Azure Data Factory (ADF), ADLS Gen2, Azure DevOps, CI/CD, Docker, Azure Monitor, Job Clusters, Autoscaling</div>
           <div class="skill-label">Programming &amp; Querying</div><div>Python, SQL, KQL, Pandas, Hive, REST APIs, ETL/ELT, Incremental Loading, Metadata-Driven Pipelines</div>
           <div class="skill-label">Modeling &amp; Governance</div><div>dbt, Star Schema, Data Modeling, Data Quality, Data Governance, Audit Logging, Schema Evolution, Workflow Orchestration</div>
@@ -415,6 +415,7 @@
             <li>Reduced a thrice-daily pipeline's runtime from ~1 hr 50 min to ~30 min per run by resolving data skew and migrating to job compute clusters, cutting daily compute hours by ~70% and lowering DBU costs</li>
             <li>Built config-driven, Dockerized ingestion with idempotent checkpoints and schema evolution into Bronze Delta tables, allowing new sources to onboard without new pipeline code</li>
             <li>Tuned shuffle partitions, broadcast joins, adaptive query execution, file compaction, and clustering to stabilize heavier Spark workloads as data volume grew</li>
+            <li>Automated per-branch Snowflake zero-copy dev clones in Azure DevOps with month-end cleanup, used by 15+ engineers</li>
           </ul>
         </div>
 
