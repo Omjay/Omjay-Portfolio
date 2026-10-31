@@ -1135,6 +1135,18 @@ document.addEventListener('DOMContentLoaded', async function() {
     );
 
     replaceTemplateOnce(
+      'Apps Script + Python automation replaced manual roll-ups across 20+ sheets - reporting 25% faster.',
+      'Apps Script and Excel automation for 10K+ student records - manual reporting cycles cut 40%.',
+      'PlanetSpark outcome consistency'
+    );
+
+    replaceTemplateOnce(
+      "'The thrice-daily flagship pipeline now runs in ~30 minutes instead of ~1h 50m.',",
+      "'The thrice-daily flagship pipeline now runs in ~30 minutes instead of ~1h 50m, cutting daily compute hours by ~70%.',",
+      'ExaQube compute outcome'
+    );
+
+    replaceTemplateOnce(
       'if ((this.props.enableScrollAdvance ?? true) === false) return;',
       'return;',
       'scroll advance removal'
@@ -1525,7 +1537,7 @@ document.addEventListener('DOMContentLoaded', async function() {
     const tourHint = Array.from(homeMain.querySelectorAll('div')).find((element) =>
       element.children.length === 0 && element.textContent.trim().startsWith('KEEP SCROLLING PAST THE END TO TOUR THE WORK')
     );
-    if (tourHint) { tourHint.textContent = 'Select a role above to explore the work.'; tourHint.style.color = '#59636e'; }
+    if (tourHint) tourHint.remove();
 
     const contactLink = Array.from(doc.querySelectorAll('[role="link"]')).find((element) =>
       element.textContent.trim() === 'CONTACT'

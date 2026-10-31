@@ -12,9 +12,9 @@ Om Jay Mishra is an Azure-focused Data Engineer in Chennai, India. He builds gov
 
 ## Experience
 
-- **ExaQube Technologies:** Data Engineer modernizing production workloads with Databricks Workflows, Delta Lake, Docker and Python.
+- **ExaQube Technologies:** Data Engineer modernizing production workloads with Databricks Workflows, Delta Lake, Docker and Python; cut a thrice-daily pipeline from ~1h 50m to ~30 min per run and daily compute hours by ~70%.
 - **Azimuth GRC:** Data Engineer building and optimizing an Azure Databricks compliance-data Lakehouse.
-- **PlanetSpark:** Data Analytics Engineer automating reporting and building engagement analysis for more than 10,000 users.
+- **PlanetSpark:** Data Analytics Engineer automating reporting for more than 10,000 student records, cutting manual reporting cycles by 40%, and building engagement analysis.
 
 ## Credentials
 
