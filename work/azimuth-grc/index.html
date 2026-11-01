@@ -4,14 +4,14 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Azimuth GRC case | Om Jay Mishra</title>
-  <meta name="description" content="How Om Jay Mishra built the Azimuth GRC compliance Lakehouse on Azure Databricks: 500M+ record pipelines from 6 hours to 30 minutes.">
+  <meta name="description" content="How Om Jay Mishra built the Azimuth GRC pipeline that turned a manual 6-hour process into 30 minutes, and kept it there as the data grew from 20M to 500M+ records.">
   <link rel="canonical" href="https://omjay.github.io/Omjay-Portfolio/work/azimuth-grc/">
   <link rel="icon" href="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%2064%2064'%3E%3Crect%20width='64'%20height='64'%20rx='12'%20fill='%231c1e21'/%3E%3Ctext%20x='32'%20y='41'%20text-anchor='middle'%20font-family='Arial'%20font-size='24'%20font-weight='700'%20fill='%23fbfbf9'%3EOM%3C/text%3E%3C/svg%3E">
   <meta name="theme-color" content="#fbfbf9">
   <meta property="og:type" content="article">
   <meta property="og:site_name" content="Om Jay Mishra">
   <meta property="og:title" content="Azimuth GRC case | Om Jay Mishra">
-  <meta property="og:description" content="How Om Jay Mishra built the Azimuth GRC compliance Lakehouse on Azure Databricks: 500M+ record pipelines from 6 hours to 30 minutes.">
+  <meta property="og:description" content="How Om Jay Mishra built the Azimuth GRC pipeline that turned a manual 6-hour process into 30 minutes, and kept it there as the data grew from 20M to 500M+ records.">
   <meta property="og:url" content="https://omjay.github.io/Omjay-Portfolio/work/azimuth-grc/">
   <meta property="og:image" content="https://omjay.github.io/Omjay-Portfolio/og-image.png">
   <meta name="twitter:card" content="summary_large_image">
@@ -55,16 +55,16 @@
         <div>
           <a class="crumb" href="../../#work">All work</a>
           <h1 id="case-title">Azimuth GRC</h1>
-          <p class="lead">Built and optimized the compliance-data Lakehouse on Azure Databricks: legacy migration, 500M+ record pipelines, workflow automation, governance and cost work.</p>
+          <p class="lead">Built and optimized the compliance-data Lakehouse on Azure Databricks: legacy migration, a pipeline that grew from 20M records to about 4 billion, workflow automation, governance and cost work.</p>
         </div>
         <div>
         <figure class="vignette" data-ambient data-check>
-                <div class="vignette-art v-check" aria-hidden="true">
-                  <ul class="v-check-stream"><li class="is-pass" data-ok="1">Audit ready</li><li class="is-fail" data-ok="0">Bad loan</li><li class="is-pass" data-ok="1">Lien recorded</li><li class="is-fail" data-ok="0">Duplicate charge</li><li class="is-pass" data-ok="1">Verified APR</li><li class="is-fail" data-ok="0">Missing disclosure</li><li class="is-pass" data-ok="1">Compliant fee</li><li class="is-fail" data-ok="0">Late filing</li><li class="is-pass" data-ok="1">Consent logged</li><li class="is-fail" data-ok="0">Stale APR</li><li class="is-pass" data-ok="1">Records complete</li><li class="is-fail" data-ok="0">Invalid escrow</li><li class="is-pass" data-ok="1">Ledger balanced</li><li class="is-fail" data-ok="0">Unsigned form</li><li class="is-pass" data-ok="1">Terms verified</li><li class="is-fail" data-ok="0">Expired license</li><li class="is-pass" data-ok="1">Notice on time</li><li class="is-fail" data-ok="0">Rate mismatch</li><li class="is-pass" data-ok="1">Controls passed</li><li class="is-fail" data-ok="0">Orphan record</li></ul>
-                  <div class="v-check-line"></div>
-                  <p class="v-check-count" data-check-count hidden></p>
+                <div class="vignette-art v-check" data-ambient-toggle>
+                  <ul class="v-check-stream" aria-hidden="true"><li class="is-pass" data-ok="1">Audit ready</li><li class="is-fail" data-ok="0">Bad loan</li><li class="is-pass" data-ok="1">Lien recorded</li><li class="is-fail" data-ok="0">Duplicate charge</li><li class="is-pass" data-ok="1">Verified APR</li><li class="is-fail" data-ok="0">Missing disclosure</li><li class="is-pass" data-ok="1">Compliant fee</li><li class="is-fail" data-ok="0">Late filing</li><li class="is-pass" data-ok="1">Consent logged</li><li class="is-fail" data-ok="0">Stale APR</li><li class="is-pass" data-ok="1">Records complete</li><li class="is-fail" data-ok="0">Invalid escrow</li><li class="is-pass" data-ok="1">Ledger balanced</li><li class="is-fail" data-ok="0">Unsigned form</li><li class="is-pass" data-ok="1">Terms verified</li><li class="is-fail" data-ok="0">Expired license</li><li class="is-pass" data-ok="1">Notice on time</li><li class="is-fail" data-ok="0">Rate mismatch</li><li class="is-pass" data-ok="1">Controls passed</li><li class="is-fail" data-ok="0">Orphan record</li></ul>
+                  <div class="v-check-line" aria-hidden="true"></div>
+                  <p class="v-check-count" aria-hidden="true" data-check-count hidden></p>
                 </div>
-                <div class="vignette-foot"><figcaption>Records rise through the check line: passes go on, failures are held back. Sample checks.</figcaption><button class="text-button" type="button" data-ambient-toggle hidden>Pause</button></div>
+                <div class="vignette-foot"><figcaption>Records rise through the check line: passes go on, failures are held back. Sample checks.</figcaption></div>
               </figure>
         <dl class="facts">
           <div><dt>Role</dt><dd>Data Engineer</dd></div>
@@ -84,9 +84,9 @@
           <h2 id="lakehouse-migration-title">Architectural migration and Lakehouse transition</h2>
           <p class="project-stack">Azure, Databricks, Delta Lake</p>
           <ul class="points">
-              <li>Designed and built the pipeline that replaced a manual 6-hour process: one automated Azure Data Factory and Databricks run, from raw-data validation to the Tableau refresh, in 30 minutes for 20M+ records (12x faster).</li>
-              <li>Spearheaded a full-scale migration from traditional databases to a Databricks Lakehouse, converting legacy SQL procedures into scalable PySpark logic.</li>
-              <li>Architected incremental loading patterns on Delta Lake, so each run touches only new and changed data.</li>
+              <li>Designed and built the pipeline that replaced a manual 6-hour process: one automated Azure Data Factory and Databricks run, from raw-data validation to the Tableau refresh, in about 30 minutes for 20M records (12x faster).</li>
+              <li>Led a full-scale migration from traditional databases to a Databricks Lakehouse, converting legacy SQL procedures into scalable PySpark logic.</li>
+              <li>Designed incremental loading patterns on Delta Lake, so each run touches only new and changed data.</li>
               <li>Designed a star schema in the Gold layer: join overhead down, query performance up 65% across 50M+ records.</li>
               <li>File compaction and Delta vacuuming cut the storage footprint 30%.</li>
           </ul>
@@ -107,7 +107,7 @@
               <div class="run-track" aria-hidden="true"><div class="run-fill"></div></div>
             </li>
             </ol>
-            <figcaption id="run-azi">The same workload on one time axis: 20M+ records when I first automated it, 500M+ as it grew.</figcaption>
+            <figcaption id="run-azi">The same workload on one time axis. It started at 20M records, still ran in about 30 minutes past 500M+, and has since grown to about 4 billion.</figcaption>
           </figure>
           <figure class="flow" data-steps aria-labelledby="flow-medallion">
             <div class="flow-head">
@@ -143,7 +143,7 @@
               <li>Integrated custom Python scrapers and validation logic into scalable Azure pipelines with concurrent execution for faster extraction.</li>
               <li>Reworked the scrapers to remove redundant calls and reduce time complexity, saving about 5% in monthly costs.</li>
               <li>Containerized a VPN-dependent pipeline with Docker on Azure.</li>
-              <li>Built a real-time ingestion framework for rate-limited APIs with exponential backoff and Azure Monitor alerting: 99.9% data reliability.</li>
+              <li>Built a near-real-time ingestion framework for rate-limited APIs with exponential backoff and Azure Monitor alerting: 99.9% data reliability.</li>
           </ul>
         </div>
         <div class="project-figure">
@@ -163,7 +163,7 @@
           <h2 id="performance-governance-title">High-volume performance and governance</h2>
           <p class="project-stack">Databricks, Delta Lake, Spark</p>
           <ul class="points">
-              <li>As the data grew past 500M+ records, diagnosed the partition skew holding up runs and resolved it with Liquid Clustering and compaction: runtimes from 6 hours to 30 minutes.</li>
+              <li>As the data grew past 500M+ records, diagnosed the partition skew holding up runs and resolved it with Liquid Clustering and compaction, keeping the pipeline at about 30 minutes.</li>
               <li>Implemented Unity Catalog for centralized governance: fine-grained access controls and automated audit logs.</li>
               <li>Optimized Databricks DBU consumption 25% through job clusters, autoscaling and Photon.</li>
               <li>Engineered a custom “Expectations” data-quality framework in PySpark validating schema and business logic at the Bronze to Silver layer.</li>
@@ -177,24 +177,24 @@
                 <button type="button" data-set="before" aria-pressed="true">Before</button>
                 <button type="button" data-set="after" aria-pressed="false">With Liquid Clustering</button>
               </div>
-              <p class="skew-total" aria-live="polite"><span data-show="before">Run takes 6 h 00 m</span><span data-show="after">Run takes 30 m</span></p>
+              <p class="skew-total" aria-live="polite"><span data-show="before">One task holds up the stage</span><span data-show="after">Tasks finish together</span></p>
             </div>
             <ul class="skew-tasks" aria-hidden="true">
-              <li style="--before: 0.2; --after: 0.077"><i></i></li>
-              <li style="--before: 0.23; --after: 0.083"><i></i></li>
-              <li style="--before: 0.17; --after: 0.080"><i></i></li>
-              <li style="--before: 0.25; --after: 0.083"><i></i></li>
-              <li style="--before: 0.21; --after: 0.080"><i></i></li>
-              <li style="--before: 0.24; --after: 0.077"><i></i></li>
-              <li style="--before: 0.19; --after: 0.083"><i></i></li>
-              <li class="straggler" style="--before: 1; --after: 0.083"><i></i></li>
+              <li style="--before: 0.2; --after: 0.279"><i></i></li>
+              <li style="--before: 0.23; --after: 0.300"><i></i></li>
+              <li style="--before: 0.17; --after: 0.288"><i></i></li>
+              <li style="--before: 0.25; --after: 0.300"><i></i></li>
+              <li style="--before: 0.21; --after: 0.288"><i></i></li>
+              <li style="--before: 0.24; --after: 0.279"><i></i></li>
+              <li style="--before: 0.19; --after: 0.300"><i></i></li>
+              <li class="straggler" style="--before: 1; --after: 0.3"><i></i></li>
             </ul>
-            <div class="skew-axis" aria-hidden="true"><span>0</span><span>6 h 00 m</span></div>
-            <figcaption id="skew-azi">Eight tasks in one stage on a shared axis. Task lengths are illustrative; the totals are real.</figcaption>
+            <div class="skew-axis" aria-hidden="true"><span>0</span><span>time</span></div>
+            <figcaption id="skew-azi">Eight tasks in one stage. Illustrative: it shows the shape of the fix, not measured timings.</figcaption>
           </figure>
           <dl class="ba">
-            <div><dt>Before</dt><dd><strong>Skewed full scans</strong><span>Partition skew forced 6-hour runs over 500M+ records.</span></dd></div>
-            <div><dt>After</dt><dd><strong>Liquid Clustering and compaction</strong><span>Data spread evenly and incremental merges touch only what changed: 30-minute runs.</span></dd></div>
+            <div><dt>Before</dt><dd><strong>Skewed full scans</strong><span>One oversized partition held up every run as the data passed 500M+ records.</span></dd></div>
+            <div><dt>After</dt><dd><strong>Liquid Clustering and compaction</strong><span>Data spread evenly and incremental merges touch only what changed: runs stayed at about 30 minutes.</span></dd></div>
           </dl>
           <ul class="case-figures">
             <li><b>25%</b><span>lower DBU consumption</span></li>
@@ -218,9 +218,6 @@
         <li><a href="../../about/">About</a></li>
         <li><a href="../../contact/">Contact details</a></li>
         <li><a href="../../privacy/">Privacy</a></li>
-        <li><a href="../../developers/">Developer resources</a></li>
-        <li><a href="../../index.md">Markdown portfolio</a></li>
-        <li><a href="https://github.com/Omjay/Omjay-Portfolio">Source on GitHub</a></li>
       </ul>
       <p>Om Jay Mishra, Data Engineer</p>
     </div>

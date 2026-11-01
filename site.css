@@ -378,7 +378,7 @@ a.cred:hover { border-color: var(--color-accent); color: var(--color-accent); }
 
 /* ---------- Case pages ---------- */
 .case-head { padding-block: var(--space-3xl) var(--space-2xl); }
-.case-head .container { display: grid; gap: var(--space-xl) var(--space-3xl); grid-template-columns: minmax(0, 7fr) minmax(0, 5fr); align-items: end; }
+.case-head .container { display: grid; gap: var(--space-xl) var(--space-3xl); grid-template-columns: minmax(0, 7fr) minmax(0, 5fr); align-items: start; }
 .case-head .lead { color: var(--color-ink-2); font-size: var(--text-lead); line-height: 1.45; margin-top: var(--space-lg); max-width: 44ch; }
 .crumb { display: inline-flex; font-size: var(--text-sm); margin-bottom: var(--space-lg); min-height: 44px; align-items: center; }
 .facts { border-top: 1px solid var(--color-rule); display: grid; }
@@ -542,36 +542,49 @@ a.cred:hover { border-color: var(--color-accent); color: var(--color-accent); }
 }
 .v-check-count[hidden] { display: none; }
 
-/* PlanetSpark: learners in orbit around a core that pulses as their data comes in. */
-.v-night { background: var(--color-night); border: 1px solid var(--color-night-rule); }
-.v-night .star-b { fill: var(--color-star-blue); }
-.v-night .star-g { fill: var(--color-star-gold); }
-.v-night .star-c { fill: var(--color-star-coral); }
-.v-night .link { stroke: var(--color-star-blue); stroke-width: 0.7; opacity: 0.25; }
-.v-night .orbit { fill: none; stroke-width: 1; }
-.v-night .orbit-a { stroke: var(--color-sea); opacity: 0.45; }
-.v-night .orbit-b { stroke: var(--color-orbit-coral); opacity: 0.4; }
-.v-night .orbit-c { stroke: var(--color-sun); opacity: 0.35; }
-.v-night .planet-a { fill: var(--color-core-glow); }
-.v-night .planet-b { fill: var(--color-star-coral); }
-.v-night .planet-c { fill: var(--color-star-gold); }
-.v-night .spin { transform-origin: 115px 75px; animation: v-orbit 9s linear infinite; }
-.v-night .spin-b { animation-duration: 7s; }
-.v-night .spin-c { animation-duration: 12s; }
-.v-night .core-halo { fill: var(--color-sea); opacity: 0.15; }
-.v-night .core-glow { fill: var(--color-core-glow); opacity: 0.3; }
-.v-night .core { fill: var(--color-core); }
-.v-night .pulse { fill: none; stroke: var(--color-core-glow); stroke-width: 1; opacity: 0; transform-origin: 115px 75px; animation: v-pulse 3.4s var(--ease-out) infinite; }
-@keyframes v-orbit { to { transform: rotate(360deg); } }
-@keyframes v-pulse { 0% { opacity: 0.55; transform: scale(0.5); } 100% { opacity: 0; transform: scale(2.1); } }
+/* PlanetSpark: a sheet fills itself in, row by row, and feeds a small dashboard. */
+.v-sheet { background: var(--color-paper-2); }
+.v-sheet .head { fill: var(--color-rule-strong); }
+.v-sheet .cell { fill: var(--color-paper); stroke: var(--color-rule); stroke-width: 1; }
+.v-sheet .fill {
+  animation: v-cell 8s var(--ease-out) infinite;
+  animation-delay: calc(var(--i) * 0.2s);
+  fill: var(--color-accent);
+  opacity: 0;
+}
+.v-sheet .flow { fill: none; stroke: var(--color-mark); stroke-dasharray: 4 4; stroke-width: 1.5; animation: v-wave 1.6s linear infinite; }
+.v-sheet .flow-head { fill: none; stroke: var(--color-mark); stroke-linecap: round; stroke-width: 1.5; }
+.v-sheet .panel { fill: var(--color-paper); stroke: var(--color-rule); stroke-width: 1; }
+.v-sheet .axis { stroke: var(--color-rule-strong); stroke-width: 1; }
+.v-sheet .bar { animation: v-bar 8s var(--ease-out) infinite; transform-box: fill-box; transform-origin: center bottom; }
+.v-sheet .bar-a { fill: var(--color-accent); }
+.v-sheet .bar-b { fill: var(--color-mark); }
+.v-sheet .bar-c { fill: var(--color-accent); opacity: 0.6; }
+@keyframes v-cell { 0%, 4% { opacity: 0; } 9%, 84% { opacity: 0.85; } 92%, 100% { opacity: 0; } }
+@keyframes v-bar { 0%, 38% { transform: scaleY(0.2); } 52%, 86% { transform: scaleY(1); } 96%, 100% { transform: scaleY(0.2); } }
+
+/* Click or tap a vignette to pause it; the control is the art itself. */
+.vignette-art[role='button'] { cursor: pointer; }
+.vignette-art[role='button']:focus-visible { outline: 2px solid var(--color-focus); outline-offset: 3px; }
+.vignette.is-user-paused .vignette-art::after {
+  background: var(--color-paper);
+  border-radius: var(--radius-control);
+  bottom: var(--space-xs);
+  color: var(--color-ink-2);
+  content: 'Paused';
+  font-size: var(--text-sm);
+  left: var(--space-xs);
+  padding: var(--space-3xs) var(--space-xs);
+  position: absolute;
+}
 
 @media (prefers-reduced-motion: reduce) {
-  .v-sky, .v-sun, .v-moon, .v-ship, .v-ping, .v-wave, .v-night .spin, .v-night .pulse { animation: none !important; }
+  .v-sky, .v-sun, .v-moon, .v-ship, .v-ping, .v-wave, .v-sheet .fill, .v-sheet .flow, .v-sheet .bar { animation: none !important; }
+  .v-sheet .fill { opacity: 0.85; }
   .v-sky { transform: translate(36px, -12px); }
   .v-sun { opacity: 0.9; }
-  .v-moon, .v-ping, .v-night .pulse { opacity: 0; }
+  .v-moon, .v-ping { opacity: 0; }
   .v-ship { opacity: 1; transform: none; }
-  .vignette-foot .text-button { display: none; }
 }
 
 /* The four changes behind 6 h to 30 m: a real ordered sequence, highlighted by the walk-through. */
@@ -608,3 +621,6 @@ a.cred:hover { border-color: var(--color-accent); color: var(--color-accent); }
 .changes-foot a { align-items: center; display: inline-flex; font-weight: 600; min-height: 44px; }
 @media (max-width: 60rem) { .changes ol { grid-template-columns: repeat(2, minmax(0, 1fr)); row-gap: var(--space-xl); } }
 @media (max-width: 30rem) { .changes ol { grid-template-columns: minmax(0, 1fr); } }
+
+.close-note { color: var(--color-ink-2); margin-top: var(--space-md); max-width: 52ch; }
+.cred--more { color: var(--color-accent); font-weight: 600; }

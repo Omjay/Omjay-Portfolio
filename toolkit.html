@@ -661,9 +661,9 @@
               <li data-verification-item="sql"><span>SQL</span><span class="verification-badge" tabindex="0" role="img" aria-label="WORK VERIFIED"><svg aria-hidden="true"><use href="#verification-badge-mark"></use></svg><i class="verification-badge__tooltip" role="tooltip">WORK VERIFIED</i></span></li>
               <li>KQL</li>
               <li data-verification-item="sql-server"><span>SQL Server</span><span class="verification-badge" tabindex="0" role="img" aria-label="WORK VERIFIED"><svg aria-hidden="true"><use href="#verification-badge-mark"></use></svg><i class="verification-badge__tooltip" role="tooltip">WORK VERIFIED</i></span></li>
-              <li data-verification-item="scala"><span>Scala</span><span class="verification-badge" tabindex="0" role="img" aria-label="WORK VERIFIED"><svg aria-hidden="true"><use href="#verification-badge-mark"></use></svg><i class="verification-badge__tooltip" role="tooltip">WORK VERIFIED</i></span></li>
-              <li data-verification-item="hive"><span>Hive</span><span class="verification-badge" tabindex="0" role="img" aria-label="WORK VERIFIED"><svg aria-hidden="true"><use href="#verification-badge-mark"></use></svg><i class="verification-badge__tooltip" role="tooltip">WORK VERIFIED</i></span></li>
-              <li data-verification-item="bash"><span>Bash</span><span class="verification-badge" tabindex="0" role="img" aria-label="WORK VERIFIED"><svg aria-hidden="true"><use href="#verification-badge-mark"></use></svg><i class="verification-badge__tooltip" role="tooltip">WORK VERIFIED</i></span></li>
+              <li>Scala</li>
+              <li>Hive</li>
+              <li>Bash</li>
             </ul>
           </article>
 
@@ -713,16 +713,6 @@
             <h3>Medallion architecture</h3>
             <p>Progressively improves raw data into validated and business-ready models with clear quality boundaries.</p>
             <div class="architecture-path">Sources → ADF and ADLS Gen2 → Databricks and PySpark → Bronze, Silver, Gold → Power BI</div>
-          </article>
-          <article class="architecture-card">
-            <h3>Lambda architecture</h3>
-            <p>Combines reliable batch processing with a faster path when consumers need lower-latency updates.</p>
-            <div class="architecture-path">Batch: ADF and Databricks<br>Speed: Spark Structured Streaming<br>Serve: SQL and BI models</div>
-          </article>
-          <article class="architecture-card">
-            <h3>Kappa architecture</h3>
-            <p>Treats replayable event streams as the main source so one processing path can support continuous workloads.</p>
-            <div class="architecture-path">Events and logs → Structured Streaming → append-only Delta tables → Spark SQL and Power BI</div>
           </article>
           <article class="architecture-card">
             <h3>One big table</h3>

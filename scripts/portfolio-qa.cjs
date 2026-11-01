@@ -370,9 +370,9 @@ async function navigationCheck(browser) {
 
   const workVerifiedItems = [
     'databricks', 'delta-lake', 'azure', 'sql-server',
-    'pyspark', 'python', 'sql', 'scala', 'hive',
+    'pyspark', 'python', 'sql',
     'power-bi', 'tableau', 'apps-script', 'google-sheets', 'excel',
-    'docker', 'ubuntu', 'git', 'azure-devops', 'bash', 'snowflake',
+    'docker', 'ubuntu', 'git', 'azure-devops', 'snowflake',
   ];
   for (const itemName of workVerifiedItems) {
     const item = page.locator(`[data-verification-item="${itemName}"]`);

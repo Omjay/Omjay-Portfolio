@@ -50,7 +50,8 @@ OKLCH tokens, tinted toward hue 240. Restrained posture: the accent is a signal 
 - **Race** (`[data-race]`): runs drawn on one time axis; plays once when 50% visible, longest run in six seconds, then offers "Run it again".
 - **Switch** (`[data-switch]`): two real states of one figure behind a segmented control; the reader chooses.
 - **Steps** (`[data-steps]`): every stage readable at rest; "Walk through it" moves a highlight and announces each stage.
-- Only `transform`, `opacity` and colour animate. No loops. Under `prefers-reduced-motion` nothing moves and figures show their result.
+- **Vignettes** (`[data-ambient]`): the ExaQube ship, the Azimuth check line and the PlanetSpark sheet. Each loop pauses when the reader clicks or taps the art (it becomes a labelled button), stops off-screen, and holds a still frame under reduced motion.
+- Only `transform`, `opacity` and colour animate. Under `prefers-reduced-motion` nothing moves and figures show their result.
 - Illustrative parts (task lengths, table names) are labelled as illustrative beside the figure.
 
 ## 7. Copy

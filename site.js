@@ -129,22 +129,29 @@
     play.addEventListener('click', walk);
   }
 
-  // Ambient vignettes: a Pause control, and no motion while off-screen.
+  // Ambient vignettes: click or tap the art to pause it (no visible button), and no
+  // motion while off-screen. The art only becomes a control when motion is allowed.
   function ambient(fig) {
-    var button = fig.querySelector('[data-ambient-toggle]');
+    var art = fig.querySelector('[data-ambient-toggle]');
     var userPaused = false;
     var onScreen = true;
     function apply() {
       fig.classList.toggle('is-paused', userPaused || !onScreen);
-      if (button) {
-        button.textContent = userPaused ? 'Play' : 'Pause';
-        button.setAttribute('aria-pressed', String(userPaused));
+      fig.classList.toggle('is-user-paused', userPaused);
+      if (art) {
+        art.setAttribute('aria-pressed', String(userPaused));
+        art.setAttribute('aria-label', userPaused ? 'Play the animation' : 'Pause the animation');
       }
     }
+    function toggle() { userPaused = !userPaused; apply(); }
     if (reduced()) return;
-    if (button) {
-      button.hidden = false;
-      button.addEventListener('click', function () { userPaused = !userPaused; apply(); });
+    if (art) {
+      art.setAttribute('role', 'button');
+      art.setAttribute('tabindex', '0');
+      art.addEventListener('click', toggle);
+      art.addEventListener('keydown', function (event) {
+        if (event.key === 'Enter' || event.key === ' ') { event.preventDefault(); toggle(); }
+      });
     }
     if ('IntersectionObserver' in window) {
       new IntersectionObserver(function (entries) {

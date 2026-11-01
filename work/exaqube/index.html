@@ -59,8 +59,8 @@
         </div>
         <div>
         <figure class="vignette" data-ambient>
-                <div class="vignette-art v-sea" aria-hidden="true">
-                  <svg viewBox="0 20 320 82" role="presentation">
+                <div class="vignette-art v-sea" data-ambient-toggle>
+                  <svg viewBox="0 20 320 82" aria-hidden="true" focusable="false">
                     <g class="v-sky">
                       <g class="v-sun"><circle cx="16" cy="58" r="7"></circle><circle class="ring" cx="16" cy="58" r="10.5"></circle></g>
                       <g class="v-moon"><path d="M19 50.5a7.5 7.5 0 1 0 4.5 12.9 8.6 8.6 0 0 1-4.5-12.9Z"></path><circle cx="32" cy="52" r="0.9"></circle><circle cx="28" cy="64" r="0.7"></circle></g>
@@ -84,7 +84,7 @@
                     <path class="v-wave v-wave--far" d="M0 92q9-4 18 0t18 0 18 0 18 0 18 0 18 0 18 0 18 0 18 0 18 0 18 0 18 0 18 0 18 0 18 0 18 0 18 0 18 0"></path>
                   </svg>
                 </div>
-                <div class="vignette-foot"><figcaption>A container ship pinging its position: the data a maritime AI platform runs on.</figcaption><button class="text-button" type="button" data-ambient-toggle hidden>Pause</button></div>
+                <div class="vignette-foot"><figcaption>A container ship pinging its position: the data a maritime AI platform runs on.</figcaption></div>
               </figure>
         <dl class="facts">
           <div><dt>Role</dt><dd>Data Engineer</dd></div>
@@ -105,7 +105,7 @@
           <p class="project-stack">Ubuntu, Databricks, Delta Lake</p>
           <ul class="points">
               <li>Migrated 40+ production Python scripts off a legacy Ubuntu server onto Databricks Workflows.</li>
-              <li>The thrice-daily flagship pipeline now runs in about 30 minutes instead of 1 h 50 m, cutting daily compute hours by about 70%.</li>
+              <li>Resolved the data skew in the thrice-daily flagship pipeline and moved it to job compute clusters: about 30 minutes a run instead of 1 h 50 m, and about 70% fewer daily compute hours.</li>
               <li>Orchestration, retries and alerting replaced cron jobs and manual restarts.</li>
           </ul>
         </div>
@@ -117,15 +117,15 @@
             </div>
             <ol class="run-rows">
             <li class="run-row" style="--share: 1.0000" data-minutes="110">
-              <div class="run-row-label"><strong>Before: cron scripts on one server</strong><span class="clock" data-clock>1 h 50 m</span></div>
+              <div class="run-row-label"><strong>Before: skewed, on shared compute</strong><span class="clock" data-clock>1 h 50 m</span></div>
               <div class="run-track" aria-hidden="true"><div class="run-fill"></div></div>
             </li>
             <li class="run-row run-row--after" style="--share: 0.2727" data-minutes="30">
-              <div class="run-row-label"><strong>After: Databricks Workflows</strong><span class="clock" data-clock>30 m</span></div>
+              <div class="run-row-label"><strong>After: skew fixed, on job clusters</strong><span class="clock" data-clock>30 m</span></div>
               <div class="run-track" aria-hidden="true"><div class="run-fill"></div></div>
             </li>
             </ol>
-            <figcaption id="run-exa">The thrice-daily flagship pipeline, both runs on the same time axis.</figcaption>
+            <figcaption id="run-exa">The thrice-daily flagship pipeline, both runs on the same time axis. The move to Workflows below is a separate change: it brought retries and alerting, not the speed.</figcaption>
           </figure>
           <dl class="ba">
             <div><dt>Before</dt><dd><strong>Cron scripts on one server</strong><span>Sequential cron-scheduled scripts on a single Ubuntu box: no retries, failures found by hand.</span></dd></div>
@@ -156,7 +156,6 @@
           <h2 id="spark-tuning-title">Spark performance tuning</h2>
           <p class="project-stack">Spark, Databricks, Delta Lake</p>
           <ul class="points">
-              <li>Resolved data skew on the thrice-daily pipeline and moved it to job compute clusters.</li>
               <li>Tuned shuffle partitions, broadcast joins and adaptive query execution across the heaviest jobs.</li>
               <li>File compaction and clustering keep query latency flat as data volume grows.</li>
           </ul>
@@ -235,9 +234,6 @@
         <li><a href="../../about/">About</a></li>
         <li><a href="../../contact/">Contact details</a></li>
         <li><a href="../../privacy/">Privacy</a></li>
-        <li><a href="../../developers/">Developer resources</a></li>
-        <li><a href="../../index.md">Markdown portfolio</a></li>
-        <li><a href="https://github.com/Omjay/Omjay-Portfolio">Source on GitHub</a></li>
       </ul>
       <p>Om Jay Mishra, Data Engineer</p>
     </div>
