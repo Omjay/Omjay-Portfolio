@@ -198,6 +198,7 @@
               <li>Every clone gets a unique uppercase name, DATABASE_BRANCH_YYYYMMDD, so each environment traces back to its branch and the day it was cut.</li>
               <li>15+ engineers test changes against real production data as of branch creation, without touching production or duplicating storage.</li>
               <li>A month-end job drops clones of feature branches with no push for a month; main, prod and non-feature branches are never dropped.</li>
+              <li>Brought governance to development work: every copy of production is named after its branch and the day it was cut, kept apart from production, and removed once its branch goes quiet, so no untracked copies of production data linger.</li>
           </ul>
         </div>
         <div class="project-figure">
