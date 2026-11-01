@@ -1,773 +1,109 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Engineering Toolkit | Om Jay Mishra</title>
-  <meta name="description" content="The data engineering tools, platform capabilities, and architecture patterns Om Jay Mishra uses across Azure, Databricks, PySpark, Delta Lake, and analytics automation.">
+  <meta name="description" content="The tools Om Jay Mishra uses for Azure Databricks and Snowflake data engineering, each linked to the project that used it.">
   <link rel="canonical" href="https://omjay.github.io/Omjay-Portfolio/toolkit.html">
   <link rel="icon" href="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%2064%2064'%3E%3Crect%20width='64'%20height='64'%20rx='12'%20fill='%231c1e21'/%3E%3Ctext%20x='32'%20y='41'%20text-anchor='middle'%20font-family='Arial'%20font-size='24'%20font-weight='700'%20fill='%23fbfbf9'%3EOM%3C/text%3E%3C/svg%3E">
-  <meta name="theme-color" content="#ffffff">
+  <meta name="theme-color" content="#fbfbf9">
   <meta property="og:type" content="website">
   <meta property="og:site_name" content="Om Jay Mishra">
   <meta property="og:title" content="Engineering Toolkit | Om Jay Mishra">
-  <meta property="og:description" content="Data engineering capabilities and architecture patterns across Azure, Databricks, PySpark, and Delta Lake.">
+  <meta property="og:description" content="The tools Om Jay Mishra uses for Azure Databricks and Snowflake data engineering, each linked to the project that used it.">
   <meta property="og:url" content="https://omjay.github.io/Omjay-Portfolio/toolkit.html">
-  <meta name="twitter:card" content="summary">
+  <meta property="og:image" content="https://omjay.github.io/Omjay-Portfolio/og-image.png">
+  <meta name="twitter:card" content="summary_large_image">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600&amp;family=Public+Sans:wght@400;500;600;700&amp;family=Source+Serif+4:opsz,wght@8..60,500;8..60,600&amp;display=swap" rel="stylesheet">
-  <style>
-    :root {
-      --canvas: #ffffff;
-      --surface: #fbfbf9;
-      --surface-alt: #f5f7f8;
-      --surface-hover: #f1f5f7;
-      --border: #e2e5e6;
-      --border-strong: #c8cdd0;
-      --ink: #1c1e21;
-      --ink-secondary: #45484d;
-      --ink-tertiary: #697078;
-      --accent: #1f6791;
-      --accent-hover: #164b6a;
-      --accent-soft: #e8f2f8;
-      --brand-databricks: #9f2b23;
-      --brand-azure: #005b96;
-      --brand-sql: #8e4450;
-      --brand-delta: #0b6b47;
-      --brand-language: #6f500c;
-      --brand-devops: #45515c;
-      --matrix-green: #69e6a6;
-      --verification-certified: #e9a115;
-      --verification-work: #0078d4;
-      --canvas-rgb: 255, 255, 255;
-      --ink-rgb: 28, 30, 33;
-      --accent-rgb: 31, 103, 145;
-      --radius: 10px;
-      --content: 1180px;
-    }
-
-    *, *::before, *::after { box-sizing: border-box; }
-
-    html { background: var(--canvas); scroll-behavior: smooth; }
-
-    body {
-      background: var(--canvas);
-      color: var(--ink);
-      font-family: 'Public Sans', sans-serif;
-      margin: 0;
-      min-width: 0;
-      overflow-x: clip;
-      -webkit-font-smoothing: antialiased;
-    }
-
-    a {
-      color: var(--accent);
-      text-decoration-color: transparent;
-      text-decoration-thickness: 1px;
-      text-underline-offset: 0.22em;
-      transition: color 160ms ease, text-decoration-color 160ms ease, background-color 160ms ease, border-color 160ms ease, transform 160ms ease;
-    }
-
-    a:hover { color: var(--accent-hover); text-decoration-color: currentColor; }
-    a:active { transform: translateY(1px); }
-    a:focus-visible { outline: 2px solid var(--accent); outline-offset: 3px; }
-
-    .skip-link {
-      align-items: center;
-      background: var(--ink);
-      color: var(--canvas);
-      display: inline-flex;
-      left: 16px;
-      min-height: 44px;
-      padding: 12px 16px;
-      position: fixed;
-      top: 12px;
-      transform: translateY(-150%);
-      z-index: 10;
-    }
-
-    .skip-link:focus { color: var(--canvas); transform: translateY(0); }
-
-    .shell { margin-inline: auto; max-width: var(--content); padding-inline: 32px; }
-
-    .site-header {
-      background: rgba(var(--canvas-rgb), 0.94);
-      border-bottom: 1px solid var(--border);
-      position: sticky;
-      top: 0;
-      z-index: 4;
-    }
-
-    .site-header__inner {
-      align-items: center;
-      display: flex;
-      justify-content: space-between;
-      min-height: 68px;
-    }
-
-    .brand {
-      align-items: baseline;
-      color: var(--ink);
-      display: inline-flex;
-      font-family: 'Source Serif 4', serif;
-      font-size: 1.2rem;
-      font-weight: 600;
-      min-height: 44px;
-      text-decoration: none;
-    }
-
-    .site-nav { align-items: center; display: flex; gap: 6px; }
-
-    .site-nav a {
-      align-items: center;
-      border-radius: 6px;
-      display: inline-flex;
-      font-family: 'JetBrains Mono', monospace;
-      font-size: 0.72rem;
-      letter-spacing: 0.04em;
-      min-height: 44px;
-      padding-inline: 12px;
-      text-decoration: none;
-    }
-
-    .site-nav a[aria-current='page'] { background: var(--accent-soft); color: var(--accent-hover); }
-
-    main { animation: page-enter 420ms cubic-bezier(0.16, 1, 0.3, 1) both; }
-
-    .hero {
-      display: grid;
-      gap: 40px;
-      grid-template-columns: minmax(0, 1.2fr) minmax(260px, 0.8fr);
-      padding-block: 88px 76px;
-    }
-
-    .eyebrow {
-      color: var(--ink-tertiary);
-      font-family: 'JetBrains Mono', monospace;
-      font-size: 0.72rem;
-      font-weight: 500;
-      letter-spacing: 0.06em;
-      margin: 0 0 18px;
-    }
-
-    h1, h2, h3 { font-family: 'Source Serif 4', serif; text-wrap: balance; }
-
-    h1 {
-      font-size: clamp(3rem, 7vw, 5.25rem);
-      font-weight: 600;
-      letter-spacing: -0.035em;
-      line-height: 0.98;
-      margin: 0;
-      max-width: 760px;
-    }
-
-    .hero__intro {
-      color: var(--ink-secondary);
-      font-size: 1.05rem;
-      line-height: 1.65;
-      margin: 24px 0 0;
-      max-width: 64ch;
-    }
-
-    .hero__aside {
-      align-self: end;
-      border-left: 1px solid var(--border);
-      padding-left: 28px;
-    }
-
-    .hero__aside p { color: var(--ink-secondary); line-height: 1.6; margin: 0; }
-
-    .flow {
-      color: var(--accent-hover);
-      font-family: 'JetBrains Mono', monospace;
-      font-size: 0.72rem;
-      line-height: 1.8;
-      margin-top: 18px;
-    }
-
-    section { padding-block: 72px; }
-    section + section { border-top: 1px solid var(--border); }
-
-    .section-heading { margin-bottom: 34px; max-width: 720px; }
-
-    h2 {
-      font-size: clamp(2.1rem, 4vw, 3.25rem);
-      font-weight: 600;
-      letter-spacing: -0.025em;
-      line-height: 1.08;
-      margin: 0;
-    }
-
-    .section-heading p { color: var(--ink-secondary); line-height: 1.65; margin: 16px 0 0; }
-
-    .capability-layout {
-      display: grid;
-      gap: 16px;
-      grid-template-columns: repeat(12, minmax(0, 1fr));
-    }
-
-    .stack-core {
-      background: #17231e;
-      border: 1px solid var(--ink);
-      border-radius: var(--radius);
-      color: var(--canvas);
-      display: flex;
-      flex-direction: column;
-      grid-column: 1 / -1;
-      isolation: isolate;
-      justify-content: space-between;
-      min-height: 220px;
-      overflow: hidden;
-      padding: 28px;
-      position: relative;
-    }
-
-    .stack-core::after {
-      color: var(--matrix-green);
-      content: '01001101 11010010 00110101 10100110 01101001 10010110 01011010 11000101 00101101 10110010 01100110 10011001 01010110 11001010 00110101 10100101';
-      font-family: 'JetBrains Mono', monospace;
-      font-size: 0.68rem;
-      inset: 20px 24px 20px auto;
-      letter-spacing: 0.22em;
-      line-height: 2.15;
-      max-width: 44%;
-      opacity: 0.12;
-      overflow: hidden;
-      position: absolute;
-      text-align: right;
-      width: 420px;
-      word-break: break-all;
-      z-index: -1;
-    }
-
-    .stack-core > * { max-width: 640px; position: relative; z-index: 1; }
-
-    .stack-core h3 { font-size: 2rem; margin: 0; }
-    .stack-core p { color: var(--border); line-height: 1.6; margin: 18px 0 0; }
-
-    .stack-core__note {
-      color: var(--border-strong);
-      font-family: 'JetBrains Mono', monospace;
-      font-size: 0.7rem;
-      letter-spacing: 0.05em;
-      margin-top: 42px;
-    }
-
-    .capability-card {
-      --card-accent: var(--accent);
-      --card-surface: var(--surface);
-      background: var(--card-surface);
-      border: 1px solid var(--border);
-      border-top: 3px solid var(--card-accent);
-      border-radius: var(--radius);
-      grid-column: span 7;
-      padding: 24px;
-      transition: border-color 180ms ease, box-shadow 180ms ease, transform 180ms ease;
-    }
-
-    .capability-card:nth-of-type(n+3) { grid-column: span 4; }
-    .capability-card--platform { grid-column: 1 / -1; min-height: 168px; }
-    .capability-card--half { grid-column: span 6; }
-    .capability-card--databricks { --card-accent: var(--brand-databricks); --card-surface: #fff8f7; }
-    .capability-card--azure { --card-accent: var(--brand-azure); --card-surface: #f5faff; }
-    .capability-card--storage { --card-accent: var(--brand-delta); --card-surface: #f5fbf8; }
-    .capability-card--languages { --card-accent: var(--brand-language); --card-surface: #fffbf2; }
-    .capability-card--devops { --card-accent: var(--brand-devops); --card-surface: #f7f8f9; }
-    .capability-card--analytics { --card-accent: var(--brand-sql); --card-surface: #fdf7f8; }
-    .capability-card:hover { border-color: var(--card-accent); box-shadow: 0 10px 30px rgba(var(--ink-rgb), 0.06); transform: translateY(-1px); }
-
-    .capability-card__top {
-      align-items: center;
-      display: flex;
-      gap: 16px;
-      justify-content: space-between;
-      margin-bottom: 26px;
-    }
-
-    .capability-brand {
-      align-items: center;
-      color: var(--card-accent);
-      display: inline-flex;
-      font-family: 'JetBrains Mono', monospace;
-      font-size: 0.68rem;
-      font-weight: 600;
-      gap: 8px;
-      letter-spacing: 0.08em;
-      text-transform: uppercase;
-    }
-
-    .capability-logo {
-      display: block;
-      flex: 0 0 auto;
-      height: 22px;
-      object-fit: contain;
-      width: 22px;
-    }
-
-    .capability-status {
-      border: 1px solid var(--card-accent);
-      border-radius: 3px;
-      color: var(--card-accent);
-      font-family: 'JetBrains Mono', monospace;
-      font-size: 0.62rem;
-      letter-spacing: 0.06em;
-      padding: 4px 7px;
-      text-transform: uppercase;
-      white-space: nowrap;
-    }
-
-    .capability-title {
-      align-items: center;
-      display: flex;
-      flex-wrap: wrap;
-      gap: 8px;
-    }
-
-    .capability-card h3 { font-size: 1.25rem; margin: 0; }
-
-    .capability-card p {
-      color: var(--ink-tertiary);
-      font-family: 'JetBrains Mono', monospace;
-      font-size: 0.68rem;
-      line-height: 1.55;
-      margin: 12px 0 0;
-    }
-
-    .tags {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 7px;
-      list-style: none;
-      margin: 18px 0 0;
-      padding: 0;
-    }
-
-    .tags li {
-      align-items: center;
-      background: var(--surface);
-      border: 1px solid var(--border);
-      border-radius: 4px;
-      color: var(--ink-secondary);
-      display: inline-flex;
-      font-family: 'JetBrains Mono', monospace;
-      font-size: 0.7rem;
-      gap: 6px;
-      line-height: 1.4;
-      padding: 6px 8px;
-    }
-
-    .verification-badges {
-      display: inline-flex;
-      gap: 6px;
-    }
-
-    .verification-badge {
-      align-items: center;
-      color: var(--verification-work);
-      cursor: help;
-      display: inline-flex;
-      position: relative;
-    }
-
-    .verification-badge--certified { color: var(--verification-certified); }
-
-    .verification-badge svg {
-      display: block;
-      flex: 0 0 auto;
-      height: 15px;
-      width: 15px;
-    }
-
-    .verification-badge__tooltip {
-      background: var(--ink);
-      border-radius: 4px;
-      bottom: calc(100% + 7px);
-      color: var(--canvas);
-      font-family: 'JetBrains Mono', monospace;
-      font-size: 0.56rem;
-      font-style: normal;
-      left: 50%;
-      letter-spacing: 0.08em;
-      opacity: 0;
-      padding: 5px 8px;
-      pointer-events: none;
-      position: absolute;
-      transform: translateX(-50%);
-      transition: opacity 150ms ease;
-      white-space: nowrap;
-      z-index: 40;
-    }
-
-    .verification-badge:hover .verification-badge__tooltip,
-    .verification-badge:focus .verification-badge__tooltip { opacity: 1; }
-
-    .verification-badge:focus-visible {
-      border-radius: 3px;
-      outline: 2px solid var(--accent);
-      outline-offset: 3px;
-    }
-
-    .verification-symbols {
-      height: 0;
-      overflow: hidden;
-      position: absolute;
-      width: 0;
-    }
-
-    @media (max-width: 700px) {
-      .verification-badge__tooltip {
-        left: auto;
-        right: -8px;
-        transform: none;
-      }
-    }
-
-    .architecture-grid {
-      display: grid;
-      gap: 16px;
-      grid-template-columns: repeat(2, minmax(0, 1fr));
-    }
-
-    .architecture-card {
-      background: var(--surface);
-      border: 1px solid var(--border);
-      border-radius: var(--radius);
-      padding: 28px;
-    }
-
-    .architecture-card h3 { font-size: 1.4rem; margin: 0; }
-    .architecture-card > p { color: var(--ink-secondary); line-height: 1.6; margin: 12px 0 0; }
-
-    .architecture-path {
-      border-left: 2px solid var(--accent);
-      color: var(--ink-secondary);
-      font-family: 'JetBrains Mono', monospace;
-      font-size: 0.7rem;
-      line-height: 1.7;
-      margin-top: 22px;
-      padding-left: 14px;
-    }
-
-    .practice {
-      align-items: start;
-      display: grid;
-      gap: 40px;
-      grid-template-columns: minmax(0, 0.8fr) minmax(320px, 1.2fr);
-    }
-
-    .practice h2 { max-width: 520px; }
-
-    .practice-list { border-top: 1px solid var(--border); }
-
-    .practice-item {
-      display: grid;
-      gap: 24px;
-      grid-template-columns: minmax(120px, 0.35fr) minmax(0, 1fr);
-      padding-block: 22px;
-    }
-
-    .practice-item + .practice-item { border-top: 1px solid var(--border); }
-
-    .practice-item h3 {
-      font-family: 'Public Sans', sans-serif;
-      font-size: 0.88rem;
-      line-height: 1.45;
-      margin: 0;
-    }
-
-    .practice-item p { color: var(--ink-secondary); line-height: 1.6; margin: 0; }
-
-    .cta-row { align-items: center; display: flex; flex-wrap: wrap; gap: 12px; margin-top: 30px; }
-
-    .button {
-      align-items: center;
-      background: var(--accent);
-      border: 1px solid var(--accent);
-      border-radius: 6px;
-      color: var(--canvas);
-      display: inline-flex;
-      font-size: 0.82rem;
-      font-weight: 600;
-      justify-content: center;
-      min-height: 44px;
-      padding: 11px 16px;
-      text-decoration: none;
-    }
-
-    .button:hover { background: var(--accent-hover); border-color: var(--accent-hover); color: var(--canvas); text-decoration: none; }
-
-    .button--secondary { background: var(--canvas); border-color: var(--border-strong); color: var(--ink); }
-    .button--secondary:hover { background: var(--surface-hover); border-color: var(--accent); color: var(--ink); }
-
-    footer { border-top: 1px solid var(--border); padding-block: 36px 48px; }
-
-    .footer-inner { align-items: center; display: flex; gap: 24px; justify-content: space-between; }
-    .footer-inner p { color: var(--ink-tertiary); font-size: 0.8rem; margin: 0; }
-    .footer-links { display: flex; flex-wrap: wrap; gap: 18px; }
-    .footer-links a { align-items: center; display: inline-flex; font-size: 0.8rem; min-height: 44px; }
-
-    @keyframes page-enter {
-      from { opacity: 0; transform: translateY(8px); }
-      to { opacity: 1; transform: translateY(0); }
-    }
-
-    @media (max-width: 900px) {
-      .hero, .practice { grid-template-columns: 1fr; }
-      .hero__aside { border-left: 0; border-top: 1px solid var(--border); padding-left: 0; padding-top: 24px; }
-      .stack-core, .capability-card--platform { grid-column: 1 / -1; }
-      .capability-card, .capability-card:nth-of-type(n+3), .capability-card--half { grid-column: span 6; }
-    }
-
-    @media (max-width: 700px) {
-      .shell { padding-inline: 20px; }
-      .site-header__inner { align-items: flex-start; flex-direction: column; padding-block: 10px; }
-      .site-nav { justify-content: space-between; width: 100%; }
-      .site-nav a { font-size: 0.68rem; padding-inline: 8px; }
-      .hero { gap: 28px; padding-block: 60px 52px; }
-      h1 { font-size: clamp(2.65rem, 13vw, 3.6rem); line-height: 1.02; }
-      section { padding-block: 54px; }
-      .capability-layout { grid-template-columns: 1fr; }
-      .stack-core, .capability-card, .capability-card:nth-of-type(n+3), .capability-card--platform, .capability-card--half { grid-column: 1; min-height: auto; }
-      .stack-core::after { max-width: 62%; opacity: 0.08; }
-      .capability-card__top { margin-bottom: 22px; }
-      .architecture-grid { grid-template-columns: 1fr; }
-      .practice { gap: 28px; }
-      .practice-item { gap: 10px; grid-template-columns: 1fr; }
-      .footer-inner { align-items: flex-start; flex-direction: column; gap: 8px; }
-    }
-
-    @media (max-width: 360px) {
-      .site-nav { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); }
-      .site-nav a { justify-content: center; padding-inline: 4px; }
-    }
-
-    @media (prefers-reduced-motion: reduce) {
-      *, *::before, *::after {
-        animation-duration: 0.01ms !important;
-        animation-iteration-count: 1 !important;
-        scroll-behavior: auto !important;
-        transition-duration: 0.01ms !important;
-      }
-    }
-  </style>
+  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@500;600&amp;family=Public+Sans:wght@400;600&amp;family=Source+Serif+4:opsz,wght@8..60,600&amp;display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="tokens.css">
+  <link rel="stylesheet" href="base.css">
+  <link rel="stylesheet" href="site.css">
 </head>
 <body>
-  <svg class="verification-symbols" aria-hidden="true" focusable="false">
-    <defs>
-      <symbol id="verification-badge-mark" viewBox="0 0 24 24">
-        <path fill="currentColor" d="M22.25 12c0-1.43-.88-2.67-2.19-3.34.46-1.39.2-2.9-.81-3.91s-2.52-1.27-3.91-.81c-.66-1.31-1.91-2.19-3.34-2.19s-2.67.88-3.33 2.19c-1.4-.46-2.91-.2-3.92.81s-1.26 2.52-.8 3.91c-1.31.67-2.2 1.91-2.2 3.34s.89 2.67 2.2 3.34c-.46 1.39-.21 2.9.8 3.91s2.52 1.26 3.91.81c.67 1.31 1.91 2.19 3.34 2.19s2.68-.88 3.34-2.19c1.39.45 2.9.2 3.91-.81s1.27-2.52.81-3.91c1.31-.67 2.19-1.91 2.19-3.34z"></path>
-        <path fill="#ffffff" d="m10.6 16.08-3.6-3.6 1.42-1.41 2.18 2.18 4.98-4.98 1.42 1.41z"></path>
-      </symbol>
-    </defs>
-  </svg>
-  <a class="skip-link" href="#main-content">Skip to content</a>
-  <header class="site-header">
-    <div class="shell site-header__inner">
-      <a class="brand" href="index.html">Om Jay Mishra</a>
-      <nav class="site-nav" aria-label="Primary navigation">
-        <a href="index.html">Portfolio</a>
-        <a href="toolkit.html?v=20260904-3" aria-current="page">Toolkit</a>
-        <a href="certifications.html?v=20260904-3">Certifications</a>
-        <a href="resume.html">Resume</a>
+  <a class="skip-link" href="#main">Skip to content</a>
+  <header class="site-nav">
+    <div class="container">
+      <a class="wordmark" href="" aria-label="Om Jay Mishra, home">Om Jay Mishra</a>
+      <nav aria-label="Primary">
+        <ul class="nav-links">
+          <li><a href="./#work">Work</a></li>
+          <li><a href="toolkit.html?v=20260904-3" aria-current="page">Toolkit</a></li>
+          <li><a href="certifications.html?v=20260904-3">Certifications</a></li>
+          <li><a href="resume.html">Resume</a></li>
+          <li><a class="nav-email" href="mailto:mishra.omjay@gmail.com">Email me</a></li>
+        </ul>
+        <details class="nav-menu">
+          <summary>Menu</summary>
+          <ul>
+            <li><a href="./#work">Work</a></li>
+          <li><a href="toolkit.html?v=20260904-3" aria-current="page">Toolkit</a></li>
+          <li><a href="certifications.html?v=20260904-3">Certifications</a></li>
+          <li><a href="resume.html">Resume</a></li>
+            <li><a href="mailto:mishra.omjay@gmail.com">Email me</a></li>
+          </ul>
+        </details>
       </nav>
     </div>
   </header>
 
-  <main id="main-content">
-    <div class="shell">
-      <section class="hero" aria-labelledby="toolkit-title">
+  <main id="main">
+    <section class="case-head" aria-labelledby="toolkit-title">
+      <div class="container">
         <div>
-          <p class="eyebrow">Data engineering toolkit</p>
-          <h1 id="toolkit-title">How the stack fits together</h1>
-          <p class="hero__intro">A practical view of the platforms, languages, and patterns I use to build reliable data products. The portfolio shows outcomes; this page shows the engineering system behind them.</p>
+          <h1 id="toolkit-title">The stack, and where I used it</h1>
+          <p class="lead">Every group below links to the projects that used it. Tools I know from courses or exams are listed separately, so nothing here is claimed without work behind it.</p>
         </div>
-        <div class="hero__aside" role="group" aria-label="Typical data flow">
-          <p>My default path starts with governed ingestion, keeps transformations observable, and serves models built for the questions people actually ask.</p>
-          <div class="flow">Sources → ingest → transform → govern → serve</div>
+      </div>
+    </section>
+
+    <section class="section--tight" aria-labelledby="used-title">
+      <div class="container">
+        <div class="section-head"><h2 id="used-title">Used in production work</h2></div>
+        <dl class="rows rows--tools">
+          <div><dt>Databricks and Spark</dt><dd><span class="tool-list">PySpark, Spark SQL, Databricks Workflows, Unity Catalog, Photon, job clusters, adaptive query execution, Liquid Clustering</span><span class="evidence">Used at: <a href="work/azimuth-grc/#lakehouse-migration">Azimuth GRC, migration</a> <a href="work/azimuth-grc/#performance-governance">Azimuth GRC, performance</a> <a href="work/exaqube/#legacy-to-workflows">ExaQube, Workflows</a> <a href="work/exaqube/#spark-tuning">ExaQube, Spark tuning</a></span></dd></div>
+          <div><dt>Azure</dt><dd><span class="tool-list">Azure Data Factory, ADLS Gen2, Azure Monitor, Docker on Azure</span><span class="evidence">Used at: <a href="work/azimuth-grc/#workflow-automation">Azimuth GRC, workflow automation</a> <a href="work/azimuth-grc/#lakehouse-migration">Azimuth GRC, migration</a></span></dd></div>
+          <div><dt>Lakehouse and modelling</dt><dd><span class="tool-list">Delta Lake, medallion layers, incremental loads and merges, star schema, compaction and vacuuming, Parquet</span><span class="evidence">Used at: <a href="work/azimuth-grc/#lakehouse-migration">Azimuth GRC, migration</a> <a href="work/exaqube/#config-ingestion">ExaQube, ingestion</a></span></dd></div>
+          <div><dt>Snowflake</dt><dd><span class="tool-list">Zero-copy database clones, branch-based dev environments, month-end clone cleanup</span><span class="evidence">Used at: <a href="work/exaqube/#snowflake-dev">ExaQube, Snowflake dev environments</a></span></dd></div>
+          <div><dt>Languages</dt><dd><span class="tool-list">Python, SQL, SQL Server</span><span class="evidence">Used at: <a href="work/azimuth-grc/#workflow-automation">Azimuth GRC, workflow automation</a> <a href="work/exaqube/#config-ingestion">ExaQube, ingestion</a></span></dd></div>
+          <div><dt>Delivery and DevOps</dt><dd><span class="tool-list">Azure DevOps CI/CD, Git, Docker, Ubuntu</span><span class="evidence">Used at: <a href="work/azimuth-grc/#performance-governance">Azimuth GRC, performance</a> <a href="work/exaqube/#snowflake-dev">ExaQube, Snowflake dev environments</a> <a href="work/exaqube/#legacy-to-workflows">ExaQube, Workflows</a></span></dd></div>
+          <div><dt>Analytics</dt><dd><span class="tool-list">Power BI, Tableau, Google Sheets, Apps Script, Excel</span><span class="evidence">Used at: <a href="work/planetspark/">PlanetSpark</a> <a href="work/azimuth-grc/#lakehouse-migration">Azimuth GRC, migration</a></span></dd></div>
+        </dl>
+        <dl class="rows rows--tools rows--quiet">
+          <div><dt>From courses and exams</dt><dd><span class="tool-list">Microsoft Fabric and KQL (DP-700), dbt, Scala, Hive, Azure Synapse, Z-Ordering</span></dd></div>
+        </dl>
+      </div>
+    </section>
+
+    <section class="section" aria-labelledby="practice-title">
+      <div class="container">
+        <div class="section-head"><h2 id="practice-title">How I use them</h2></div>
+        <dl class="rows">
+          <div><dt>Performance</dt><dd>Partitioning, adaptive query execution, clustering, autoscaling and Photon, applied where measurements justify them.</dd></div>
+          <div><dt>Reliability</dt><dd>Schema controls, idempotent jobs, checkpoints, visible failures and clear retries.</dd></div>
+          <div><dt>Governance</dt><dd>Unity Catalog access boundaries, audit logs and documented ownership.</dd></div>
+          <div><dt>Cost</dt><dd>Compute size, job duration, storage layout and DBU use treated as engineering constraints.</dd></div>
+        </dl>
+        <div class="rows-links">
+          <a class="button button--quiet" href="./#work">See the work</a>
+          <a class="button button--quiet" href="certifications.html?v=20260904-3">See certifications</a>
         </div>
-      </section>
-
-      <section aria-labelledby="capabilities-title">
-        <div class="section-heading">
-          <p class="eyebrow">Capability map</p>
-          <h2 id="capabilities-title">One stack, clear responsibilities</h2>
-          <p>Each group has a defined job in the delivery path. The emphasis is on maintainable systems rather than long tool lists.</p>
-        </div>
-
-        <div class="capability-layout">
-          <article class="stack-core">
-            <div>
-              <h3>Om's data stack</h3>
-              <p>Azure and Databricks form the platform core, with Snowflake for client warehouse work. Delta Lake supplies reliable storage, while PySpark and SQL carry most transformation work.</p>
-            </div>
-            <div class="stack-core__note">Built for governed Lakehouse delivery</div>
-          </article>
-
-          <article class="capability-card capability-card--platform capability-card--databricks" data-verification-item="databricks">
-            <div class="capability-card__top">
-              <span class="capability-brand"><img class="capability-logo" src="icons/databricks-toolkit.svg" alt="" aria-hidden="true">Databricks</span>
-              <span class="capability-status">Core · daily</span>
-            </div>
-            <div class="capability-title">
-              <h3>Databricks and Spark</h3>
-              <span class="verification-badges">
-                <span class="verification-badge verification-badge--certified" tabindex="0" role="img" aria-label="DATABRICKS CERTIFIED"><svg aria-hidden="true"><use href="#verification-badge-mark"></use></svg><i class="verification-badge__tooltip" role="tooltip">DATABRICKS CERTIFIED</i></span>
-                <span class="verification-badge" tabindex="0" role="img" aria-label="WORK VERIFIED"><svg aria-hidden="true"><use href="#verification-badge-mark"></use></svg><i class="verification-badge__tooltip" role="tooltip">WORK VERIFIED</i></span>
-              </span>
-            </div>
-            <p>Distributed transformation, orchestration, tuning, and governance</p>
-            <ul class="tags" aria-label="Databricks and Spark capabilities">
-              <li data-verification-item="pyspark"><span>PySpark</span><span class="verification-badge" tabindex="0" role="img" aria-label="WORK VERIFIED"><svg aria-hidden="true"><use href="#verification-badge-mark"></use></svg><i class="verification-badge__tooltip" role="tooltip">WORK VERIFIED</i></span></li>
-              <li>Spark SQL</li><li>Workflows</li><li>AQE tuning</li><li>Unity Catalog</li><li>Photon</li><li>Job clusters</li>
-            </ul>
-          </article>
-
-          <article class="capability-card capability-card--azure" data-verification-item="azure">
-            <div class="capability-card__top">
-              <span class="capability-brand"><img class="capability-logo" src="icons/microsoft-azure.svg" alt="" aria-hidden="true" loading="lazy">Azure</span>
-              <span class="capability-status">Strong</span>
-            </div>
-            <div class="capability-title">
-              <h3>Azure cloud</h3>
-              <span class="verification-badges"><span class="verification-badge verification-badge--certified" tabindex="0" role="img" aria-label="MICROSOFT AZURE CERTIFIED"><svg aria-hidden="true"><use href="#verification-badge-mark"></use></svg><i class="verification-badge__tooltip" role="tooltip">MICROSOFT AZURE CERTIFIED</i></span><span class="verification-badge" tabindex="0" role="img" aria-label="WORK VERIFIED"><svg aria-hidden="true"><use href="#verification-badge-mark"></use></svg><i class="verification-badge__tooltip" role="tooltip">WORK VERIFIED</i></span></span>
-            </div>
-            <p>Ingestion, storage, and platform services</p>
-            <ul class="tags" aria-label="Azure cloud capabilities"><li>Data Factory</li><li>ADLS Gen2</li><li>Containers</li><li>Container Jobs</li><li>Synapse</li><li>Monitor</li><li>DP-900</li></ul>
-          </article>
-
-          <article class="capability-card capability-card--storage" data-verification-item="delta-lake">
-            <div class="capability-card__top">
-              <span class="capability-brand"><img class="capability-logo" src="icons/delta.svg" alt="" aria-hidden="true" loading="lazy">Lakehouse</span>
-              <span class="capability-status">Core</span>
-            </div>
-            <div class="capability-title">
-              <h3>Delta Lake and modelling</h3>
-              <span class="verification-badges"><span class="verification-badge verification-badge--certified" tabindex="0" role="img" aria-label="DATABRICKS CERTIFIED"><svg aria-hidden="true"><use href="#verification-badge-mark"></use></svg><i class="verification-badge__tooltip" role="tooltip">DATABRICKS CERTIFIED</i></span><span class="verification-badge" tabindex="0" role="img" aria-label="WORK VERIFIED"><svg aria-hidden="true"><use href="#verification-badge-mark"></use></svg><i class="verification-badge__tooltip" role="tooltip">WORK VERIFIED</i></span></span>
-            </div>
-            <p>Reliable formats and analytics-ready structures</p>
-            <ul class="tags" aria-label="Storage and modelling capabilities"><li data-verification-item="snowflake"><span>Snowflake</span><span class="verification-badge" tabindex="0" role="img" aria-label="WORK VERIFIED"><svg aria-hidden="true"><use href="#verification-badge-mark"></use></svg><i class="verification-badge__tooltip" role="tooltip">WORK VERIFIED</i></span></li><li>Zero-copy clones</li><li>Parquet</li><li>Medallion</li><li>Liquid Clustering</li><li>Z-Ordering</li><li>Star schema</li><li>dbt</li></ul>
-          </article>
-
-          <article class="capability-card capability-card--languages">
-            <div class="capability-card__top">
-              <span class="capability-brand"><img class="capability-logo" src="icons/brackets-curly.svg" alt="" aria-hidden="true" loading="lazy">Languages</span>
-              <span class="capability-status">Daily</span>
-            </div>
-            <h3>Languages and query</h3>
-            <p>Production transformation, automation, and query engineering</p>
-            <ul class="tags" aria-label="Programming languages and query tools">
-              <li data-verification-item="python"><span>Python</span><span class="verification-badge" tabindex="0" role="img" aria-label="WORK VERIFIED"><svg aria-hidden="true"><use href="#verification-badge-mark"></use></svg><i class="verification-badge__tooltip" role="tooltip">WORK VERIFIED</i></span></li>
-              <li data-verification-item="sql"><span>SQL</span><span class="verification-badge" tabindex="0" role="img" aria-label="WORK VERIFIED"><svg aria-hidden="true"><use href="#verification-badge-mark"></use></svg><i class="verification-badge__tooltip" role="tooltip">WORK VERIFIED</i></span></li>
-              <li>KQL</li>
-              <li data-verification-item="sql-server"><span>SQL Server</span><span class="verification-badge" tabindex="0" role="img" aria-label="WORK VERIFIED"><svg aria-hidden="true"><use href="#verification-badge-mark"></use></svg><i class="verification-badge__tooltip" role="tooltip">WORK VERIFIED</i></span></li>
-              <li>Scala</li>
-              <li>Hive</li>
-              <li>Bash</li>
-            </ul>
-          </article>
-
-          <article class="capability-card capability-card--half capability-card--devops">
-            <div class="capability-card__top">
-              <span class="capability-brand"><img class="capability-logo" src="icons/terminal-window.svg" alt="" aria-hidden="true" loading="lazy">Operations</span>
-              <span class="capability-status">Delivery</span>
-            </div>
-            <h3>DevOps and infrastructure</h3>
-            <p>Repeatable delivery and dependable environments</p>
-            <ul class="tags" aria-label="DevOps and infrastructure capabilities">
-              <li data-verification-item="git"><span>Git</span><span class="verification-badge" tabindex="0" role="img" aria-label="WORK VERIFIED"><svg aria-hidden="true"><use href="#verification-badge-mark"></use></svg><i class="verification-badge__tooltip" role="tooltip">WORK VERIFIED</i></span></li>
-              <li data-verification-item="docker"><span>Docker</span><span class="verification-badge" tabindex="0" role="img" aria-label="WORK VERIFIED"><svg aria-hidden="true"><use href="#verification-badge-mark"></use></svg><i class="verification-badge__tooltip" role="tooltip">WORK VERIFIED</i></span></li>
-              <li data-verification-item="ubuntu"><span>Ubuntu</span><span class="verification-badge" tabindex="0" role="img" aria-label="WORK VERIFIED"><svg aria-hidden="true"><use href="#verification-badge-mark"></use></svg><i class="verification-badge__tooltip" role="tooltip">WORK VERIFIED</i></span></li>
-              <li data-verification-item="azure-devops"><span>Azure DevOps CI/CD</span><span class="verification-badge" tabindex="0" role="img" aria-label="WORK VERIFIED"><svg aria-hidden="true"><use href="#verification-badge-mark"></use></svg><i class="verification-badge__tooltip" role="tooltip">WORK VERIFIED</i></span></li>
-              <li>Branch dev environments</li>
-            </ul>
-          </article>
-
-          <article class="capability-card capability-card--half capability-card--analytics">
-            <div class="capability-card__top">
-              <span class="capability-brand"><img class="capability-logo" src="icons/chart-bar.svg" alt="" aria-hidden="true" loading="lazy">Delivery layer</span>
-              <span class="capability-status">Applied</span>
-            </div>
-            <h3>Analytics and automation</h3>
-            <p>Useful delivery layers for analysts and operators</p>
-            <ul class="tags" aria-label="Analytics and automation capabilities">
-              <li data-verification-item="power-bi"><span>Power BI</span><span class="verification-badge" tabindex="0" role="img" aria-label="WORK VERIFIED"><svg aria-hidden="true"><use href="#verification-badge-mark"></use></svg><i class="verification-badge__tooltip" role="tooltip">WORK VERIFIED</i></span></li>
-              <li data-verification-item="tableau"><span>Tableau</span><span class="verification-badge" tabindex="0" role="img" aria-label="WORK VERIFIED"><svg aria-hidden="true"><use href="#verification-badge-mark"></use></svg><i class="verification-badge__tooltip" role="tooltip">WORK VERIFIED</i></span></li>
-              <li data-verification-item="google-sheets"><span>Google Sheets</span><span class="verification-badge" tabindex="0" role="img" aria-label="WORK VERIFIED"><svg aria-hidden="true"><use href="#verification-badge-mark"></use></svg><i class="verification-badge__tooltip" role="tooltip">WORK VERIFIED</i></span></li>
-              <li data-verification-item="apps-script"><span>Apps Script</span><span class="verification-badge" tabindex="0" role="img" aria-label="WORK VERIFIED"><svg aria-hidden="true"><use href="#verification-badge-mark"></use></svg><i class="verification-badge__tooltip" role="tooltip">WORK VERIFIED</i></span></li>
-              <li data-verification-item="excel"><span>Excel</span><span class="verification-badge" tabindex="0" role="img" aria-label="WORK VERIFIED"><svg aria-hidden="true"><use href="#verification-badge-mark"></use></svg><i class="verification-badge__tooltip" role="tooltip">WORK VERIFIED</i></span></li>
-            </ul>
-          </article>
-        </div>
-      </section>
-
-      <section aria-labelledby="architecture-title">
-        <div class="section-heading">
-          <p class="eyebrow">Architecture patterns</p>
-          <h2 id="architecture-title">Patterns chosen for the workload</h2>
-          <p>No single architecture fits every pipeline. These are the patterns I use and the situations they help address.</p>
-        </div>
-
-        <div class="architecture-grid">
-          <article class="architecture-card">
-            <h3>Medallion architecture</h3>
-            <p>Progressively improves raw data into validated and business-ready models with clear quality boundaries.</p>
-            <div class="architecture-path">Sources → ADF and ADLS Gen2 → Databricks and PySpark → Bronze, Silver, Gold → Power BI</div>
-          </article>
-          <article class="architecture-card">
-            <h3>One big table</h3>
-            <p>Produces a wide, consumption-ready table when repeated joins would make a focused analytics workload slower or harder to use.</p>
-            <div class="architecture-path">Delta Lake and Spark SQL → governed joins → wide serving model → Power BI, Tableau, or Excel</div>
-          </article>
-        </div>
-      </section>
-
-      <section class="practice" aria-labelledby="practice-title">
-        <div>
-          <p class="eyebrow">Engineering practice</p>
-          <h2 id="practice-title">The tools support the operating model</h2>
-          <div class="cta-row">
-            <a class="button" href="index.html#selected-work">See selected work</a>
-            <a class="button button--secondary" href="certifications.html?v=20260904-3">View certifications</a>
-          </div>
-        </div>
-        <div class="practice-list">
-          <article class="practice-item">
-            <h3>Performance</h3>
-            <p>Partition strategy, adaptive query execution, clustering, autoscaling, and Photon are applied where measurements justify them.</p>
-          </article>
-          <article class="practice-item">
-            <h3>Reliability</h3>
-            <p>Schema controls, idempotent jobs, checkpoints, observable failures, and clear retry behavior reduce operational surprises.</p>
-          </article>
-          <article class="practice-item">
-            <h3>Governance</h3>
-            <p>Unity Catalog, access boundaries, lineage, and documented ownership keep data useful without weakening control.</p>
-          </article>
-          <article class="practice-item">
-            <h3>Cost</h3>
-            <p>Compute size, job duration, storage layout, and DBU use are treated as engineering constraints, not billing afterthoughts.</p>
-          </article>
-        </div>
-      </section>
-    </div>
+      </div>
+    </section>
   </main>
 
-  <footer>
-    <div class="shell footer-inner">
+  <footer class="site-footer">
+    <div class="container">
+      <ul>
+        <li><a href="about/">About</a></li>
+        <li><a href="contact/">Contact details</a></li>
+        <li><a href="privacy/">Privacy</a></li>
+      </ul>
       <p>Om Jay Mishra, Data Engineer</p>
-      <div class="footer-links">
-        <a href="index.html">Back to portfolio</a>
-        <a href="https://linkedin.com/in/omjay-mishra" target="_blank" rel="noopener">LinkedIn</a>
-      </div>
     </div>
   </footer>
-  <script>
-    document.querySelectorAll('.capability-logo').forEach((icon) => {
-      const hideBrokenIcon = () => { icon.hidden = true; };
-      if (icon.complete && icon.naturalWidth === 0) hideBrokenIcon();
-      else icon.addEventListener('error', hideBrokenIcon, { once: true });
-    });
-  </script>
+  <script src="site.js" defer></script>
 </body>
 </html>

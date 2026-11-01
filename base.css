@@ -1,4 +1,4 @@
-/* Hallmark · base · what the Floor already decided: overflow, focus, type defaults, reduced motion. */
+/* Base: overflow, focus, type defaults and reduced motion for every redesigned page. */
 *, *::before, *::after { box-sizing: border-box; }
 
 html, body { overflow-x: clip; }

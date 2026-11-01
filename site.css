@@ -1,7 +1,6 @@
-/* Hallmark · v2.0.0 · redesign: full · shape: stat-led · genre: editorial · brand: kept · posture: restrained · job: hire · hero: stage (the run drawn to scale) · nav: edge-aligned, wordmark and five links · footer: colophon · signature: the 500M+ record pipeline as two bars on one time axis, 6 h against 30 m */
-/* Hallmark · pre-emit critique: P4 H4 E4 S5 R5 V4 · weakest: P and E, the case pages still read as lists; each now leads with one figure drawn from its own numbers */
-/* Hallmark · waive 13 · the hero keeps a sixth block, the credential links, because the owner asked for them by name */
-/* Hallmark · waive 80 · the ship, check-line and orbit vignettes are the owner's own pieces, kept by request; each loop pauses on demand, off-screen and under reduced motion */
+/* Design notes: stat-led page for a hiring audience. Hero: the run drawn to scale. Nav: wordmark and five links. Footer: colophon. */
+/* The hero keeps the credential links because the owner asked for them by name. */
+/* The ship, check-line and sheet vignettes are kept by request; each loop pauses on click, off-screen and under reduced motion. */
 
 /* ---------- Chrome ---------- */
 .site-nav {
@@ -624,3 +623,25 @@ a.cred:hover { border-color: var(--color-accent); color: var(--color-accent); }
 
 .close-note { color: var(--color-ink-2); margin-top: var(--space-md); max-width: 52ch; }
 .cred--more { color: var(--color-accent); font-weight: 600; }
+
+/* Toolkit rows: the tools, then the projects that used them. */
+.rows--tools dd { display: grid; gap: var(--space-xs); }
+.rows--tools .tool-list { color: var(--color-ink); font-size: var(--text-lead); line-height: 1.45; }
+.rows--tools .evidence { color: var(--color-muted); display: flex; flex-wrap: wrap; font-size: var(--text-sm); gap: var(--space-2xs) var(--space-md); }
+.rows--quiet { border-top: 0; margin-top: var(--space-xl); }
+.rows--quiet dt { color: var(--color-muted); }
+.rows--quiet .tool-list { color: var(--color-ink-2); font-size: var(--text-md); }
+
+/* Courses: a quiet list under the exam-backed certifications. */
+.courses { border-top: 1px solid var(--color-rule); list-style: none; padding: 0; }
+.courses li {
+  align-items: baseline;
+  border-bottom: 1px solid var(--color-rule);
+  display: grid;
+  gap: var(--space-2xs) var(--gap-columns);
+  grid-template-columns: minmax(0, 2fr) minmax(0, 6fr) minmax(0, 3fr) auto;
+  padding-block: var(--space-md);
+}
+.courses .course-when, .courses .course-by { color: var(--color-muted); font-size: var(--text-sm); }
+.courses a { font-size: var(--text-sm); font-weight: 600; white-space: nowrap; }
+@media (max-width: 60rem) { .courses li { grid-template-columns: minmax(0, 1fr); } }

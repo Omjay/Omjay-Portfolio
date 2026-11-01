@@ -2,7 +2,7 @@
 
 > A sober, evidence-first portfolio for recruiters and engineering leaders. Locked system: every page built on `tokens.css`, `base.css` and `site.css` follows this file.
 
-Redesigned with [Hallmark](https://github.com/nutlope/hallmark) v2.0.0 at full depth: shape **Stat-Led**, genre **editorial**, job **hire**, brand **kept** (the blue accent, Source Serif 4 and Public Sans).
+A full redesign: a stat-led page for a hiring audience, keeping the brand (the blue accent, Source Serif 4 and Public Sans).
 
 ## 1. What the site argues
 
@@ -14,11 +14,11 @@ The first screen states one real result, set big: a 500M+ record pipeline cut fr
 | --- | --- |
 | `tokens.css` | Every colour, font, size, space, radius, easing and duration. The only place a literal colour or `font-family` may appear. |
 | `base.css` | Element defaults: overflow clipping, type, links, focus ring, skip link, reduced motion. |
-| `site.css` | Components and page layouts. Starts with the Hallmark stamp and critique lines. |
+| `site.css` | Components and page layouts. Starts with short design notes. |
 | `site.js` | Progressive enhancement for figures only. Every figure is complete in the HTML without it. |
 | `index.html`, `work/*/index.html` | The homepage and the three case pages, static HTML. |
 
-Older pages (`toolkit.html`, `certifications.html`, `resume.html`, the agent pages) keep their own styles for now; they share the palette and faces.
+`toolkit.html` and `certifications.html` are built on the same system. `resume.html` and the small agent pages keep their own styles; they share the palette and faces.
 
 ## 3. Colour
 
