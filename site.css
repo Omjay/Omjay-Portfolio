@@ -645,3 +645,5 @@ a.cred:hover { border-color: var(--color-accent); color: var(--color-accent); }
 .courses .course-when, .courses .course-by { color: var(--color-muted); font-size: var(--text-sm); }
 .courses a { font-size: var(--text-sm); font-weight: 600; white-space: nowrap; }
 @media (max-width: 60rem) { .courses li { grid-template-columns: minmax(0, 1fr); } }
+
+.work-who .work-team { color: var(--color-ink); font-size: var(--text-sm); font-weight: 600; margin-top: var(--space-2xs); }

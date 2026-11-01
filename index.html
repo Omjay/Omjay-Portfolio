@@ -126,8 +126,8 @@
           <h1 id="hero-title">A six-hour manual process, now thirty minutes.</h1>
           <p class="lead">I’m Om Jay Mishra, a Data Engineer with 3+ years on Azure Databricks, now at ExaQube Technologies in Chennai.</p>
           <div class="hero-actions">
-            <a class="button" href="resume.html">Read my resume</a>
-            <a class="button button--quiet" href="mailto:mishra.omjay@gmail.com">Email me</a>
+            <a class="button" href="mailto:mishra.omjay@gmail.com?subject=Project%20enquiry">Discuss a project</a>
+            <a class="button button--quiet" href="resume.html">Read my resume</a>
           </div>
           <div class="creds">
             <p class="creds-title">Certified</p>
@@ -154,7 +154,7 @@
               <div class="run-track" aria-hidden="true"><div class="run-fill"></div></div>
             </li>
           </ol>
-          <figcaption id="run-caption">The same Azimuth GRC workload on one time axis. It started at 20M records, still ran in about 30 minutes past 500M+, and has since grown to about 4 billion.</figcaption>
+          <figcaption id="run-caption">The same Azimuth GRC workload on one time axis. It started at 20M records and still ran in about 30 minutes past 500M+.</figcaption>
         </figure>
       </div>
     </section>
@@ -187,7 +187,7 @@
           <h2 id="figures-title">What else I changed</h2>
         </div>
         <ul class="figures">
-          <li><b>~4B</b><span>records the Azimuth data grew to, from 20M when I first automated the pipeline</span><small>Azimuth GRC</small></li>
+          <li><b>12.75M</b><span>compliance test results every Tuesday: about 1.5 lakh records checked against 85 tests, in a results table that grew to about 4 billion rows</span><small>Azimuth GRC</small></li>
           <li><b>270+ h</b><span>of recurring manual work replaced by ADF and Databricks pipelines</span><small>Azimuth GRC</small></li>
           <li><b>50%</b><span>less pipeline maintenance from a metadata-driven ADF framework</span><small>Azimuth GRC</small></li>
           <li><b>~70%</b><span>fewer daily compute hours on a thrice-daily pipeline</span><small>ExaQube Technologies</small></li>
@@ -206,6 +206,7 @@
             <div class="work-who">
               <h3>ExaQube Technologies</h3>
               <p>Data Engineer in Chennai, at a maritime AI company</p>
+              <p class="work-team">The only data engineer at a 10-person startup</p>
               <ul class="work-links">
                 <li><a href="https://www.exaqube.com/" target="_blank" rel="noopener">Website</a></li>
                 <li><a href="https://www.linkedin.com/company/exaqube-technologies" target="_blank" rel="noopener" aria-label="ExaQube on LinkedIn">LinkedIn</a></li>
@@ -250,6 +251,7 @@
             <div class="work-who">
               <h3>Azimuth GRC</h3>
               <p>Data Engineer in Gurgaon, on US compliance automation</p>
+              <p class="work-team">Led a two-person data team at a 30-person startup</p>
               <ul class="work-links">
                 <li><a href="https://www.azimuthgrc.com/" target="_blank" rel="noopener">Website</a></li>
                 <li><a href="https://www.linkedin.com/company/azimuth-grc" target="_blank" rel="noopener" aria-label="Azimuth GRC on LinkedIn">LinkedIn</a></li>
@@ -274,6 +276,7 @@
             <div class="work-who">
               <h3>PlanetSpark</h3>
               <p>Data Analytics Engineer in Gurgaon, at an EdTech company</p>
+              <p class="work-team">Junior member of a two-person data team at a startup of about 40</p>
               <ul class="work-links">
                 <li><a href="https://www.planetspark.in/" target="_blank" rel="noopener">Website</a></li>
                 <li><a href="https://www.linkedin.com/company/planet-spark" target="_blank" rel="noopener" aria-label="PlanetSpark on LinkedIn">LinkedIn</a></li>
@@ -304,6 +307,21 @@
       </div>
     </section>
 
+    <section class="section" id="help" aria-labelledby="help-title">
+      <div class="container">
+        <div class="section-head">
+          <h2 id="help-title">Where I can help</h2>
+          <p>I take on freelance and consulting work alongside my role at ExaQube. Each offer below is something I have already done in production.</p>
+        </div>
+        <dl class="rows rows--tools">
+          <div><dt>Slow or costly Databricks pipelines</dt><dd><span class="tool-list">Find the skew, the full scans and the oversized clusters, then fix them. I kept one pipeline near 30 minutes past 500M+ records, cut another from 1&nbsp;h&nbsp;50&nbsp;m to 30&nbsp;m, and cut DBU spend 25%.</span><span class="evidence">Proof: <a href="work/azimuth-grc/#performance-governance">Azimuth GRC, performance</a> <a href="work/exaqube/#spark-tuning">ExaQube, Spark tuning</a></span></dd></div>
+          <div><dt>Manual work that should be a pipeline</dt><dd><span class="tool-list">Azure Data Factory and Databricks pipelines that replace scripts, cron jobs and hand-run steps, with retries and alerting.</span><span class="evidence">Proof: <a href="work/azimuth-grc/#workflow-automation">Azimuth GRC, 270+ hours automated</a> <a href="work/exaqube/#legacy-to-workflows">ExaQube, 40+ scripts moved</a></span></dd></div>
+          <div><dt>Lakehouse migrations</dt><dd><span class="tool-list">Legacy SQL to Delta Lake: medallion layers, incremental loads, a Gold-layer star schema and Unity Catalog governance.</span><span class="evidence">Proof: <a href="work/azimuth-grc/#lakehouse-migration">Azimuth GRC, migration</a></span></dd></div>
+          <div><dt>Snowflake dev environments</dt><dd><span class="tool-list">A zero-copy clone of production for every feature branch, created and cleaned up automatically in Azure DevOps.</span><span class="evidence">Proof: <a href="work/exaqube/#snowflake-dev">ExaQube, used by 15+ engineers</a></span></dd></div>
+        </dl>
+      </div>
+    </section>
+
     <section class="section" aria-labelledby="stack-title">
       <div class="container">
         <div class="section-head">
@@ -325,8 +343,8 @@
   <section class="close" aria-labelledby="close-title">
     <div class="container">
       <div>
-        <h2 id="close-title">Open to Data Engineer roles and technical conversations.</h2>
-        <p class="close-note">My production code lives in client environments, so it is not on GitHub. I am happy to walk through the architecture and the code decisions in an interview.</p>
+        <h2 id="close-title">Available for freelance and consulting work.</h2>
+        <p class="close-note">Tell me what is slow, manual or expensive, and I will reply with how I would approach it. My production code lives in client environments, so I walk through architecture and code decisions on a call rather than on GitHub.</p>
       </div>
       <dl>
         <div><dt>Email</dt><dd><a href="mailto:mishra.omjay@gmail.com">mishra.omjay@gmail.com</a></dd></div>
