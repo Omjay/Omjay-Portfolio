@@ -136,12 +136,13 @@
         <div class="project-grid">
         <div class="project-copy">
           <h2 id="workflow-automation-title">Legacy workflow automation and scraper orchestration</h2>
-          <p class="project-stack">Azure ADF, Python, Databricks</p>
+          <p class="project-stack">Azure ADF, Python, Databricks, Docker</p>
           <ul class="points">
               <li>Eliminated 270+ hours of manual effort by orchestrating fragmented workflows (manual script runs, SQL stored-procedure triggers) into ADF and Databricks pipelines.</li>
               <li>Engineered a metadata-driven pipeline architecture in ADF for dynamic source schemas: maintenance overhead down 50%.</li>
               <li>Integrated custom Python scrapers and validation logic into scalable Azure pipelines with concurrent execution for faster extraction.</li>
               <li>Reworked the scrapers to remove redundant calls and reduce time complexity, saving about 5% in monthly costs.</li>
+              <li>Containerized a VPN-dependent pipeline with Docker on Azure.</li>
               <li>Built a real-time ingestion framework for rate-limited APIs with exponential backoff and Azure Monitor alerting: 99.9% data reliability.</li>
           </ul>
         </div>
