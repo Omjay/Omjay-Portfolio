@@ -424,7 +424,7 @@
             <li>Reduced a thrice-daily pipeline's runtime from ~1 hr 50 min to ~30 min per run by resolving data skew and migrating to job compute clusters, cutting daily compute hours by ~70% and lowering DBU costs</li>
             <li>Built config-driven, Dockerized ingestion with idempotent checkpoints and schema evolution into Bronze Delta tables, allowing new sources to onboard without new pipeline code</li>
             <li>Tuned shuffle partitions, broadcast joins, adaptive query execution, file compaction, and clustering to stabilize heavier Spark workloads as data volume grew</li>
-            <li>Automated per-branch Snowflake zero-copy dev clones in Azure DevOps with month-end cleanup, used by 15+ engineers</li>
+            <li>Automated per-branch Snowflake zero-copy dev clones for a client (Azure DevOps, month-end cleanup, 15+ engineers)</li>
           </ul>
         </div>
 
@@ -435,7 +435,7 @@
           </div>
           <ul>
             <li>Led migration from legacy databases and SQL workflows to an Azure Databricks Lakehouse, redesigning pipelines in PySpark and Delta Lake; a Gold-layer Star Schema made queries 65% faster across 50M+ records</li>
-            <li>Built the ADF and Databricks pipeline that turned a manual 6-hour process into a 30-minute run at 20M records, keeping it near 30 minutes past 500M+; weekly runs checked ~1.5 lakh records x 85 tests</li>
+            <li>Built the ADF and Databricks pipeline that turned a manual 6-hour process into a 30-minute run at 20M records, keeping it near 30 minutes past 500M+; weekly runs checked ~150,000 records x 85 tests</li>
             <li>Cut Databricks DBU consumption 25% through job clusters, autoscaling, Photon, and workload tuning; file compaction and Delta vacuuming reduced storage footprint 30%</li>
             <li>Automated ADF, Databricks, SQL, and Python workflows, eliminating 270+ hours of recurring manual work; metadata-driven ADF patterns reduced maintenance overhead 50%</li>
             <li>Implemented Unity Catalog access controls and audit logs, a PySpark Expectations framework for Bronze-to-Silver quality checks, and multi-stage Azure DevOps CI/CD</li>

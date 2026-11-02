@@ -647,3 +647,12 @@ a.cred:hover { border-color: var(--color-accent); color: var(--color-accent); }
 @media (max-width: 60rem) { .courses li { grid-template-columns: minmax(0, 1fr); } }
 
 .work-who .work-team { color: var(--color-ink); font-size: var(--text-sm); font-weight: 600; margin-top: var(--space-2xs); }
+
+/* Prose pages: About, Contact, Privacy, Developers, 404. */
+.prose-page { display: grid; gap: var(--space-md); max-width: 68ch; }
+.prose-page .lede { color: var(--color-ink-2); font-size: var(--text-lead); line-height: 1.5; }
+.prose-page h2 { font-size: var(--text-title); margin-top: var(--space-lg); }
+.prose-page .card { background: var(--color-paper-2); border-radius: var(--radius-card); display: grid; gap: var(--space-sm); padding: var(--space-lg); }
+.prose-page .card h2 { margin-top: 0; }
+.prose-page ul { display: grid; gap: var(--space-xs); padding-left: var(--space-lg); }
+.prose-page code { background: var(--color-paper-2); border-radius: var(--radius-control); font-size: 0.9em; padding: 0 var(--space-2xs); }

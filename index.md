@@ -6,7 +6,7 @@ Available for freelance and consulting work: slow or costly Databricks pipelines
 
 ## Selected impact
 
-- Built the Azure Data Factory and Databricks pipeline that turned a manual six-hour process into a thirty-minute run at 20M records, and kept it near thirty minutes past 500M+ records with incremental Delta loads, Liquid Clustering for partition skew, and job-cluster tuning. Every Tuesday the run checked about 1.5 lakh records against 85 compliance tests (about 12.75 million results), into a results table that grew to about 4 billion rows.
+- Built the Azure Data Factory and Databricks pipeline that turned a manual six-hour process into a thirty-minute run at 20M records, and kept it near thirty minutes past 500M+ records with incremental Delta loads, Liquid Clustering for partition skew, and job-cluster tuning. Every Tuesday the run checked about 150,000 records against 85 compliance tests (about 12.75 million results), into a results table that grew to about 4 billion rows.
 - Improved Gold-layer query performance by 65% across more than 50M records using a Star Schema.
 - Reduced Databricks DBU consumption by 25% using job clusters, autoscaling and Photon.
 - Eliminated more than 270 hours of manual work through ADF and Databricks automation.

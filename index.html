@@ -124,7 +124,7 @@
       <div class="container">
         <div class="hero-copy">
           <h1 id="hero-title">A six-hour manual process, now thirty minutes.</h1>
-          <p class="lead">I’m Om Jay Mishra, a Data Engineer with 3+ years on Azure Databricks, now at ExaQube Technologies in Chennai.</p>
+          <p class="lead">I’m Om Jay Mishra, a Data Engineer with 3+ years on Azure Databricks. As a freelancer I make slow, costly pipelines faster and turn manual work into pipelines.</p>
           <div class="hero-actions">
             <a class="button" href="mailto:mishra.omjay@gmail.com?subject=Project%20enquiry">Discuss a project</a>
             <a class="button button--quiet" href="resume.html">Read my resume</a>
@@ -159,7 +159,22 @@
       </div>
     </section>
 
-    <section class="section--tight" aria-labelledby="changes-title">
+    <section class="section--tight" id="help" aria-labelledby="help-title">
+      <div class="container">
+        <div class="section-head">
+          <h2 id="help-title">Where I can help</h2>
+          <p>I take on freelance and consulting work alongside my role at ExaQube. Each offer below is something I have already done in production.</p>
+        </div>
+        <dl class="rows rows--tools">
+          <div><dt>Slow or costly Databricks pipelines</dt><dd><span class="tool-list">Find the skew, the full scans and the oversized clusters, then fix them. I kept one pipeline near 30 minutes past 500M+ records, cut another from 1&nbsp;h&nbsp;50&nbsp;m to 30&nbsp;m, and cut DBU spend 25%.</span><span class="evidence">Proof: <a href="work/azimuth-grc/#performance-governance">Azimuth GRC, performance</a> <a href="work/exaqube/#spark-tuning">ExaQube, Spark tuning</a></span></dd></div>
+          <div><dt>Manual work that should be a pipeline</dt><dd><span class="tool-list">Azure Data Factory and Databricks pipelines that replace scripts, cron jobs and hand-run steps, with retries and alerting.</span><span class="evidence">Proof: <a href="work/azimuth-grc/#workflow-automation">Azimuth GRC, 270+ hours automated</a> <a href="work/exaqube/#legacy-to-workflows">ExaQube, 40+ scripts moved</a></span></dd></div>
+          <div><dt>Lakehouse migrations</dt><dd><span class="tool-list">Legacy SQL to Delta Lake: medallion layers, incremental loads, a Gold-layer star schema and Unity Catalog governance.</span><span class="evidence">Proof: <a href="work/azimuth-grc/#lakehouse-migration">Azimuth GRC, migration</a></span></dd></div>
+          <div><dt>Snowflake dev environments</dt><dd><span class="tool-list">A zero-copy clone of production for every feature branch, created and cleaned up automatically in Azure DevOps, with naming and cleanup rules that keep copies of production data governed.</span><span class="evidence">Proof: <a href="work/exaqube/#snowflake-dev">ExaQube, used by 15+ engineers</a></span></dd></div>
+        </dl>
+      </div>
+    </section>
+
+    <section class="section" aria-labelledby="changes-title">
       <div class="container">
         <div class="section-head">
           <h2 id="changes-title">How six hours became thirty minutes</h2>
@@ -187,7 +202,7 @@
           <h2 id="figures-title">What else I changed</h2>
         </div>
         <ul class="figures">
-          <li><b>12.75M</b><span>compliance test results every Tuesday: about 1.5 lakh records checked against 85 tests, in a results table that grew to about 4 billion rows</span><small>Azimuth GRC</small></li>
+          <li><b>12.75M</b><span>compliance test results every Tuesday: about 150,000 records checked against 85 tests, in a results table that grew to about 4 billion rows</span><small>Azimuth GRC</small></li>
           <li><b>270+ h</b><span>of recurring manual work replaced by ADF and Databricks pipelines</span><small>Azimuth GRC</small></li>
           <li><b>50%</b><span>less pipeline maintenance from a metadata-driven ADF framework</span><small>Azimuth GRC</small></li>
           <li><b>~70%</b><span>fewer daily compute hours on a thrice-daily pipeline</span><small>ExaQube Technologies</small></li>
@@ -304,21 +319,6 @@
             </div>
           </li>
         </ol>
-      </div>
-    </section>
-
-    <section class="section" id="help" aria-labelledby="help-title">
-      <div class="container">
-        <div class="section-head">
-          <h2 id="help-title">Where I can help</h2>
-          <p>I take on freelance and consulting work alongside my role at ExaQube. Each offer below is something I have already done in production.</p>
-        </div>
-        <dl class="rows rows--tools">
-          <div><dt>Slow or costly Databricks pipelines</dt><dd><span class="tool-list">Find the skew, the full scans and the oversized clusters, then fix them. I kept one pipeline near 30 minutes past 500M+ records, cut another from 1&nbsp;h&nbsp;50&nbsp;m to 30&nbsp;m, and cut DBU spend 25%.</span><span class="evidence">Proof: <a href="work/azimuth-grc/#performance-governance">Azimuth GRC, performance</a> <a href="work/exaqube/#spark-tuning">ExaQube, Spark tuning</a></span></dd></div>
-          <div><dt>Manual work that should be a pipeline</dt><dd><span class="tool-list">Azure Data Factory and Databricks pipelines that replace scripts, cron jobs and hand-run steps, with retries and alerting.</span><span class="evidence">Proof: <a href="work/azimuth-grc/#workflow-automation">Azimuth GRC, 270+ hours automated</a> <a href="work/exaqube/#legacy-to-workflows">ExaQube, 40+ scripts moved</a></span></dd></div>
-          <div><dt>Lakehouse migrations</dt><dd><span class="tool-list">Legacy SQL to Delta Lake: medallion layers, incremental loads, a Gold-layer star schema and Unity Catalog governance.</span><span class="evidence">Proof: <a href="work/azimuth-grc/#lakehouse-migration">Azimuth GRC, migration</a></span></dd></div>
-          <div><dt>Snowflake dev environments</dt><dd><span class="tool-list">A zero-copy clone of production for every feature branch, created and cleaned up automatically in Azure DevOps, with naming and cleanup rules that keep copies of production data governed.</span><span class="evidence">Proof: <a href="work/exaqube/#snowflake-dev">ExaQube, used by 15+ engineers</a></span></dd></div>
-        </dl>
       </div>
     </section>
 
