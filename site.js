@@ -30,11 +30,19 @@
     return h ? h + nb + 'h' + nb + (r < 10 ? '0' : '') + r + nb + 'm' : r + nb + 'm';
   }
 
+  // Fires once the element is half visible, or fills most of a short or zoomed viewport,
+  // with a fallback so a figure never stays at its start frame.
   function onFirstView(el, cb) {
-    if (!('IntersectionObserver' in window)) { cb(); return; }
+    var fired = false;
+    function fire() { if (fired) return; fired = true; if (io) io.disconnect(); clearTimeout(fallback); cb(); }
+    if (!('IntersectionObserver' in window)) { fire(); return; }
     var io = new IntersectionObserver(function (entries) {
-      if (entries.some(function (e) { return e.isIntersecting; })) { io.disconnect(); cb(); }
-    }, { threshold: 0.5 });
+      entries.forEach(function (e) {
+        if (!e.isIntersecting) return;
+        if (e.intersectionRatio >= 0.5 || e.intersectionRect.height >= window.innerHeight * 0.9) fire();
+      });
+    }, { threshold: [0, 0.25, 0.5, 0.75] });
+    var fallback = setTimeout(fire, 12000);
     io.observe(el);
   }
 
@@ -73,23 +81,60 @@
       })(t0);
     }
 
+    // The HTML shows the final result; it resets to zero only as the race starts,
+    // so a quick glance or a link preview never shows a half-run clock.
     if (reduced()) return;
     if (replay) replay.addEventListener('click', play);
-    render(0);
     onFirstView(fig, play);
   }
 
-  // The switch: two real states of one figure, chosen by the reader.
+  // The switch: two real states of one figure. It flips between them on its own every
+  // few seconds while on screen; hover or focus pauses it, and a click hands control
+  // to the reader for good. With motion reduced it never flips on its own.
   function switcher(fig) {
-    var buttons = fig.querySelectorAll('[data-set]');
-    Array.prototype.forEach.call(buttons, function (button) {
+    var buttons = Array.prototype.slice.call(fig.querySelectorAll('[data-set]'));
+    var live = fig.querySelector('[aria-live]');
+    var every = 3500;
+    var timer = 0;
+    var userControlled = false;
+    var hovered = false;
+    var focused = false;
+    var onScreen = false;
+
+    function show(state) {
+      fig.setAttribute('data-state', state);
+      buttons.forEach(function (b) { b.setAttribute('aria-pressed', String(b.getAttribute('data-set') === state)); });
+    }
+    function schedule() {
+      clearTimeout(timer);
+      if (userControlled || hovered || focused || !onScreen) return;
+      timer = setTimeout(function () {
+        var current = buttons.map(function (b) { return b.getAttribute('data-set'); }).indexOf(fig.getAttribute('data-state'));
+        show(buttons[(current + 1) % buttons.length].getAttribute('data-set'));
+        schedule();
+      }, every);
+    }
+
+    buttons.forEach(function (button) {
       button.addEventListener('click', function () {
-        fig.setAttribute('data-state', button.getAttribute('data-set'));
-        Array.prototype.forEach.call(buttons, function (b) {
-          b.setAttribute('aria-pressed', String(b === button));
-        });
+        userControlled = true;
+        clearTimeout(timer);
+        if (live) live.setAttribute('aria-live', 'polite');
+        show(button.getAttribute('data-set'));
       });
     });
+
+    if (reduced() || !('IntersectionObserver' in window)) return;
+    // Automatic flips are not announced; only a reader's own choice is.
+    if (live) live.setAttribute('aria-live', 'off');
+    fig.addEventListener('mouseenter', function () { hovered = true; schedule(); });
+    fig.addEventListener('mouseleave', function () { hovered = false; schedule(); });
+    fig.addEventListener('focusin', function () { focused = true; schedule(); });
+    fig.addEventListener('focusout', function () { focused = false; schedule(); });
+    new IntersectionObserver(function (entries) {
+      onScreen = entries[entries.length - 1].isIntersecting;
+      schedule();
+    }, { threshold: 0.5 }).observe(fig);
   }
 
   // Stages: all readable at rest; "Walk through it" moves a highlight one stage at a time.
@@ -99,31 +144,37 @@
     var status = fig.querySelector('[data-steps-status]');
     var timer = 0;
 
-    function show(i) {
+    var walking = false;
+    function show(i, announce) {
       Array.prototype.forEach.call(items, function (li, k) { li.classList.toggle('is-current', k === i); });
-      if (status && items[i]) {
-        var parts = Array.prototype.map.call(items[i].children, function (c) { return c.textContent.trim(); });
-        status.textContent = 'Stage ' + (i + 1) + ' of ' + items.length + ': ' + parts.join(': ');
+      if (announce && status && items[i]) {
+        var first = items[i].firstElementChild || items[i];
+        status.textContent = 'Stage ' + (i + 1) + ' of ' + items.length + ': ' + first.textContent.trim();
       }
     }
+    // While walking, the button stays focusable (aria-disabled), so keyboard focus is not lost.
     function walk() {
+      if (walking) return;
       clearTimeout(timer);
+      walking = true;
       var i = 0;
       play.textContent = 'Walking through';
-      play.disabled = true;
+      play.setAttribute('aria-disabled', 'true');
       (function step() {
-        show(i);
+        show(i, true);
         i += 1;
         if (i < items.length) { timer = setTimeout(step, reduced() ? 0 : 1600); return; }
         timer = setTimeout(function () {
+          walking = false;
           play.textContent = 'Walk through it again';
-          play.disabled = false;
+          play.removeAttribute('aria-disabled');
         }, reduced() ? 0 : 1600);
       })();
     }
 
     Array.prototype.forEach.call(items, function (li, i) {
-      li.addEventListener('mouseenter', function () { if (!play.disabled) show(i); });
+      li.addEventListener('mouseenter', function () { if (!walking) show(i, false); });
+      li.addEventListener('mouseleave', function () { if (!walking) li.classList.remove('is-current'); });
     });
     play.hidden = false;
     play.addEventListener('click', walk);
@@ -135,19 +186,19 @@
     var art = fig.querySelector('[data-ambient-toggle]');
     var userPaused = false;
     var onScreen = true;
+    // A toggle keeps one fixed name; only its pressed state changes.
     function apply() {
       fig.classList.toggle('is-paused', userPaused || !onScreen);
       fig.classList.toggle('is-user-paused', userPaused);
-      if (art) {
-        art.setAttribute('aria-pressed', String(userPaused));
-        art.setAttribute('aria-label', userPaused ? 'Play the animation' : 'Pause the animation');
-      }
+      if (art) art.setAttribute('aria-pressed', String(userPaused));
+      fig.dispatchEvent(new CustomEvent('ambientchange'));
     }
     function toggle() { userPaused = !userPaused; apply(); }
     if (reduced()) return;
     if (art) {
       art.setAttribute('role', 'button');
       art.setAttribute('tabindex', '0');
+      art.setAttribute('aria-label', 'Pause the animation');
       art.addEventListener('click', toggle);
       art.addEventListener('keydown', function (event) {
         if (event.key === 'Enter' || event.key === ' ') { event.preventDefault(); toggle(); }
@@ -180,12 +231,25 @@
     var passed = 0;
     var held = 0;
     var last = performance.now();
+    var running = false;
     if (count) count.hidden = false;
 
-    (function frame(now) {
+    // The loop sleeps while the figure is paused, off-screen or in a background tab.
+    function idle() { return fig.classList.contains('is-paused') || document.hidden; }
+    function start() {
+      if (running || idle()) return;
+      running = true;
+      last = performance.now();
+      requestAnimationFrame(frame);
+    }
+    fig.addEventListener('ambientchange', start);
+    document.addEventListener('visibilitychange', start);
+
+    function frame(now) {
+      if (idle()) { running = false; return; }
       var dt = Math.min(0.1, (now - last) / 1000);
       last = now;
-      if (!fig.classList.contains('is-paused')) {
+      {
         offset = (offset + speed * dt) % half;
         // The list is doubled, so shifting by its own height loops without a seam.
         stream.style.transform = 'translateY(' + (-offset).toFixed(1) + 'px)';
@@ -206,9 +270,24 @@
         });
         if (count) count.textContent = passed + ' passed, ' + held + ' held back';
       }
-      nextFrame(frame);
-    })(last);
+      requestAnimationFrame(frame);
+    }
+    start();
   }
+
+  // Phone menu: closes on Escape (focus returns to Menu), on choosing a link, and on a click outside.
+  Array.prototype.forEach.call(document.querySelectorAll('details.nav-menu'), function (menu) {
+    var summary = menu.querySelector('summary');
+    menu.addEventListener('keydown', function (event) {
+      if (event.key === 'Escape' && menu.open) { menu.open = false; summary.focus(); }
+    });
+    menu.addEventListener('click', function (event) {
+      if (event.target.closest('a')) menu.open = false;
+    });
+    document.addEventListener('click', function (event) {
+      if (menu.open && !menu.contains(event.target)) menu.open = false;
+    });
+  });
 
   Array.prototype.forEach.call(document.querySelectorAll('[data-ambient]'), ambient);
   Array.prototype.forEach.call(document.querySelectorAll('[data-check]'), checkLine);

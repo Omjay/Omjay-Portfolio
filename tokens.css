@@ -19,7 +19,7 @@
   --color-focus: oklch(50% 0.16 240);
 
   /* Data marks: the slow run and the straggler partition. */
-  --color-mark: oklch(66% 0.01 250);
+  --color-mark: oklch(58% 0.01 250);
   --color-warn: oklch(52% 0.11 75);
 
   /* Company vignettes: the ExaQube sea, the Azimuth checks, the PlanetSpark sheet. */
@@ -32,16 +32,9 @@
   --color-check-paper: oklch(98.6% 0.006 160);
   --color-check-rule: oklch(90% 0.025 160);
 
-  /* Code blocks. */
-  --color-code-paper: oklch(23% 0.012 250);
-  --color-code-ink: oklch(94% 0.005 250);
-  --color-code-muted: oklch(74% 0.01 250);
-  --color-code-key: oklch(80% 0.08 235);
-  --color-code-ok: oklch(82% 0.13 155);
-
   --font-display: 'Source Serif 4', Georgia, serif;
   --font-body: 'Public Sans', system-ui, sans-serif;
-  --font-mono: 'JetBrains Mono', ui-monospace, monospace;
+  --font-mono: ui-monospace, 'Cascadia Mono', Consolas, monospace;
 
   /* Type scale, 1.25 from a 16px body; display sizes clamp down on small screens. */
   --text-display: clamp(2.75rem, 2rem + 3.6vw, 5.25rem);

@@ -7,7 +7,7 @@
   <meta name="description" content="How Om Jay Mishra moved ExaQube production workloads onto Databricks Workflows and built branch-based Snowflake dev environments.">
   <link rel="canonical" href="https://omjay.github.io/Omjay-Portfolio/work/exaqube/">
   <link rel="icon" href="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%2064%2064'%3E%3Crect%20width='64'%20height='64'%20rx='12'%20fill='%231c1e21'/%3E%3Ctext%20x='32'%20y='41'%20text-anchor='middle'%20font-family='Arial'%20font-size='24'%20font-weight='700'%20fill='%23fbfbf9'%3EOM%3C/text%3E%3C/svg%3E">
-  <meta name="theme-color" content="#fbfbf9">
+  <meta name="theme-color" content="#fafcfd">
   <meta property="og:type" content="article">
   <meta property="og:site_name" content="Om Jay Mishra">
   <meta property="og:title" content="ExaQube Technologies case | Om Jay Mishra">
@@ -17,7 +17,7 @@
   <meta name="twitter:card" content="summary_large_image">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@500;600&amp;family=Public+Sans:wght@400;600&amp;family=Source+Serif+4:opsz,wght@8..60,600&amp;display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Public+Sans:wght@400;600&amp;family=Source+Serif+4:opsz,wght@8..60,600&amp;display=swap" rel="stylesheet">
   <link rel="stylesheet" href="../../tokens.css">
   <link rel="stylesheet" href="../../base.css">
   <link rel="stylesheet" href="../../site.css">
@@ -30,19 +30,17 @@
       <nav aria-label="Primary">
         <ul class="nav-links">
           <li><a href="../../#work">Work</a></li>
-          <li><a href="../../toolkit.html?v=20260904-3">Toolkit</a></li>
-          <li><a href="../../certifications.html?v=20260904-3">Certifications</a></li>
-          <li><a href="../../resume.html">Resume</a></li>
-          <li><a class="nav-email" href="mailto:mishra.omjay@gmail.com">Email me</a></li>
+          <li><a href="../../toolkit.html">Toolkit</a></li>
+          <li><a href="../../certifications.html">Certifications</a></li>
+          <li class="nav-cta"><a class="nav-email" href="../../contact/">Contact</a></li>
         </ul>
         <details class="nav-menu">
           <summary>Menu</summary>
           <ul>
             <li><a href="../../#work">Work</a></li>
-          <li><a href="../../toolkit.html?v=20260904-3">Toolkit</a></li>
-          <li><a href="../../certifications.html?v=20260904-3">Certifications</a></li>
-          <li><a href="../../resume.html">Resume</a></li>
-            <li><a href="mailto:mishra.omjay@gmail.com">Email me</a></li>
+          <li><a href="../../toolkit.html">Toolkit</a></li>
+          <li><a href="../../certifications.html">Certifications</a></li>
+            <li><a href="../../contact/">Contact</a></li>
           </ul>
         </details>
       </nav>
@@ -56,9 +54,7 @@
           <a class="crumb" href="../../#work">All work</a>
           <h1 id="case-title">ExaQube Technologies</h1>
           <p class="lead">Modernizing a legacy data platform: production workloads moving off a self-managed Ubuntu server onto Databricks Workflows and Delta Lake, plus branch-based Snowflake dev environments for a client.</p>
-        </div>
-        <div>
-        <figure class="vignette" data-ambient>
+          <figure class="vignette" data-ambient>
                 <div class="vignette-art v-sea" data-ambient-toggle>
                   <svg viewBox="0 20 320 82" aria-hidden="true" focusable="false">
                     <g class="v-sky">
@@ -86,13 +82,15 @@
                 </div>
                 <div class="vignette-foot"><figcaption>A container ship pinging its position: the data a maritime AI platform runs on.</figcaption></div>
               </figure>
+        </div>
+        <div>
         <dl class="facts">
           <div><dt>Role</dt><dd>Data Engineer</dd></div>
           <div><dt>Team</dt><dd>The only data engineer, at a 10-person startup</dd></div>
           <div><dt>When</dt><dd>Jun 2026 to now</dd></div>
           <div><dt>Where</dt><dd>Chennai</dd></div>
           <div><dt>Company</dt><dd>Maritime-first AI: data platforms and decision support for shipping, logistics and enterprise operations</dd></div>
-          <div><dt>Links</dt><dd class="work-links"><a href="https://www.exaqube.com/" target="_blank" rel="noopener" aria-label="ExaQube Technologies website">Website</a> <a href="https://www.linkedin.com/company/exaqube-technologies" target="_blank" rel="noopener" aria-label="ExaQube Technologies linkedin">LinkedIn</a></dd></div>
+          <div><dt>Links</dt><dd class="work-links"><a href="https://www.exaqube.com/" target="_blank" rel="noopener">Website<span class="visually-hidden"> of ExaQube Technologies (opens in a new tab)</span></a> <a href="https://www.linkedin.com/company/exaqube-technologies" target="_blank" rel="noopener" aria-label="ExaQube Technologies on LinkedIn">LinkedIn</a></dd></div>
         </dl>
         </div>
       </div>
@@ -106,7 +104,7 @@
           <p class="project-stack">Ubuntu, Databricks, Delta Lake</p>
           <ul class="points">
               <li>Migrated 40+ production Python scripts off a legacy Ubuntu server onto Databricks Workflows.</li>
-              <li>Resolved the data skew in the thrice-daily flagship pipeline and moved it to job compute clusters: about 30 minutes a run instead of 1 h 50 m, and about 70% fewer daily compute hours.</li>
+              <li>Resolved the data skew in the flagship pipeline, which runs three times a day, and moved it to job compute clusters: about 30 minutes a run instead of 1 h 50 m, and about 70% fewer daily compute hours.</li>
               <li>Orchestration, retries and alerting replaced cron jobs and manual restarts.</li>
           </ul>
         </div>
@@ -126,7 +124,7 @@
               <div class="run-track" aria-hidden="true"><div class="run-fill"></div></div>
             </li>
             </ol>
-            <figcaption id="run-exa">The thrice-daily flagship pipeline, both runs on the same time axis. The move to Workflows below is a separate change: it brought retries and alerting, not the speed.</figcaption>
+            <figcaption id="run-exa">The flagship pipeline, which runs three times a day, with both runs on the same time axis. The move to Workflows below is a separate change: it brought retries and alerting, not the speed.</figcaption>
           </figure>
           <dl class="ba">
             <div><dt>Before</dt><dd><strong>Cron scripts on one server</strong><span>Sequential cron-scheduled scripts on a single Ubuntu box: no retries, failures found by hand.</span></dd></div>
@@ -138,7 +136,7 @@
     </article>
     <article class="project" id="config-ingestion" aria-labelledby="config-ingestion-title">
       <div class="container">
-        <div class="project-grid project-grid--text">
+        <div class="project-grid project-grid--compact">
         <div class="project-copy">
           <h2 id="config-ingestion-title">Config-driven ingestion in Docker</h2>
           <p class="project-stack">Docker, Python, Delta Lake</p>
@@ -221,6 +219,20 @@
         </div>
       </div>
     </article>
+    <section class="close" id="contact" aria-labelledby="close-title">
+      <div class="container">
+        <div>
+          <h2 id="close-title">Need this on your platform?</h2>
+          <p class="close-note">I take freelance and consulting work on slow Databricks pipelines, manual processes and Lakehouse migrations. Tell me what is slow, your stack, rough data volumes and your timeline, and I will reply with how I would approach it.</p>
+          <p class="close-action"><a class="button" href="mailto:mishra.omjay@gmail.com?subject=Data%20engineering%20project&amp;body=What%20is%20slow%2C%20manual%20or%20expensive%3A%0A%0AStack%3A%0A%0ARough%20data%20volumes%3A%0A%0ATimeline%3A%0A">Email me about a project</a></p>
+        </div>
+        <dl>
+          <div><dt>Email</dt><dd><a href="mailto:mishra.omjay@gmail.com">mishra.omjay@gmail.com</a></dd></div>
+          <div><dt>LinkedIn</dt><dd><a href="https://www.linkedin.com/in/omjay-mishra/" target="_blank" rel="noopener">linkedin.com/in/omjay-mishra<span class="visually-hidden"> (opens in a new tab)</span></a></dd></div>
+          <div><dt>Based in</dt><dd>India</dd></div>
+        </dl>
+      </div>
+    </section>
   </main>
 
   <nav class="pager" aria-label="Case studies">
@@ -234,10 +246,11 @@
     <div class="container">
       <ul>
         <li><a href="../../about/">About</a></li>
-        <li><a href="../../contact/">Contact details</a></li>
+        <li><a href="../../resume.html">Resume</a></li>
+        <li><a href="../../contact/">Contact</a></li>
         <li><a href="../../privacy/">Privacy</a></li>
       </ul>
-      <p>Om Jay Mishra, Data Engineer</p>
+      <p>Om Jay Mishra, freelance data engineer</p>
     </div>
   </footer>
   <script src="../../site.js" defer></script>

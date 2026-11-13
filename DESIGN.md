@@ -1,12 +1,12 @@
 # Om Jay Mishra Portfolio Design System
 
-> A sober, evidence-first portfolio for recruiters and engineering leaders. Locked system: every page built on `tokens.css`, `base.css` and `site.css` follows this file.
+> A sober, evidence-first portfolio for founders and data leads looking for a freelance data engineer. Locked system: every page built on `tokens.css`, `base.css` and `site.css` follows this file.
 
-A full redesign: a stat-led page for a hiring audience, keeping the brand (the blue accent, Source Serif 4 and Public Sans).
+A full redesign: a stat-led page for buyers of freelance data engineering, keeping the brand (the blue accent, Source Serif 4 and Public Sans).
 
 ## 1. What the site argues
 
-The first screen states one real result, set big: a 500M+ record pipeline cut from 6 hours to 30 minutes, drawn to scale. Everything after it supports that claim with more real figures, the work itself and the stack. Every number on the site comes from the resume or the case pages; nothing is invented, rounded up or derived.
+The first screen states one real result, set big: a manual 6-hour process that became a run of about 30 minutes at 20M records and stayed at about 30 minutes past 500M+, drawn to scale. Everything after it supports that claim with more real figures, the work itself and the stack. Every number on the site comes from the resume or the case pages; nothing is invented, rounded up or derived.
 
 ## 2. Files
 
@@ -29,7 +29,6 @@ OKLCH tokens, tinted toward hue 240. Restrained posture: the accent is a signal 
 - Rules `--color-rule` and `--color-rule-strong`.
 - Accent `--color-accent` with `--color-accent-ink` for text on it, `--color-accent-soft` for quiet fills, `--color-focus` for rings.
 - Data marks: `--color-mark` for the slow run, `--color-warn` for the straggler partition.
-- Code: `--color-code-*`, used only for code blocks.
 
 ## 4. Type
 
@@ -41,7 +40,7 @@ OKLCH tokens, tinted toward hue 240. Restrained posture: the accent is a signal 
 ## 5. Layout
 
 - One container, 1440px max, fluid gutters; layouts use `minmax(0, 1fr)` tracks so nothing overflows from 320px to 1920px.
-- Homepage order: hero with the run drawn to scale and the credentials; four figures; the work index (one row per role, the current role leads); the skew explainer with a before/after switch; the stack as rows; the close; the footer.
+- Homepage order: hero with the run drawn to scale and the credentials; where I can help, four offers with proof links; the four changes behind the result; four further figures; the work index (one row per role, the current role leads); the stack as rows; the close; the footer. The before/after switch lives on the case pages. Every page that shows work ends with the close.
 - Case pages: a head with the company, lead and facts; one article per project, text beside its figure; previous and next links.
 - Sections part by space and hairlines; wells (`paper-2`) for figures; no card inside a card.
 
@@ -61,7 +60,7 @@ Specific and plain: the real numbers, places and tools. Headlines seven words or
 ## 8. Do not
 
 - Invent a metric, testimonial, logo or count.
-- Add looping or decorative motion, parallax or scroll hijacking.
+- Add decorative motion beyond the three vignettes in section 6, or any parallax or scroll hijacking.
 - Use colour or `font-family` literals outside `tokens.css`.
 - Hide content until JavaScript runs.
 - Publish, create a pull request, or merge without explicit approval.

@@ -40,9 +40,10 @@ function testHomepage() {
   assert.ok(jsonLdBlocks.length >= 1, 'homepage JSON-LD is missing');
   const graph = JSON.parse(jsonLdBlocks[0][1])['@graph'];
   assert.ok(graph.some((item) => item['@type'] === 'Person'));
-  const organization = graph.find((item) => item['@type'] === 'Organization');
-  assert.ok(organization?.contactPoint?.email, 'Organization contactPoint email is missing');
-  assert.equal(organization?.address?.['@type'], 'PostalAddress');
+  const person = graph.find((item) => item['@type'] === 'Person');
+  assert.equal(person?.email, 'mishra.omjay@gmail.com', 'Person email must be a plain address');
+  assert.equal(person?.address?.['@type'], 'PostalAddress');
+  assert.ok(!graph.some((item) => item['@type'] === 'Organization'), 'the site is a person, not an organization');
 }
 
 function testCrawlerFiles() {
@@ -62,7 +63,7 @@ function testCrawlerFiles() {
 function testSitemapAndPages() {
   const sitemap = read('sitemap.xml');
   assert.match(sitemap, /^<\?xml version="1\.0" encoding="UTF-8"\?>/);
-  const expected = ['/', '/toolkit.html', '/certifications.html', '/resume.html', '/about/', '/contact/', '/privacy/', '/developers/'];
+  const expected = ['/', '/toolkit.html', '/certifications.html', '/resume.html', '/about/', '/contact/', '/privacy/', '/developers/', '/work/exaqube/', '/work/azimuth-grc/', '/work/planetspark/'];
   for (const suffix of expected) {
     assert.ok(sitemap.includes(`<loc>https://omjay.github.io/Omjay-Portfolio${suffix}</loc>`), `sitemap missing ${suffix}`);
   }
@@ -72,6 +73,12 @@ function testSitemapAndPages() {
     assert.ok(strip(html).length >= 500, `${directory} must contain at least 500 characters`);
     assert.equal((html.match(/<h1\b/g) || []).length, 1, `${directory} must contain one H1`);
     assert.match(html, new RegExp(`<link rel="canonical" href="https://omjay.github.io/Omjay-Portfolio/${directory}/">`));
+  }
+  const pages = ['index.html', 'toolkit.html', 'certifications.html', 'resume.html', '404.html', 'about/index.html', 'contact/index.html', 'privacy/index.html', 'developers/index.html', 'work/exaqube/index.html', 'work/azimuth-grc/index.html', 'work/planetspark/index.html'];
+  for (const page of pages) {
+    const html = read(page);
+    assert.ok(!html.includes('?v=20'), `${page} must not carry cache-busting query strings on links`);
+    assert.ok(!/[—–]/.test(html), `${page} must not contain em or en dashes`);
   }
   const developers = read('developers/index.html');
   assert.match(developers, /Omjay\/Omjay-Portfolio GitHub repository/);

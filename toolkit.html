@@ -7,7 +7,7 @@
   <meta name="description" content="The tools Om Jay Mishra uses for Azure Databricks and Snowflake data engineering, each linked to the project that used it.">
   <link rel="canonical" href="https://omjay.github.io/Omjay-Portfolio/toolkit.html">
   <link rel="icon" href="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%2064%2064'%3E%3Crect%20width='64'%20height='64'%20rx='12'%20fill='%231c1e21'/%3E%3Ctext%20x='32'%20y='41'%20text-anchor='middle'%20font-family='Arial'%20font-size='24'%20font-weight='700'%20fill='%23fbfbf9'%3EOM%3C/text%3E%3C/svg%3E">
-  <meta name="theme-color" content="#fbfbf9">
+  <meta name="theme-color" content="#fafcfd">
   <meta property="og:type" content="website">
   <meta property="og:site_name" content="Om Jay Mishra">
   <meta property="og:title" content="Engineering Toolkit | Om Jay Mishra">
@@ -17,7 +17,7 @@
   <meta name="twitter:card" content="summary_large_image">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@500;600&amp;family=Public+Sans:wght@400;600&amp;family=Source+Serif+4:opsz,wght@8..60,600&amp;display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Public+Sans:wght@400;600&amp;family=Source+Serif+4:opsz,wght@8..60,600&amp;display=swap" rel="stylesheet">
   <link rel="stylesheet" href="tokens.css">
   <link rel="stylesheet" href="base.css">
   <link rel="stylesheet" href="site.css">
@@ -30,19 +30,17 @@
       <nav aria-label="Primary">
         <ul class="nav-links">
           <li><a href="./#work">Work</a></li>
-          <li><a href="toolkit.html?v=20260904-3" aria-current="page">Toolkit</a></li>
-          <li><a href="certifications.html?v=20260904-3">Certifications</a></li>
-          <li><a href="resume.html">Resume</a></li>
-          <li><a class="nav-email" href="mailto:mishra.omjay@gmail.com">Email me</a></li>
+          <li><a href="toolkit.html" aria-current="page">Toolkit</a></li>
+          <li><a href="certifications.html">Certifications</a></li>
+          <li class="nav-cta"><a class="nav-email" href="contact/">Contact</a></li>
         </ul>
         <details class="nav-menu">
           <summary>Menu</summary>
           <ul>
             <li><a href="./#work">Work</a></li>
-          <li><a href="toolkit.html?v=20260904-3" aria-current="page">Toolkit</a></li>
-          <li><a href="certifications.html?v=20260904-3">Certifications</a></li>
-          <li><a href="resume.html">Resume</a></li>
-            <li><a href="mailto:mishra.omjay@gmail.com">Email me</a></li>
+          <li><a href="toolkit.html" aria-current="page">Toolkit</a></li>
+          <li><a href="certifications.html">Certifications</a></li>
+            <li><a href="contact/">Contact</a></li>
           </ul>
         </details>
       </nav>
@@ -67,7 +65,7 @@
           <div><dt>Azure</dt><dd><span class="tool-list">Azure Data Factory, ADLS Gen2, Azure Monitor, Docker on Azure</span><span class="evidence">Used at: <a href="work/azimuth-grc/#workflow-automation">Azimuth GRC, workflow automation</a> <a href="work/azimuth-grc/#lakehouse-migration">Azimuth GRC, migration</a></span></dd></div>
           <div><dt>Lakehouse and modelling</dt><dd><span class="tool-list">Delta Lake, medallion layers, incremental loads and merges, star schema, compaction and vacuuming, Parquet</span><span class="evidence">Used at: <a href="work/azimuth-grc/#lakehouse-migration">Azimuth GRC, migration</a> <a href="work/exaqube/#config-ingestion">ExaQube, ingestion</a></span></dd></div>
           <div><dt>Snowflake</dt><dd><span class="tool-list">Zero-copy database clones, branch-based dev environments, month-end clone cleanup</span><span class="evidence">Used at: <a href="work/exaqube/#snowflake-dev">ExaQube, Snowflake dev environments</a></span></dd></div>
-          <div><dt>Languages</dt><dd><span class="tool-list">Python, SQL, SQL Server</span><span class="evidence">Used at: <a href="work/azimuth-grc/#workflow-automation">Azimuth GRC, workflow automation</a> <a href="work/exaqube/#config-ingestion">ExaQube, ingestion</a></span></dd></div>
+          <div><dt>Languages</dt><dd><span class="tool-list">Python, SQL (including SQL Server stored procedures)</span><span class="evidence">Used at: <a href="work/azimuth-grc/#workflow-automation">Azimuth GRC, workflow automation</a> <a href="work/exaqube/#config-ingestion">ExaQube, ingestion</a></span></dd></div>
           <div><dt>Delivery and DevOps</dt><dd><span class="tool-list">Azure DevOps CI/CD, Git, Docker, Ubuntu</span><span class="evidence">Used at: <a href="work/azimuth-grc/#performance-governance">Azimuth GRC, performance</a> <a href="work/exaqube/#snowflake-dev">ExaQube, Snowflake dev environments</a> <a href="work/exaqube/#legacy-to-workflows">ExaQube, Workflows</a></span></dd></div>
           <div><dt>Analytics</dt><dd><span class="tool-list">Power BI, Tableau, Google Sheets, Apps Script, Excel</span><span class="evidence">Used at: <a href="work/planetspark/">PlanetSpark</a> <a href="work/azimuth-grc/#lakehouse-migration">Azimuth GRC, migration</a></span></dd></div>
         </dl>
@@ -88,8 +86,22 @@
         </dl>
         <div class="rows-links">
           <a class="button button--quiet" href="./#work">See the work</a>
-          <a class="button button--quiet" href="certifications.html?v=20260904-3">See certifications</a>
+          <a class="button button--quiet" href="certifications.html">See certifications</a>
         </div>
+      </div>
+    </section>
+    <section class="close" id="contact" aria-labelledby="close-title">
+      <div class="container">
+        <div>
+          <h2 id="close-title">Have a pipeline that needs work?</h2>
+          <p class="close-note">I take freelance and consulting work on slow Databricks pipelines, manual processes and Lakehouse migrations. Tell me what is slow, your stack, rough data volumes and your timeline, and I will reply with how I would approach it.</p>
+          <p class="close-action"><a class="button" href="mailto:mishra.omjay@gmail.com?subject=Data%20engineering%20project&amp;body=What%20is%20slow%2C%20manual%20or%20expensive%3A%0A%0AStack%3A%0A%0ARough%20data%20volumes%3A%0A%0ATimeline%3A%0A">Email me about a project</a></p>
+        </div>
+        <dl>
+          <div><dt>Email</dt><dd><a href="mailto:mishra.omjay@gmail.com">mishra.omjay@gmail.com</a></dd></div>
+          <div><dt>LinkedIn</dt><dd><a href="https://www.linkedin.com/in/omjay-mishra/" target="_blank" rel="noopener">linkedin.com/in/omjay-mishra<span class="visually-hidden"> (opens in a new tab)</span></a></dd></div>
+          <div><dt>Based in</dt><dd>India</dd></div>
+        </dl>
       </div>
     </section>
   </main>
@@ -98,10 +110,11 @@
     <div class="container">
       <ul>
         <li><a href="about/">About</a></li>
-        <li><a href="contact/">Contact details</a></li>
+        <li><a href="resume.html">Resume</a></li>
+        <li><a href="contact/">Contact</a></li>
         <li><a href="privacy/">Privacy</a></li>
       </ul>
-      <p>Om Jay Mishra, Data Engineer</p>
+      <p>Om Jay Mishra, freelance data engineer</p>
     </div>
   </footer>
   <script src="site.js" defer></script>

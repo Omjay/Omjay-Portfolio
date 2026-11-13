@@ -4,20 +4,20 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Azimuth GRC case | Om Jay Mishra</title>
-  <meta name="description" content="How Om Jay Mishra built the Azimuth GRC pipeline that turned a manual 6-hour process into 30 minutes, and kept it there as the data grew from 20M to 500M+ records.">
+  <meta name="description" content="How Om Jay Mishra built the Azimuth GRC pipeline that turned a manual 6-hour process into about 30 minutes at 20M records, and kept it there past 500M+.">
   <link rel="canonical" href="https://omjay.github.io/Omjay-Portfolio/work/azimuth-grc/">
   <link rel="icon" href="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%2064%2064'%3E%3Crect%20width='64'%20height='64'%20rx='12'%20fill='%231c1e21'/%3E%3Ctext%20x='32'%20y='41'%20text-anchor='middle'%20font-family='Arial'%20font-size='24'%20font-weight='700'%20fill='%23fbfbf9'%3EOM%3C/text%3E%3C/svg%3E">
-  <meta name="theme-color" content="#fbfbf9">
+  <meta name="theme-color" content="#fafcfd">
   <meta property="og:type" content="article">
   <meta property="og:site_name" content="Om Jay Mishra">
   <meta property="og:title" content="Azimuth GRC case | Om Jay Mishra">
-  <meta property="og:description" content="How Om Jay Mishra built the Azimuth GRC pipeline that turned a manual 6-hour process into 30 minutes, and kept it there as the data grew from 20M to 500M+ records.">
+  <meta property="og:description" content="How Om Jay Mishra built the Azimuth GRC pipeline that turned a manual 6-hour process into about 30 minutes at 20M records, and kept it there past 500M+.">
   <meta property="og:url" content="https://omjay.github.io/Omjay-Portfolio/work/azimuth-grc/">
   <meta property="og:image" content="https://omjay.github.io/Omjay-Portfolio/og-image.png">
   <meta name="twitter:card" content="summary_large_image">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@500;600&amp;family=Public+Sans:wght@400;600&amp;family=Source+Serif+4:opsz,wght@8..60,600&amp;display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Public+Sans:wght@400;600&amp;family=Source+Serif+4:opsz,wght@8..60,600&amp;display=swap" rel="stylesheet">
   <link rel="stylesheet" href="../../tokens.css">
   <link rel="stylesheet" href="../../base.css">
   <link rel="stylesheet" href="../../site.css">
@@ -30,19 +30,17 @@
       <nav aria-label="Primary">
         <ul class="nav-links">
           <li><a href="../../#work">Work</a></li>
-          <li><a href="../../toolkit.html?v=20260904-3">Toolkit</a></li>
-          <li><a href="../../certifications.html?v=20260904-3">Certifications</a></li>
-          <li><a href="../../resume.html">Resume</a></li>
-          <li><a class="nav-email" href="mailto:mishra.omjay@gmail.com">Email me</a></li>
+          <li><a href="../../toolkit.html">Toolkit</a></li>
+          <li><a href="../../certifications.html">Certifications</a></li>
+          <li class="nav-cta"><a class="nav-email" href="../../contact/">Contact</a></li>
         </ul>
         <details class="nav-menu">
           <summary>Menu</summary>
           <ul>
             <li><a href="../../#work">Work</a></li>
-          <li><a href="../../toolkit.html?v=20260904-3">Toolkit</a></li>
-          <li><a href="../../certifications.html?v=20260904-3">Certifications</a></li>
-          <li><a href="../../resume.html">Resume</a></li>
-            <li><a href="mailto:mishra.omjay@gmail.com">Email me</a></li>
+          <li><a href="../../toolkit.html">Toolkit</a></li>
+          <li><a href="../../certifications.html">Certifications</a></li>
+            <li><a href="../../contact/">Contact</a></li>
           </ul>
         </details>
       </nav>
@@ -56,23 +54,23 @@
           <a class="crumb" href="../../#work">All work</a>
           <h1 id="case-title">Azimuth GRC</h1>
           <p class="lead">Built and optimized the compliance-data Lakehouse on Azure Databricks: legacy migration, a weekly run of about 150,000 records against 85 compliance tests, workflow automation, governance and cost work.</p>
-        </div>
-        <div>
-        <figure class="vignette" data-ambient data-check>
+          <figure class="vignette" data-ambient data-check>
                 <div class="vignette-art v-check" data-ambient-toggle>
                   <ul class="v-check-stream" aria-hidden="true"><li class="is-pass" data-ok="1">Audit ready</li><li class="is-fail" data-ok="0">Bad loan</li><li class="is-pass" data-ok="1">Lien recorded</li><li class="is-fail" data-ok="0">Duplicate charge</li><li class="is-pass" data-ok="1">Verified APR</li><li class="is-fail" data-ok="0">Missing disclosure</li><li class="is-pass" data-ok="1">Compliant fee</li><li class="is-fail" data-ok="0">Late filing</li><li class="is-pass" data-ok="1">Consent logged</li><li class="is-fail" data-ok="0">Stale APR</li><li class="is-pass" data-ok="1">Records complete</li><li class="is-fail" data-ok="0">Invalid escrow</li><li class="is-pass" data-ok="1">Ledger balanced</li><li class="is-fail" data-ok="0">Unsigned form</li><li class="is-pass" data-ok="1">Terms verified</li><li class="is-fail" data-ok="0">Expired license</li><li class="is-pass" data-ok="1">Notice on time</li><li class="is-fail" data-ok="0">Rate mismatch</li><li class="is-pass" data-ok="1">Controls passed</li><li class="is-fail" data-ok="0">Orphan record</li></ul>
                   <div class="v-check-line" aria-hidden="true"></div>
                   <p class="v-check-count" aria-hidden="true" data-check-count hidden></p>
                 </div>
-                <div class="vignette-foot"><figcaption>Records rise through the check line: passes go on, failures are held back. Sample checks.</figcaption></div>
+                <div class="vignette-foot"><figcaption>Records rise through the check line: passes go on, failures are held back. Sample records, not real data.</figcaption></div>
               </figure>
+        </div>
+        <div>
         <dl class="facts">
           <div><dt>Role</dt><dd>Data Engineer</dd></div>
           <div><dt>Team</dt><dd>Led a two-person data team at a 30-person startup</dd></div>
           <div><dt>When</dt><dd>May 2023 to May 2026, three years</dd></div>
           <div><dt>Where</dt><dd>Gurgaon</dd></div>
           <div><dt>Company</dt><dd>US compliance automation: full-population regulatory monitoring and audit-ready governance data</dd></div>
-          <div><dt>Links</dt><dd class="work-links"><a href="https://www.azimuthgrc.com/" target="_blank" rel="noopener" aria-label="Azimuth GRC website">Website</a> <a href="https://www.linkedin.com/company/azimuth-grc" target="_blank" rel="noopener" aria-label="Azimuth GRC linkedin">LinkedIn</a></dd></div>
+          <div><dt>Links</dt><dd class="work-links"><a href="https://www.azimuthgrc.com/" target="_blank" rel="noopener">Website<span class="visually-hidden"> of Azimuth GRC (opens in a new tab)</span></a> <a href="https://www.linkedin.com/company/azimuth-grc" target="_blank" rel="noopener" aria-label="Azimuth GRC on LinkedIn">LinkedIn</a></dd></div>
         </dl>
         </div>
       </div>
@@ -135,10 +133,10 @@
     </article>
     <article class="project" id="workflow-automation" aria-labelledby="workflow-automation-title">
       <div class="container">
-        <div class="project-grid">
+        <div class="project-grid project-grid--compact">
         <div class="project-copy">
           <h2 id="workflow-automation-title">Legacy workflow automation and scraper orchestration</h2>
-          <p class="project-stack">Azure ADF, Python, Databricks, Docker</p>
+          <p class="project-stack">ADF, Python, Databricks, Docker</p>
           <ul class="points">
               <li>Eliminated 270+ hours of manual effort by orchestrating fragmented workflows (manual script runs, SQL stored-procedure triggers) into ADF and Databricks pipelines.</li>
               <li>Engineered a metadata-driven pipeline architecture in ADF for dynamic source schemas: maintenance overhead down 50%.</li>
@@ -205,6 +203,20 @@
         </div>
       </div>
     </article>
+    <section class="close" id="contact" aria-labelledby="close-title">
+      <div class="container">
+        <div>
+          <h2 id="close-title">Have a pipeline like this one?</h2>
+          <p class="close-note">I take freelance and consulting work on slow Databricks pipelines, manual processes and Lakehouse migrations. Tell me what is slow, your stack, rough data volumes and your timeline, and I will reply with how I would approach it.</p>
+          <p class="close-action"><a class="button" href="mailto:mishra.omjay@gmail.com?subject=Data%20engineering%20project&amp;body=What%20is%20slow%2C%20manual%20or%20expensive%3A%0A%0AStack%3A%0A%0ARough%20data%20volumes%3A%0A%0ATimeline%3A%0A">Email me about a project</a></p>
+        </div>
+        <dl>
+          <div><dt>Email</dt><dd><a href="mailto:mishra.omjay@gmail.com">mishra.omjay@gmail.com</a></dd></div>
+          <div><dt>LinkedIn</dt><dd><a href="https://www.linkedin.com/in/omjay-mishra/" target="_blank" rel="noopener">linkedin.com/in/omjay-mishra<span class="visually-hidden"> (opens in a new tab)</span></a></dd></div>
+          <div><dt>Based in</dt><dd>India</dd></div>
+        </dl>
+      </div>
+    </section>
   </main>
 
   <nav class="pager" aria-label="Case studies">
@@ -218,10 +230,11 @@
     <div class="container">
       <ul>
         <li><a href="../../about/">About</a></li>
-        <li><a href="../../contact/">Contact details</a></li>
+        <li><a href="../../resume.html">Resume</a></li>
+        <li><a href="../../contact/">Contact</a></li>
         <li><a href="../../privacy/">Privacy</a></li>
       </ul>
-      <p>Om Jay Mishra, Data Engineer</p>
+      <p>Om Jay Mishra, freelance data engineer</p>
     </div>
   </footer>
   <script src="../../site.js" defer></script>
