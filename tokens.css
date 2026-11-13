@@ -1,0 +1,77 @@
+/* Design tokens: the kept brand (blue accent, Source Serif 4, Public Sans), restrained posture. */
+/* Every colour and font on the redesigned pages comes from this block. */
+:root {
+  /* Paper and ink, tinted toward the accent hue (240). */
+  --color-paper: oklch(98.9% 0.003 240);
+  --color-paper-2: oklch(96.4% 0.007 240);
+  --color-paper-3: oklch(93.6% 0.01 240);
+  --color-ink: oklch(22% 0.012 250);
+  --color-ink-2: oklch(38% 0.012 250);
+  --color-muted: oklch(49% 0.012 250);
+  --color-rule: oklch(89.5% 0.007 250);
+  --color-rule-strong: oklch(78% 0.01 250);
+
+  /* One accent, the portfolio's established blue. */
+  --color-accent: oklch(47% 0.095 240);
+  --color-accent-hover: oklch(39% 0.085 240);
+  --color-accent-ink: oklch(98.9% 0.003 240);
+  --color-accent-soft: oklch(95% 0.022 240);
+  --color-focus: oklch(50% 0.16 240);
+
+  /* Data marks: the slow run and the straggler partition. */
+  --color-mark: oklch(58% 0.01 250);
+  --color-warn: oklch(52% 0.11 75);
+
+  /* Company vignettes: the ExaQube sea, the Azimuth checks, the PlanetSpark sheet. */
+  --color-sea: oklch(55% 0.15 250);
+  --color-steel: oklch(45% 0.03 240);
+  --color-sun: oklch(74% 0.13 85);
+  --color-pass: oklch(47% 0.11 155);
+  --color-fail: oklch(47% 0.11 25);
+  --color-scan: oklch(78% 0.17 150);
+  --color-check-paper: oklch(98.6% 0.006 160);
+  --color-check-rule: oklch(90% 0.025 160);
+
+  --font-display: 'Source Serif 4', Georgia, serif;
+  --font-body: 'Public Sans', system-ui, sans-serif;
+  --font-mono: ui-monospace, 'Cascadia Mono', Consolas, monospace;
+
+  /* Type scale, 1.25 from a 16px body; display sizes clamp down on small screens. */
+  --text-display: clamp(2.75rem, 2rem + 3.6vw, 5.25rem);
+  --text-display-s: clamp(2.25rem, 1.7rem + 2.4vw, 3.75rem);
+  --text-section: clamp(2rem, 1.5rem + 2vw, 3.25rem);
+  --text-title: 1.5625rem;
+  --text-lead: 1.3125rem;
+  --text-md: 1rem;
+  --text-sm: 0.875rem;
+
+  --space-3xs: 2px;
+  --space-2xs: 4px;
+  --space-xs: 8px;
+  --space-sm: 12px;
+  --space-md: 16px;
+  --space-lg: 24px;
+  --space-xl: 40px;
+  --space-2xl: 64px;
+  --space-3xl: 96px;
+  --space-4xl: 144px;
+
+  --section-gap-s: clamp(72px, 6vw + 32px, 120px);
+  --section-gap: clamp(88px, 7vw + 40px, 144px);
+
+  --container: 1440px;
+  --gutter: clamp(20px, 4vw, 64px);
+  --gap-columns: clamp(16px, 2vw, 32px);
+
+  --radius-control: 6px;
+  --radius-card: 10px;
+
+  --ease-out: cubic-bezier(0.16, 1, 0.3, 1);
+  --ease-in: cubic-bezier(0.7, 0, 0.84, 0);
+  --ease-in-out: cubic-bezier(0.65, 0, 0.35, 1);
+  --dur-micro: 120ms;
+  --dur-short: 220ms;
+  --dur-long: 420ms;
+
+  --z-sticky-nav: 300;
+}

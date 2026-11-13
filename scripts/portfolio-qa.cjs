@@ -125,7 +125,7 @@ async function inspect(page, pageName, viewport) {
       : [];
 
     const text = document.body.innerText;
-    const unicodeDashes = (text.match(/[—–]/g) || []).length;
+    const unicodeDashes = (text.match(/[\u2014\u2013]/g) || []).length;
     const overflow = Math.max(document.documentElement.scrollWidth, document.body.scrollWidth) - innerWidth;
 
     const parseColor = (value) => {
@@ -370,9 +370,9 @@ async function navigationCheck(browser) {
 
   const workVerifiedItems = [
     'databricks', 'delta-lake', 'azure', 'sql-server',
-    'pyspark', 'python', 'sql', 'scala', 'hive',
+    'pyspark', 'python', 'sql',
     'power-bi', 'tableau', 'apps-script', 'google-sheets', 'excel',
-    'docker', 'ubuntu', 'git', 'azure-devops', 'bash',
+    'docker', 'ubuntu', 'git', 'azure-devops', 'snowflake',
   ];
   for (const itemName of workVerifiedItems) {
     const item = page.locator(`[data-verification-item="${itemName}"]`);

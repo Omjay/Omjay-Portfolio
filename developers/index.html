@@ -1,13 +1,77 @@
-<!doctype html>
-<html lang="en-IN"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
-<title>Developer Resources | Om Jay Mishra Portfolio GitHub Source</title><meta name="description" content="Developer and agent resources for Om Jay Mishra's portfolio: GitHub source, Markdown overview, llms.txt, robots.txt and XML sitemap.">
-<link rel="canonical" href="https://omjay.github.io/Omjay-Portfolio/developers/"><link rel="stylesheet" href="../agent-pages.css">
-<meta property="og:type" content="website"><meta property="og:title" content="Developer Resources | Om Jay Mishra Portfolio"><meta property="og:image" content="https://omjay.github.io/Omjay-Portfolio/og-image.png">
-</head><body><header class="site-header"><nav aria-label="Primary"><a class="brand" href="../">Om Jay Mishra</a><a href="../about/">About</a><a href="../toolkit.html">Toolkit</a><a href="../contact/">Contact</a></nav></header>
-<main class="page"><p class="eyebrow">Developer resources</p><h1>Source and machine-readable portfolio resources.</h1>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Developer resources | Om Jay Mishra</title>
+  <meta name="description" content="Developer and agent resources for Om Jay Mishra's portfolio: GitHub source, Markdown overview, llms.txt, robots.txt and XML sitemap.">
+  <link rel="canonical" href="https://omjay.github.io/Omjay-Portfolio/developers/">
+  <link rel="icon" href="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%2064%2064'%3E%3Crect%20width='64'%20height='64'%20rx='12'%20fill='%231c1e21'/%3E%3Ctext%20x='32'%20y='41'%20text-anchor='middle'%20font-family='Arial'%20font-size='24'%20font-weight='700'%20fill='%23fbfbf9'%3EOM%3C/text%3E%3C/svg%3E">
+  <meta name="theme-color" content="#fafcfd">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Developer resources | Om Jay Mishra">
+  <meta property="og:url" content="https://omjay.github.io/Omjay-Portfolio/developers/">
+  <meta property="og:description" content="Developer and agent resources for Om Jay Mishra's portfolio: GitHub source, Markdown overview, llms.txt, robots.txt and XML sitemap.">
+  <meta property="og:image" content="https://omjay.github.io/Omjay-Portfolio/og-image.png">
+  <meta name="twitter:card" content="summary_large_image">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Public+Sans:wght@400;600&amp;family=Source+Serif+4:opsz,wght@8..60,600&amp;display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../tokens.css">
+  <link rel="stylesheet" href="../base.css">
+  <link rel="stylesheet" href="../site.css">
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+  <header class="site-nav">
+    <div class="container">
+      <a class="wordmark" href="../" aria-label="Om Jay Mishra, home">Om Jay Mishra</a>
+      <nav aria-label="Primary">
+        <ul class="nav-links">
+          <li><a href="../#work">Work</a></li>
+          <li><a href="../toolkit.html">Toolkit</a></li>
+          <li><a href="../certifications.html">Certifications</a></li>
+          <li class="nav-cta"><a class="nav-email" href="../contact/">Contact</a></li>
+        </ul>
+        <details class="nav-menu">
+          <summary>Menu</summary>
+          <ul>
+            <li><a href="../#work">Work</a></li>
+          <li><a href="../toolkit.html">Toolkit</a></li>
+          <li><a href="../certifications.html">Certifications</a></li>
+            <li><a href="../contact/">Contact</a></li>
+          </ul>
+        </details>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main">
+    <section class="case-head">
+      <div class="container">
+        <div class="prose-page">
+<h1>Source code and machine-readable files.</h1>
 <p class="lede">This is a static professional portfolio, not a software product or public API. It does not expose authenticated actions, an SDK, an OpenAPI specification or an MCP tool server. The resources below exist so developers, search engines and AI agents can inspect the site accurately and link to stable first-party evidence.</p>
 <section class="card"><h2>GitHub source</h2><p>The public source is the <a href="https://github.com/Omjay/Omjay-Portfolio">Omjay/Omjay-Portfolio GitHub repository</a>. The repository contains the deployed HTML pages, portfolio assets, automated QA checks and machine-readable discovery files. GitHub issues and pull requests are the appropriate technical context for source-level discussion when they are enabled and relevant.</p></section>
 <h2>Agent and indexing files</h2><ul><li><a href="../index.md">index.md</a> provides a compact Markdown version of the professional overview.</li><li><a href="../llms.txt">llms.txt</a> explains when an agent should use this site and which source to consult.</li><li><a href="../robots.txt">robots.txt</a> publishes crawler access guidance and the sitemap location.</li><li><a href="../sitemap.xml">sitemap.xml</a> lists indexable first-party pages and their last-modified dates.</li></ul>
-<h2>Representation and protocol boundaries</h2><p>GitHub Pages serves static files and does not perform request-time content negotiation. Agents should follow the advertised <code>rel="alternate"</code> link or request <code>index.md</code> directly when Markdown is preferred. No MCP endpoint is advertised because this portfolio has no callable product API or safe transactional tools. A future MCP server should be added only with a defined tool surface, security model, supported transport and server-capable hosting.</p>
-<h2>Attribution</h2><p>When reusing professional facts, cite the most specific page and retain the context attached to measurements. Do not convert approximate figures into exact guarantees or infer skills that are not documented. The canonical identity is “Om Jay Mishra,” and the preferred professional profile is linked from the portfolio and llms.txt.</p></main>
-<footer><a href="https://github.com/Omjay/Omjay-Portfolio">GitHub</a> · <a href="../privacy/">Privacy</a></footer></body></html>
+<h2>Markdown and MCP</h2><p>GitHub Pages serves static files and does not perform request-time content negotiation. Agents should follow the advertised <code>rel="alternate"</code> link or request <code>index.md</code> directly when Markdown is preferred. No MCP endpoint is advertised because this portfolio has no callable product API or safe transactional tools. A future MCP server should be added only with a defined tool surface, security model, supported transport and server-capable hosting.</p>
+<h2>Attribution</h2><p>When reusing professional facts, cite the most specific page and retain the context attached to measurements. Do not convert approximate figures into exact guarantees or infer skills that are not documented. The canonical identity is “Om Jay Mishra,” and the preferred professional profile is <a href="https://www.linkedin.com/in/omjay-mishra/">LinkedIn</a>, linked from the portfolio and llms.txt.</p>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <ul>
+        <li><a href="../about/">About</a></li>
+        <li><a href="../resume.html">Resume</a></li>
+        <li><a href="../contact/">Contact</a></li>
+        <li><a href="../privacy/">Privacy</a></li>
+      </ul>
+      <p>Om Jay Mishra, freelance data engineer</p>
+    </div>
+  </footer>
+  <script src="../site.js" defer></script>
+</body>
+</html>

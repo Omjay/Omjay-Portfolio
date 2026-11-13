@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>ExaQube Technologies case | Om Jay Mishra</title>
+  <meta name="description" content="How Om Jay Mishra moved ExaQube production workloads onto Databricks Workflows and built branch-based Snowflake dev environments.">
+  <link rel="canonical" href="https://omjay.github.io/Omjay-Portfolio/work/exaqube/">
+  <link rel="icon" href="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%2064%2064'%3E%3Crect%20width='64'%20height='64'%20rx='12'%20fill='%231c1e21'/%3E%3Ctext%20x='32'%20y='41'%20text-anchor='middle'%20font-family='Arial'%20font-size='24'%20font-weight='700'%20fill='%23fbfbf9'%3EOM%3C/text%3E%3C/svg%3E">
+  <meta name="theme-color" content="#fafcfd">
+  <meta property="og:type" content="article">
+  <meta property="og:site_name" content="Om Jay Mishra">
+  <meta property="og:title" content="ExaQube Technologies case | Om Jay Mishra">
+  <meta property="og:description" content="How Om Jay Mishra moved ExaQube production workloads onto Databricks Workflows and built branch-based Snowflake dev environments.">
+  <meta property="og:url" content="https://omjay.github.io/Omjay-Portfolio/work/exaqube/">
+  <meta property="og:image" content="https://omjay.github.io/Omjay-Portfolio/og-image.png">
+  <meta name="twitter:card" content="summary_large_image">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Public+Sans:wght@400;600&amp;family=Source+Serif+4:opsz,wght@8..60,600&amp;display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../../tokens.css">
+  <link rel="stylesheet" href="../../base.css">
+  <link rel="stylesheet" href="../../site.css">
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+  <header class="site-nav">
+    <div class="container">
+      <a class="wordmark" href="../../" aria-label="Om Jay Mishra, home">Om Jay Mishra</a>
+      <nav aria-label="Primary">
+        <ul class="nav-links">
+          <li><a href="../../#work">Work</a></li>
+          <li><a href="../../toolkit.html">Toolkit</a></li>
+          <li><a href="../../certifications.html">Certifications</a></li>
+          <li class="nav-cta"><a class="nav-email" href="../../contact/">Contact</a></li>
+        </ul>
+        <details class="nav-menu">
+          <summary>Menu</summary>
+          <ul>
+            <li><a href="../../#work">Work</a></li>
+          <li><a href="../../toolkit.html">Toolkit</a></li>
+          <li><a href="../../certifications.html">Certifications</a></li>
+            <li><a href="../../contact/">Contact</a></li>
+          </ul>
+        </details>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main">
+    <section class="case-head" aria-labelledby="case-title">
+      <div class="container">
+        <div>
+          <a class="crumb" href="../../#work">All work</a>
+          <h1 id="case-title">ExaQube Technologies</h1>
+          <p class="lead">Modernizing a legacy data platform: production workloads moving off a self-managed Ubuntu server onto Databricks Workflows and Delta Lake, plus branch-based Snowflake dev environments for a client.</p>
+          <figure class="vignette" data-ambient>
+                <div class="vignette-art v-sea" data-ambient-toggle>
+                  <svg viewBox="0 20 320 82" aria-hidden="true" focusable="false">
+                    <g class="v-sky">
+                      <g class="v-sun"><circle cx="16" cy="58" r="7"></circle><circle class="ring" cx="16" cy="58" r="10.5"></circle></g>
+                      <g class="v-moon"><path d="M19 50.5a7.5 7.5 0 1 0 4.5 12.9 8.6 8.6 0 0 1-4.5-12.9Z"></path><circle cx="32" cy="52" r="0.9"></circle><circle cx="28" cy="64" r="0.7"></circle></g>
+                    </g>
+                    <g class="v-ship">
+                      <circle class="v-ping" cx="205" cy="36" r="9"></circle>
+                      <circle class="v-ping v-ping--late" cx="205" cy="36" r="9"></circle>
+                      <rect class="mast" x="204.3" y="36" width="1.4" height="27"></rect>
+                      <rect class="mast" x="199" y="36" width="6" height="1.4"></rect>
+                      <rect class="cabin" x="183" y="42" width="15" height="21" rx="1"></rect>
+                      <rect class="window" x="186" y="46" width="9" height="3" rx="0.5"></rect>
+                      <rect class="box-a" x="101" y="54" width="16" height="9" rx="1"></rect>
+                      <rect class="box-b" x="119" y="54" width="16" height="9" rx="1"></rect>
+                      <rect class="box-c" x="137" y="54" width="16" height="9" rx="1"></rect>
+                      <rect class="box-a" x="155" y="54" width="16" height="9" rx="1" opacity="0.7"></rect>
+                      <rect class="box-b" x="110" y="44" width="16" height="9" rx="1" opacity="0.75"></rect>
+                      <rect class="box-a" x="128" y="44" width="16" height="9" rx="1" opacity="0.75"></rect>
+                      <path class="hull" d="M91 63h128l-10 13H103Z"></path>
+                    </g>
+                    <path class="v-wave v-wave--near" d="M8 82q9-5 18 0t18 0 18 0 18 0 18 0 18 0 18 0 18 0 18 0 18 0 18 0 18 0 18 0 18 0 18 0 18 0 18 0"></path>
+                    <path class="v-wave v-wave--far" d="M0 92q9-4 18 0t18 0 18 0 18 0 18 0 18 0 18 0 18 0 18 0 18 0 18 0 18 0 18 0 18 0 18 0 18 0 18 0 18 0"></path>
+                  </svg>
+                </div>
+                <div class="vignette-foot"><figcaption>A container ship pinging its position: the data a maritime AI platform runs on.</figcaption></div>
+              </figure>
+        </div>
+        <div>
+        <dl class="facts">
+          <div><dt>Role</dt><dd>Data Engineer</dd></div>
+          <div><dt>Team</dt><dd>The only data engineer, at a 10-person startup</dd></div>
+          <div><dt>When</dt><dd>Jun 2026 to now</dd></div>
+          <div><dt>Where</dt><dd>Chennai</dd></div>
+          <div><dt>Company</dt><dd>Maritime-first AI: data platforms and decision support for shipping, logistics and enterprise operations</dd></div>
+          <div><dt>Links</dt><dd class="work-links"><a href="https://www.exaqube.com/" target="_blank" rel="noopener">Website<span class="visually-hidden"> of ExaQube Technologies (opens in a new tab)</span></a> <a href="https://www.linkedin.com/company/exaqube-technologies" target="_blank" rel="noopener" aria-label="ExaQube Technologies on LinkedIn">LinkedIn</a></dd></div>
+        </dl>
+        </div>
+      </div>
+    </section>
+
+    <article class="project" id="legacy-to-workflows" aria-labelledby="legacy-to-workflows-title">
+      <div class="container">
+        <div class="project-grid">
+        <div class="project-copy">
+          <h2 id="legacy-to-workflows-title">Legacy server to Databricks Workflows</h2>
+          <p class="project-stack">Ubuntu, Databricks, Delta Lake</p>
+          <ul class="points">
+              <li>Migrated 40+ production Python scripts off a legacy Ubuntu server onto Databricks Workflows.</li>
+              <li>Resolved the data skew in the flagship pipeline, which runs three times a day, and moved it to job compute clusters: about 30 minutes a run instead of 1 h 50 m, and about 70% fewer daily compute hours.</li>
+              <li>Orchestration, retries and alerting replaced cron jobs and manual restarts.</li>
+          </ul>
+        </div>
+        <div class="project-figure">
+          <figure class="run" data-race aria-labelledby="run-exa">
+            <div class="run-head">
+              <p class="run-figure"><span class="from">1 h 50 m</span> to 30 m</p>
+              <button class="text-button" type="button" data-race-replay hidden>Run it again</button>
+            </div>
+            <ol class="run-rows">
+            <li class="run-row" style="--share: 1.0000" data-minutes="110">
+              <div class="run-row-label"><strong>Before: skewed, on shared compute</strong><span class="clock" data-clock>1 h 50 m</span></div>
+              <div class="run-track" aria-hidden="true"><div class="run-fill"></div></div>
+            </li>
+            <li class="run-row run-row--after" style="--share: 0.2727" data-minutes="30">
+              <div class="run-row-label"><strong>After: skew fixed, on job clusters</strong><span class="clock" data-clock>30 m</span></div>
+              <div class="run-track" aria-hidden="true"><div class="run-fill"></div></div>
+            </li>
+            </ol>
+            <figcaption id="run-exa">The flagship pipeline, which runs three times a day, with both runs on the same time axis. The move to Workflows below is a separate change: it brought retries and alerting, not the speed.</figcaption>
+          </figure>
+          <dl class="ba">
+            <div><dt>Before</dt><dd><strong>Cron scripts on one server</strong><span>Sequential cron-scheduled scripts on a single Ubuntu box: no retries, failures found by hand.</span></dd></div>
+            <div><dt>After</dt><dd><strong>Orchestrated Workflows</strong><span>Dependency-aware Databricks Workflows with automatic retries, alerting and job clusters.</span></dd></div>
+          </dl>
+        </div>
+        </div>
+      </div>
+    </article>
+    <article class="project" id="config-ingestion" aria-labelledby="config-ingestion-title">
+      <div class="container">
+        <div class="project-grid project-grid--compact">
+        <div class="project-copy">
+          <h2 id="config-ingestion-title">Config-driven ingestion in Docker</h2>
+          <p class="project-stack">Docker, Python, Delta Lake</p>
+          <ul class="points">
+              <li>Dockerized Python connectors defined by config: a new source onboards without new code.</li>
+              <li>Idempotent, checkpointed loads with schema evolution into bronze Delta tables.</li>
+          </ul>
+        </div>
+        </div>
+      </div>
+    </article>
+    <article class="project" id="spark-tuning" aria-labelledby="spark-tuning-title">
+      <div class="container">
+        <div class="project-grid">
+        <div class="project-copy">
+          <h2 id="spark-tuning-title">Spark performance tuning</h2>
+          <p class="project-stack">Spark, Databricks, Delta Lake</p>
+          <ul class="points">
+              <li>Tuned shuffle partitions, broadcast joins and adaptive query execution across the heaviest jobs.</li>
+              <li>File compaction and clustering keep query latency flat as data volume grows.</li>
+          </ul>
+        </div>
+        <div class="project-figure">
+          <figure class="skew" data-switch data-state="before" aria-labelledby="skew-exa">
+            <div class="skew-head">
+              <div class="segmented" role="group" aria-label="Show the run">
+                <button type="button" data-set="before" aria-pressed="true">Before</button>
+                <button type="button" data-set="after" aria-pressed="false">After the skew fix</button>
+              </div>
+              <p class="skew-total" aria-live="polite"><span data-show="before">Run takes 1 h 50 m</span><span data-show="after">Run takes 30 m</span></p>
+            </div>
+            <ul class="skew-tasks" aria-hidden="true">
+              <li style="--before: 0.2; --after: 0.251"><i></i></li>
+              <li style="--before: 0.23; --after: 0.270"><i></i></li>
+              <li style="--before: 0.17; --after: 0.259"><i></i></li>
+              <li style="--before: 0.25; --after: 0.270"><i></i></li>
+              <li style="--before: 0.21; --after: 0.259"><i></i></li>
+              <li style="--before: 0.24; --after: 0.251"><i></i></li>
+              <li style="--before: 0.19; --after: 0.270"><i></i></li>
+              <li class="straggler" style="--before: 1; --after: 0.27"><i></i></li>
+            </ul>
+            <div class="skew-axis" aria-hidden="true"><span>0</span><span>1 h 50 m</span></div>
+            <figcaption id="skew-exa">Eight tasks in one stage on a shared axis. Task lengths are illustrative; the totals are real.</figcaption>
+          </figure>
+        </div>
+        </div>
+      </div>
+    </article>
+    <article class="project" id="snowflake-dev" aria-labelledby="snowflake-dev-title">
+      <div class="container">
+        <div class="project-grid">
+        <div class="project-copy">
+          <h2 id="snowflake-dev-title">Branch-based dev environments on Snowflake</h2>
+          <p class="project-stack">Snowflake, Azure DevOps, Git</p>
+          <ul class="points">
+              <li>For a client platform, creating a feature branch from main triggers an Azure DevOps pipeline that zero-copy clones the full production database for that branch.</li>
+              <li>Every clone gets a unique uppercase name, DATABASE_BRANCH_YYYYMMDD, so each environment traces back to its branch and the day it was cut.</li>
+              <li>15+ engineers test changes against real production data as of branch creation, without touching production or duplicating storage.</li>
+              <li>A month-end job drops clones of feature branches with no push for a month; main, prod and non-feature branches are never dropped.</li>
+              <li>Brought governance to development work: every copy of production is named after its branch and the day it was cut, kept apart from production, and removed once its branch goes quiet, so no untracked copies of production data linger.</li>
+          </ul>
+        </div>
+        <div class="project-figure">
+          <figure class="flow" data-steps aria-labelledby="flow-branch">
+            <div class="flow-head">
+              <p id="flow-branch">One feature branch, from creation to cleanup.</p>
+              <button class="text-button" type="button" data-steps-play hidden>Walk through it</button>
+            </div>
+            <ol>
+              <li><strong>Branch from main</strong><span>A developer creates feature/… from main in Azure DevOps.</span></li>
+              <li><strong>Clone production</strong><span>The pipeline zero-copy clones the production database as DATABASE_BRANCH_YYYYMMDD.</span></li>
+              <li><strong>Build and test</strong><span>Changes run against real production data as of the branch date; production is untouched.</span></li>
+              <li><strong>Month-end check</strong><span>A scheduled job looks for feature branches with no push in the last month.</span></li>
+              <li><strong>Drop stale clones</strong><span>Their clones are dropped; main, prod and non-feature branches are never touched.</span></li>
+            </ol>
+            <p class="figure-note">Snowflake clones a whole database in one statement; Databricks clones table by table, which is why this runs on Snowflake.</p>
+            <p class="visually-hidden" aria-live="polite" data-steps-status></p>
+          </figure>
+        </div>
+        </div>
+      </div>
+    </article>
+    <section class="close" id="contact" aria-labelledby="close-title">
+      <div class="container">
+        <div>
+          <h2 id="close-title">Need this on your platform?</h2>
+          <p class="close-note">I take freelance and consulting work on slow Databricks pipelines, manual processes and Lakehouse migrations. Tell me what is slow, your stack, rough data volumes and your timeline, and I will reply with how I would approach it.</p>
+          <p class="close-action"><a class="button" href="mailto:mishra.omjay@gmail.com?subject=Data%20engineering%20project&amp;body=What%20is%20slow%2C%20manual%20or%20expensive%3A%0A%0AStack%3A%0A%0ARough%20data%20volumes%3A%0A%0ATimeline%3A%0A">Email me about a project</a></p>
+        </div>
+        <dl>
+          <div><dt>Email</dt><dd><a href="mailto:mishra.omjay@gmail.com">mishra.omjay@gmail.com</a></dd></div>
+          <div><dt>LinkedIn</dt><dd><a href="https://www.linkedin.com/in/omjay-mishra/" target="_blank" rel="noopener">linkedin.com/in/omjay-mishra<span class="visually-hidden"> (opens in a new tab)</span></a></dd></div>
+          <div><dt>Based in</dt><dd>India</dd></div>
+        </dl>
+      </div>
+    </section>
+  </main>
+
+  <nav class="pager" aria-label="Case studies">
+    <div class="container">
+      <span></span>
+      <a href="../azimuth-grc/" rel="next"><span><small>Next</small>Azimuth GRC</span></a>
+    </div>
+  </nav>
+
+  <footer class="site-footer">
+    <div class="container">
+      <ul>
+        <li><a href="../../about/">About</a></li>
+        <li><a href="../../resume.html">Resume</a></li>
+        <li><a href="../../contact/">Contact</a></li>
+        <li><a href="../../privacy/">Privacy</a></li>
+      </ul>
+      <p>Om Jay Mishra, freelance data engineer</p>
+    </div>
+  </footer>
+  <script src="../../site.js" defer></script>
+</body>
+</html>

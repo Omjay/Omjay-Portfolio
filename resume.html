@@ -3,10 +3,19 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="Resume of Om Jay Mishra, Data Engineer and Azure Databricks specialist.">
+  <meta name="description" content="Resume of Om Jay Mishra, Data Engineer and Azure Databricks specialist with Snowflake experience.">
   <link rel="canonical" href="https://omjay.github.io/Omjay-Portfolio/resume.html">
   <link rel="icon" href="og-image.svg" type="image/svg+xml">
   <title>Om Jay Mishra | Resume</title>
+  <meta property="og:type" content="profile">
+  <meta property="og:site_name" content="Om Jay Mishra">
+  <meta property="og:title" content="Om Jay Mishra | Resume">
+  <meta property="og:description" content="Resume of Om Jay Mishra, Data Engineer: Azure Databricks, Snowflake, PySpark and Delta Lake.">
+  <meta property="og:url" content="https://omjay.github.io/Omjay-Portfolio/resume.html">
+  <meta property="og:image" content="https://omjay.github.io/Omjay-Portfolio/og-image.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta name="twitter:card" content="summary_large_image">
   <style>
     :root {
       color-scheme: light;
@@ -337,7 +346,7 @@
         width: 8.5in;
         min-height: 11in;
         margin: 0;
-        padding: 0.5in;
+        padding: 0.4in 0.5in;
         box-shadow: none;
         font-size: 12.5px;
         line-height: 1.32;
@@ -362,7 +371,7 @@
     <nav class="resume-toolbar-inner" aria-label="Resume navigation">
       <a class="resume-back" href="index.html">&larr; Portfolio</a>
       <span class="resume-title">Om Jay Mishra &middot; Resume</span>
-      <a class="resume-download" href="Om%27s%20Resume.pdf" download="Om Jay Mishra - Resume.pdf" aria-label="Download resume PDF">
+      <a class="resume-download" href="OmJayMishra-DataEngineer-Resume.pdf" download="OmJayMishra-DataEngineer-Resume.pdf" aria-label="Download resume PDF">
         <span>PDF</span>
         <svg viewBox="0 0 24 24" aria-hidden="true">
           <path d="M12 3v12m0 0 4-4m-4 4-4-4"></path>
@@ -388,16 +397,16 @@
 
       <section class="resume-section">
         <h2 class="section-title">Summary</h2>
-        <p class="summary">Data Engineer with 3+ years designing and modernizing production Lakehouse platforms on Azure Databricks across ingestion, PySpark transformation, Delta Lake modeling, orchestration, data quality, governance, CI/CD, and cost-performance optimization. Reduced 500M+ record pipelines from 6 hours to 30 minutes, improved query performance 65%, and cut Databricks DBU consumption 25%.</p>
+        <p class="summary">Data Engineer with 3+ years designing and modernizing production Lakehouse platforms on Azure Databricks across ingestion, PySpark transformation, Delta Lake modeling, orchestration, data quality, governance, CI/CD, and cost-performance optimization. Built a pipeline that turned a manual 6-hour process into a run of about 30 minutes at 20M records and kept it there as data grew from 20M to 500M+ records, improved query performance 65%, and cut Databricks DBU consumption 25%.</p>
       </section>
 
       <section class="resume-section">
         <h2 class="section-title">Technical Skills</h2>
         <div class="skills-grid">
-          <div class="skill-label">Databricks &amp; Lakehouse</div><div>Azure Databricks, PySpark, Spark SQL, Delta Lake, Unity Catalog, Liquid Clustering, Photon, Medallion Architecture, Databricks Workflows</div>
+          <div class="skill-label">Databricks &amp; Lakehouse</div><div>Azure Databricks, PySpark, Spark SQL, Delta Lake, Unity Catalog, Liquid Clustering, Photon, Medallion Architecture, Databricks Workflows, Snowflake (Zero-Copy Cloning)</div>
           <div class="skill-label">Azure Data Engineering</div><div>Azure Data Factory (ADF), ADLS Gen2, Azure DevOps, CI/CD, Docker, Azure Monitor, Job Clusters, Autoscaling</div>
-          <div class="skill-label">Programming &amp; Querying</div><div>Python, SQL, KQL, Pandas, Hive, REST APIs, ETL/ELT, Incremental Loading, Metadata-Driven Pipelines</div>
-          <div class="skill-label">Modeling &amp; Governance</div><div>dbt, Star Schema, Data Modeling, Data Quality, Data Governance, Audit Logging, Schema Evolution, Workflow Orchestration</div>
+          <div class="skill-label">Programming &amp; Querying</div><div>Python, SQL, Pandas, REST APIs, ETL/ELT, Incremental Loading, Metadata-Driven Pipelines</div>
+          <div class="skill-label">Modeling &amp; Governance</div><div>Star Schema, Data Modeling, Data Quality, Data Governance, Audit Logging, Schema Evolution, Workflow Orchestration</div>
           <div class="skill-label">BI &amp; Visualization</div><div>Power BI, Tableau, Looker Studio</div>
         </div>
       </section>
@@ -407,7 +416,7 @@
 
         <div class="experience">
           <div class="experience-heading">
-            <div class="experience-role"><strong>Data Engineer</strong> &middot; ExaQube Technologies, Chennai</div>
+            <div class="experience-role"><strong>Data Engineer</strong> &middot; ExaQube Technologies, Chennai &middot; sole data engineer, 10-person startup</div>
             <div class="experience-date">Jun 2026 - Present</div>
           </div>
           <ul>
@@ -415,17 +424,18 @@
             <li>Reduced a thrice-daily pipeline's runtime from ~1 hr 50 min to ~30 min per run by resolving data skew and migrating to job compute clusters, cutting daily compute hours by ~70% and lowering DBU costs</li>
             <li>Built config-driven, Dockerized ingestion with idempotent checkpoints and schema evolution into Bronze Delta tables, allowing new sources to onboard without new pipeline code</li>
             <li>Tuned shuffle partitions, broadcast joins, adaptive query execution, file compaction, and clustering to stabilize heavier Spark workloads as data volume grew</li>
+            <li>Automated per-branch Snowflake zero-copy dev clones for a client (Azure DevOps, month-end cleanup, 15+ engineers)</li>
           </ul>
         </div>
 
         <div class="experience">
           <div class="experience-heading">
-            <div class="experience-role"><strong>Data Engineer</strong> &middot; Azimuth GRC, Gurgaon</div>
+            <div class="experience-role"><strong>Data Engineer</strong> &middot; Azimuth GRC, Gurgaon &middot; led a 2-person data team, 30-person startup</div>
             <div class="experience-date">May 2023 - May 2026</div>
           </div>
           <ul>
-            <li>Led migration from legacy databases and SQL workflows to an Azure Databricks Lakehouse, redesigning production pipelines in PySpark and Delta Lake with incremental loading patterns</li>
-            <li>Reduced 500M+ record pipelines from 6 hours to 30 minutes using Liquid Clustering; improved Gold-layer query performance 65% across 50M+ records with a Star Schema</li>
+            <li>Led migration from legacy databases and SQL workflows to an Azure Databricks Lakehouse, redesigning pipelines in PySpark and Delta Lake; a Gold-layer Star Schema made queries 65% faster across 50M+ records</li>
+            <li>Built the ADF and Databricks pipeline that turned a manual 6-hour process into a 30-minute run at 20M records, keeping it near 30 minutes past 500M+; weekly runs checked ~150,000 records x 85 tests</li>
             <li>Cut Databricks DBU consumption 25% through job clusters, autoscaling, Photon, and workload tuning; file compaction and Delta vacuuming reduced storage footprint 30%</li>
             <li>Automated ADF, Databricks, SQL, and Python workflows, eliminating 270+ hours of recurring manual work; metadata-driven ADF patterns reduced maintenance overhead 50%</li>
             <li>Implemented Unity Catalog access controls and audit logs, a PySpark Expectations framework for Bronze-to-Silver quality checks, and multi-stage Azure DevOps CI/CD</li>
@@ -434,7 +444,7 @@
 
         <div class="experience">
           <div class="experience-heading">
-            <div class="experience-role"><strong>Data Analytics Engineer</strong> &middot; PlanetSpark, Gurgaon</div>
+            <div class="experience-role"><strong>Data Analytics Engineer</strong> &middot; PlanetSpark, Gurgaon &middot; junior member of a 2-person data team, ~40-person startup</div>
             <div class="experience-date">Nov 2022 - May 2023</div>
           </div>
           <ul>
@@ -450,9 +460,7 @@
           <ul>
             <li><a href="https://learn.microsoft.com/api/credentials/share/en-us/OmJayMishra-2843/E62B60DEA33D9699?sharingId=A07CFCCD572798E5" target="_blank" rel="noopener">Microsoft Fabric Data Engineer Associate (DP-700)</a></li>
             <li><a href="https://credentials.databricks.com/93549f7e-1f10-4663-9ef6-1a3768475059#acc.l6QhUMzB" target="_blank" rel="noopener">Databricks Certified Data Engineer Professional</a></li>
-            <li><a href="https://credentials.databricks.com/36ca569a-fb10-4292-ad57-adb1495cd5b6" target="_blank" rel="noopener">Databricks Certified Data Engineer Associate</a></li>
             <li><a href="https://learn.microsoft.com/api/credentials/share/en-us/OmJayMishra-2843/981616DDC1843CF?sharingId=A07CFCCD572798E5" target="_blank" rel="noopener">Microsoft Azure Data Fundamentals (DP-900)</a></li>
-            <li><a href="https://www.coursera.org/account/accomplishments/specialization/JBEX2YW7NO97" target="_blank" rel="noopener">Google AI Professional Certificate</a></li>
           </ul>
         </section>
 

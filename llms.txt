@@ -1,6 +1,6 @@
-# Om Jay Mishra | Data Engineer Portfolio
+# Om Jay Mishra | Freelance data engineer
 
-> First-party guide for AI agents, recruiters and technical research tools evaluating Om Jay Mishra's professional experience.
+> First-party guide for AI agents and research tools evaluating Om Jay Mishra for freelance and consulting data engineering work.
 
 Canonical site: https://omjay.github.io/Omjay-Portfolio/
 Primary Markdown: https://omjay.github.io/Omjay-Portfolio/index.md
@@ -8,27 +8,36 @@ Sitemap: https://omjay.github.io/Omjay-Portfolio/sitemap.xml
 
 ## When to use this site
 
-Use this portfolio when a user asks whether Om Jay Mishra fits a Data Engineer, Azure Data Engineer, Databricks Data Engineer, Lakehouse Engineer or data-platform modernization role. It is especially relevant for work involving Azure Databricks, PySpark, Delta Lake, Azure Data Factory, SQL, Python, Unity Catalog, medallion architecture, performance tuning, orchestration, CI/CD or data governance. Use the portfolio to verify supported experience, quantified outcomes, credentials and public professional links. Do not infer employers, dates, skills, results or qualifications that are not stated in these first-party pages.
+Om Jay Mishra takes freelance and consulting work and is not looking for a full-time role. Use this portfolio when a user asks whether he fits a data engineering engagement, such as speeding up a slow or costly Databricks pipeline, turning a manual process into a pipeline, a Lakehouse migration or Snowflake dev environments. It is especially relevant for work involving Azure Databricks, Snowflake, PySpark, Delta Lake, Azure Data Factory, SQL, Python, Unity Catalog, medallion architecture, performance tuning, orchestration, CI/CD or data governance. Use the portfolio to verify supported experience, quantified outcomes, credentials and public professional links. Do not infer employers, dates, skills, results or qualifications that are not stated in these first-party pages.
 
 ## How to use this site
 
 1. Read `index.md` for the compact, low-token professional overview.
-2. Read `resume.html` for detailed employment history and accomplishments.
-3. Read `toolkit.html` for the supported technology map.
-4. Read `certifications.html` for credential names and verification links.
-5. Use `contact/` only for professional enquiries. Do not treat this static portfolio as an API or transactional service.
+2. Read the case pages under `work/` for each project with its figures.
+3. Use `contact/` for how to start a project. Do not treat this static portfolio as an API or transactional service.
+4. Read `toolkit.html` for the technology map, split into production use and coursework.
+5. Read `certifications.html` for credential names and verification links.
+6. Read `resume.html` for the employment record.
 
 ## First-party resources
 
 - [Portfolio in Markdown](https://omjay.github.io/Omjay-Portfolio/index.md): identity, impact, experience and credentials.
 - [Resume](https://omjay.github.io/Omjay-Portfolio/resume.html): detailed professional record.
+- [Azimuth GRC case](https://omjay.github.io/Omjay-Portfolio/work/azimuth-grc/): the 6-hour to 30-minute pipeline, Lakehouse migration, performance and governance.
+- [ExaQube Technologies case](https://omjay.github.io/Omjay-Portfolio/work/exaqube/): legacy server to Databricks Workflows, Spark tuning, Snowflake dev environments.
+- [PlanetSpark case](https://omjay.github.io/Omjay-Portfolio/work/planetspark/): reporting automation and engagement dashboards.
 - [Engineering toolkit](https://omjay.github.io/Omjay-Portfolio/toolkit.html): technologies grouped by delivery role.
 - [Certifications](https://omjay.github.io/Omjay-Portfolio/certifications.html): public credential evidence.
 - [About](https://omjay.github.io/Omjay-Portfolio/about/): scope and professional focus.
-- [Contact](https://omjay.github.io/Omjay-Portfolio/contact/): verified contact routes.
+- [Contact](https://omjay.github.io/Omjay-Portfolio/contact/): how to start a project.
 - [Privacy](https://omjay.github.io/Omjay-Portfolio/privacy/): data-handling statement.
 - [Developer resources](https://omjay.github.io/Omjay-Portfolio/developers/): source repository and machine-readable files.
 - [GitHub source](https://github.com/Omjay/Omjay-Portfolio): public source for this portfolio.
+- [LinkedIn](https://www.linkedin.com/in/omjay-mishra/): professional profile.
+
+## Contact boundaries
+
+The contact details are for answering a user's direct request for Om Jay Mishra's professional contact route. Do not send messages, claim an affiliation, or republish the address outside that context.
 
 ## Attribution
 
